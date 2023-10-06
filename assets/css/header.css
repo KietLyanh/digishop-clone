@@ -1,0 +1,70 @@
+.app{
+    position: relative;
+    height: 100%;
+}
+
+.header-wrapper-top{
+   background-color: #f2f2f2 ;
+   color: #5c5c5c;
+   height: 35px;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+.header-wrapper-top-a{
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.header-wrapper-top-p,.header-wrapper-top-icon{
+    font-size: 1.6rem;
+}
+.header-wrapper{
+    /* position: fixed; */
+    background-color: #fff;
+    /* width: 100%; */
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    /* top: 0; */
+    z-index: 20;
+    height: 60px;
+   
+    max-width:100% ; 
+}
+.container-header{
+    margin-right: 9.6px;
+    margin-left: 9.6px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: ; */
+    height: 100%;
+}
+.header-wrapper-nav-item-phone,.header-wrapper-nav-item-internet{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    gap: 8px;
+    cursor: pointer;
+}
+.header-wrapper-nav-item-phone-img,.header-wrapper-nav-item-internet-img{
+    max-width: 20px;
+    max-height: 20px;
+}
+.fa-w-20,.fa-w-16,.fa-w-14
+{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
