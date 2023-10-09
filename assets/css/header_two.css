@@ -1,10 +1,10 @@
-.home-hotdeal-container{
+.home-header2-container{
     padding-right: 15px;
     padding-left: 15px;
     padding-bottom: 30px;
     margin-top: 3rem !important;
 }
-.home-hotdeal-row{
+.home-header2-row{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,7 +14,7 @@
     max-width: 50px;
     max-height: 50px;
 }
-.home-hotdeal-item1,.home-hotdeal-item2,.home-hotdeal-item3,.home-hotdeal-item4{
+.home-header2-item1,.home-header2-item2,.home-header2-item3,.home-header2-item4{
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center;
 }
-.home-hotdeal-item1 p,.home-hotdeal-item2 p,.home-hotdeal-item3 p,.home-hotdeal-item4 p{
+.home-header2-item1 p,.home-header2-item2 p,.home-header2-item3 p,.home-header2-item4 p{
     font-size: 1.8rem;
     font-weight: 550;
     margin-bottom: 0px;
