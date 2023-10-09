@@ -1,0 +1,38 @@
+.home-hotdeal-container{
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 30px;
+    margin-top: 3rem !important;
+}
+.home-hotdeal-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.img1 img,.img2 img,.img3 img,.img4 img{
+    max-width: 50px;
+    max-height: 50px;
+}
+.home-hotdeal-item1,.home-hotdeal-item2,.home-hotdeal-item3,.home-hotdeal-item4{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.img1,.img2,.img3,.img4{
+    background-color: #fff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    box-shadow: 0px 4px 15px rgba(57, 57, 57, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home-hotdeal-item1 p,.home-hotdeal-item2 p,.home-hotdeal-item3 p,.home-hotdeal-item4 p{
+    font-size: 1.8rem;
+    font-weight: 550;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    max-width: 200px;
+}
