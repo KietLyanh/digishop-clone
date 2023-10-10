@@ -28,10 +28,11 @@
     margin-top: 20px;
     box-sizing: content-box;
     width: 100%;
-    height: 70%;
+    height: 78%;
     z-index: 1;
 }
 .hotdeal-row-box{
+    cursor: pointer;
     /* padding: 0 10px; */
     position: relative;
     /* border: solid red 1px; */
@@ -62,6 +63,7 @@
 }
 .hotdeal-row-box-content{
     height: 75%;
+       
 }
 .hotdeal-row-box-content-img{
     padding: 10px 17% 0;
@@ -73,8 +75,7 @@
 }
 
 .hotdeal-row-box-sold{
-    margin-top: 25px;
-    
+    margin-top: 15px;
 }
 .hotdeal-row-box-sold button{
     color: #fff;
@@ -160,8 +161,11 @@
     line-height: 32px;
     margin-top: 10px;
     overflow-y: hidden;
+    
 }
-
+.hotdeal-row-box-content-text p{
+    text-overflow: ellipsis;
+}
 .hotdeal-row-box-content-text::before{
     content: '';
     position: absolute;
@@ -172,5 +176,22 @@
     width: 75%;
     background-color: #d0dddd;
     margin: auto;
+}
+
+.hotdeal-row-box-content-text-price{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px 10%;
+    gap: 5px;
+}
+.hotdeal-row-box-content-text-price h4{
+    font-size: 30px;
+    font-weight: bold;
+}
+.hotdeal-row-box-content-text-price p{
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 /* hotdeal-items */
