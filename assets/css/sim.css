@@ -1,0 +1,121 @@
+.sim-container{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.sim-container h3{
+    text-transform: uppercase;
+}
+/* sim title */
+.sim-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.sim-title img{
+    width: 17px;
+    height: 17px;
+}
+.sim-title h2{
+    font-size: 32px;
+    color: #0095d9;
+    font-weight: 600;
+    font-style: normal;
+}
+/* sim title */
+.sim-row{
+    background: #ffffff;
+    box-shadow: 0px 4px 30px rgba(149, 149, 149, 0.25);
+    border-radius: 8px;
+    display: flex;
+    margin-top: 20px;
+    height: 594px;
+}
+.col-3-sim{
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.col-6-sim{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.sim-row-items{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.sim-row-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    border-bottom: solid 1px #eaeff7;
+    overflow: hidden;
+    /* border: solid red 1px; */
+}
+.sim-row-item h3{
+    color: #40c3ff;
+    /* width: 250px; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 2.8rem;
+}
+.sim-row-item img{
+    height: 80px;
+    width: 80px;
+    margin-right: 15px;
+    background-color: rgba(228, 246, 255, 0.9);
+    border-radius: 50%;
+}
+.sim-row-item-desc{
+    width: 59%;
+    font-size: 1.5rem;
+    line-height: 20px;
+    padding-bottom: 20px;
+}
+.sim-row-desc{
+    color: #fff;
+    text-align: center;
+    box-shadow: 0px 4px 30px rgba(149, 149, 149, 0.5);
+    background-color: #3aa4f6;
+    padding: 3%;
+   
+}
+.sim-row-desc-container h3{
+    width: 100%;
+    font-size: 2.8rem;
+}
+.sim-row-desc-container{
+    position: relative;
+    margin-bottom: 1rem;
+}
+.sim-row-desc-container p{
+    font-size: 1.4rem;
+    line-height: 26px;
+}
+.sim-row-desc hr{
+    width: 40%;
+    height: 1px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 15% auto 0;
+}
+.sim-row-desc-p{
+    margin-top: 15px;
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+.sim-row-desc-m{
+    font-size: 2rem;
+}
