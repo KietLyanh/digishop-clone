@@ -4,21 +4,29 @@
     padding-bottom: 30px;
     margin-top: 3rem !important;
 }
+
+
 .home-header2-row{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+
+
 .img1 img,.img2 img,.img3 img,.img4 img{
     max-width: 50px;
     max-height: 50px;
 }
+
+
 .home-header2-item1,.home-header2-item2,.home-header2-item3,.home-header2-item4{
     display: flex;
     align-items: center;
     cursor: pointer;
 }
+
+
 .img1,.img2,.img3,.img4{
     background-color: #fff;
     border-radius: 50%;
@@ -29,6 +37,8 @@
     align-items: center;
     justify-content: center;
 }
+
+
 .home-header2-item1 p,.home-header2-item2 p,.home-header2-item3 p,.home-header2-item4 p{
     font-size: 1.8rem;
     font-weight: 550;

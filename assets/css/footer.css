@@ -11,6 +11,8 @@
     justify-content: center;
     align-items: center;
 }
+
+
 .footer-menu a{
     color: #0071BC;
     padding: 16px 20px;
@@ -19,6 +21,8 @@
     cursor: pointer;
     font-weight: 550;
 }
+
+
 .footer-menu a:hover{
     text-decoration: underline;
     text-decoration-color: #0071BC;
@@ -33,6 +37,8 @@
     padding-top: 30px;
     margin-bottom: 30px;
 }
+
+
 .container-footer{
     width: 100%;
     padding-right: 15px;
@@ -40,12 +46,15 @@
     margin-right: auto;
     margin-left: auto;
 }
+
+
 .row{
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
 }
+
 .col-3{
     flex: 0 0 25%;
     max-width: 25%;
@@ -54,28 +63,34 @@
     width: 100%;
     justify-content: flex-start;
 }
+
 .col-3 h6{
     font-size: 1.6rem;
     font-weight: bold;
     color: #000;
     margin-bottom: 2rem;
 }
+
 .col-3 p{
     font-size: 1.5rem;
     margin-bottom: 1.2rem;
 }
+
 .col-3 ul{
     margin: 0;
     padding-left: 12px;
 }
+
 .col-3 li{
     margin-bottom: 1.2rem;
     
 }
+
 .col-3 a{
     font-size: 1.5rem;
     cursor: pointer;
 }
+
 .col-3-img-social
 {
     display: flex;
@@ -83,10 +98,12 @@
     gap: 20px;
     align-items: center;
 }
+
 .col-3 img{
     max-width: 30px;
     max-height: 30px;
 }
+
 .col-3 a:hover{
     text-decoration: underline;
     color: #007bff;
@@ -105,15 +122,21 @@
     margin-right: 15px;
     margin-left: 15px;
 }
+
+
 .footer-bottom-logo-copyright,.footer-bottom-logo-title{
     display: flex;
     gap: 20px;
     align-items: center;
 }
+
+
 .footer-bottom-logo-copyright p{
     font-size: 1.2rem;
     color: #5c5c5c;
 }
+
+
 .footer-bottom-logo-title p{
     font-size: 1.4rem;
 }
