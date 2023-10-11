@@ -11,29 +11,41 @@
     align-items: center;
     flex-wrap: nowrap;
 }
+
+
 .col-lg-8{
     flex: 0 0 calc(100% * 2/3);
     max-width:calc(100% * 2/3) ;
 }
+
+
 .home-banner-container-img1 img{
     width: 100%;
     height: calc(100%-10px);
     max-height: 384px;
     object-fit: contain;
 }
+
+
 .home-banner-4{
     /* display:flex;
     flex-direction: column; */
     /* align-items: center; */
     padding-left: 10px;
 }
+
+
 .col-lg-4{
     flex: 0 0 calc(100% * 1/3);
     max-width: calc(100% * 1/3);
 }
+
+
 .home-banner-container-img2{
     margin-bottom: 10px;
 }
+
+
 .home-banner-container-img2 img,.home-banner-container-img3 img{
     width: 100%;
     height: 100%;

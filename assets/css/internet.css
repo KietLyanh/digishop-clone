@@ -13,28 +13,38 @@
     align-items: center;
     margin-bottom: 15px;
 }
+
+
 .internet-title img{
     width: 17px;
     height: 17px;
     margin-right: 10px;
 }
+
+
 .internet-title h2{
     font-size: 32px;
     color: #0095d9;
     font-weight: 600;
     font-style: normal;
 }
+
+
 .internet-title a{
     margin-left: 20px;
     font-size: 1.6rem;
     cursor: pointer;
     color: #5c5c5c;
 }
+
+
 .internet-row{
     padding-right: 5px;
     padding-left: 5px;
     height: 100%;
 }
+
+
 .internet-row-items{
     display: flex;
     flex-direction: row;
@@ -45,11 +55,15 @@
     width: 100%;
     overflow-x: hidden;
 }
+
+
 .internet-row-item{
     width: 486px;
     height: 100%;
     padding: 0 10px;
 }
+
+
 .internet-row-item-box{
     position: relative;
     height: 100%;
@@ -59,6 +73,8 @@
     color: #252525;
     cursor: pointer;
 }
+
+
 .internet-row-item-border{
     position: absolute;
     top: 0;
@@ -68,10 +84,14 @@
     height: 5px;
     background-color: #0095d9;
 }
+
+
 .internet-row-item-top{
     padding: 40px 8% 20px;
     border-bottom: 0.8px solid #D0DDDD;
 }
+
+
 .internet-row-item-top h3{
     font-size: 30px;
     font-weight: bold;
@@ -79,15 +99,21 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     color: #E7007F;
 }
+
+
 .internet-row-item-body{
     padding: 10px 8% 20px;
 }
+
+
 .internet-row-item-content{
     height: 160px;
     font-size: 1.5rem;
     line-height: 28px;
     overflow-y: hidden;
 }
+
+
 .internet-row-item-price{
     display: flex;
     flex-direction: row;
@@ -96,14 +122,20 @@
     margin-top: 3rem !important;
     gap: 10px;
 }
+
+
 .internet-row-item-price h4{
     font-weight: bold;
     font-size: 30px;
 }
+
+
 .internet-row-item-price span{
     font-size: 1.4rem;
     font-weight: bold;
 }
+
+
 .internet-row-item-btn{
     display: flex;
     align-items: center;
@@ -111,6 +143,8 @@
     border-top:  0.8px solid #D0DDDD;
     padding: 20px 8%;
 }
+
+
 .internet-row-item-btn button{
     text-align: center;
     text-transform: uppercase;

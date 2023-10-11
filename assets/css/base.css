@@ -3,9 +3,11 @@
     --black-color: #000;
     --text-color: #333;
 }
+
 *{
     box-sizing: inherit;
 }
+
 html{
     font-size: 62.5%;
     line-height: 1.6rem;
@@ -13,23 +15,28 @@ html{
     box-sizing: border-box;
     overflow-x: hidden;
 }
+
 .grid{
     width: 1200px;
     max-width: 100%;
     margin: 0 auto; /*để căn giữa bố cục*/
     
 }
+
 .grid__full-width{
     width: 100%;
 }
+
 .grid__row{
     /* để cho bố cục nằm ngang*/
     display: flex;
     flex-wrap: wrap; /*để khi max-width thì nó sẽ tự động xuống dòng*/
 }
+
 a{
     text-decoration: none   ;
 }
+
 p{
     margin: 0 0;
 }
