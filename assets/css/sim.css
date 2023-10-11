@@ -32,6 +32,10 @@
 
 
 /* sim title */
+
+/* sim-container */  
+
+
 .sim-row{
     background: #ffffff;
     box-shadow: 0px 4px 30px rgba(149, 149, 149, 0.25);
@@ -133,10 +137,15 @@
 .sim-row-desc-container p{
     font-size: 1.4rem;
     line-height: 26px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
 }
 
 
 .sim-row-desc hr{
+    border: none;
     width: 40%;
     height: 1px;
     background: #fff;
@@ -155,3 +164,97 @@
 .sim-row-desc-m{
     font-size: 2rem;
 }
+
+
+.sim-phonenumber-container{
+    padding: 3% 0;
+    background-color: #fff;
+    height: 100%;
+    border-radius: 0px 8px 8px 0px;
+} 
+
+
+.sim-phonenumber-table{
+    height: 80%;
+    padding: 0px 5%;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+
+.sim-phonenumber-table table{
+    font-size: 15px;
+    width: 100%;
+    border-radius: 5px;
+    border-spacing: none;
+    border-collapse: collapse !important;
+    background-color: #fff;
+    color: #5c5c5c;
+}
+
+
+.sim-phonenumber-table tr{
+    border-bottom: 1px solid rgba(208, 220, 221, 0.6);
+}
+
+
+.sim-phonenumber-table td{
+    padding: 13.5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.sim-phonenumber-table td:nth-child(2)
+{
+    /* margin: 0; */
+    color: #8b8b8b;
+}
+
+
+.sim-phonenumber-td{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.sim-phonenumber-td span:nth-child(2)
+{
+    width: 16px;
+    height: 16px;
+    border: solid 1px #c4c4c4;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.sim-phonenumber-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+
+.sim-phonenumber-btn button{
+   border-radius: 100px;
+   border: solid 1px #c4c4c4;
+   background-color: transparent;
+   padding: 8px 15px;
+   font-size: 1.5rem;
+   text-transform: uppercase;
+   color: #5c5c5c;
+   cursor: pointer;
+}
+
+.sim-phonenumber-btn button:nth-child(2){
+    background-color: #3aa4f6;
+    border: none;
+    color: #fff;
+}
+/* sim-container */  
