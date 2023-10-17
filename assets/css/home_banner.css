@@ -21,9 +21,10 @@
 
 .home-banner-container-img1 img{
     width: 100%;
+    height: 100%;
     height: calc(100%-10px);
     max-height: 384px;
-    object-fit: contain;
+    object-fit:inherit;
 }
 
 
@@ -50,5 +51,6 @@
     width: 100%;
     height: 100%;
     max-height: 250px;
-    object-fit: contain;
+    /* background-size: auto; */
+    object-fit:inherit; /*dính liền với phần tử cha gần nó*/
 }

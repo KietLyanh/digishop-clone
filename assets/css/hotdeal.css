@@ -198,17 +198,21 @@
     text-align: center;
     height: 160px;
     padding: 0 15% 0;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 32px;
     margin-top: 10px;
-    overflow-y: hidden;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    /* white-space: nowrap; */
     
 }
 
 
-.hotdeal-row-box-content-text p{
+/* .hotdeal-row-box-content-text p{
     text-overflow: ellipsis;
-}
+} */
 
 
 .hotdeal-row-box-content-text::before{

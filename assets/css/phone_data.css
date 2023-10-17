@@ -39,12 +39,16 @@
 
 /* phonedata-title */
 
+
+/* phonedata-container */
+
+
 .phonedata-row{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     width: 100%;
-    height: 80%;
+    height: 90%;
 }
 
 
@@ -71,4 +75,101 @@
     border-radius: 8px;
     text-align: center;
     height: 100%;
+} 
+
+
+.phonedata-row-box-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color:#40c3ff;
+    height: 18%;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+    color: #fff;
 }
+
+
+.phonedata-row-box-title h3{
+    font-size: 24px;
+    /* font-family: "HelMedium", "SFProMedium"; */
+    text-transform: uppercase;
+}
+
+
+.phonedata-row-box-desc{
+    position: relative;
+    height: 131px;
+    padding: 10px 20% 5px;
+    margin: 5px;
+    font-size: 1.45rem;
+    line-height: 28px;
+    color: #4d4d4d;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+
+.phonedata-row-box-desc::after{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 1.5px;
+    background-color: #d0dddd;
+    width: 75%;
+    content: "";
+}
+
+
+.phonedata-row-box-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:baseline;
+    margin-top: 15px;
+    gap: 5px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+
+.phonedata-row-box-price h4{
+    font-weight:bold;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+
+.phonedata-row-box-price p{
+    font-size: 2rem;
+}
+
+
+.phonedata-row-box-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.phonedata-row-box-btn button{
+    width: 53%;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px 0 5px;
+    font-size: 1.5rem;
+    background-color:#3AA4F6;
+    border: none;
+    border-radius: 100px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* phonedata-container */
