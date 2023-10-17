@@ -173,3 +173,26 @@
 }
 
 /* phonedata-container */
+
+/*Phần hiệu ứng hover và animation*/
+
+.phonedata-title a:hover{
+    color: #0095d9;
+}
+
+
+.phonedata-title a:last-child:hover{
+    text-decoration: underline;
+}
+
+.phonedata-row-box-item:hover{
+    box-shadow: 0 5px 25px 1px #afafaf;
+}
+
+.phonedata-row-box-item:hover .phonedata-row-box-title{
+    background-color: #3AA4F6 ;
+}
+
+.phonedata-row-box-btn button:hover{
+    background-color: #0071bc;
+}

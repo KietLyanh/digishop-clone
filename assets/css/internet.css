@@ -158,6 +158,17 @@
     cursor: pointer;
 }
 
+/*Phần hiệu ứng hover và animation*/
 
+.internet-title a:hover{
+    color: #3aa4f6;
+}
 
+.internet-title a:last-child:hover{
+    text-decoration: underline;
+}
+
+.internet-row-item-box:hover{
+    box-shadow: 0 5px 25px 1px #afafaf;
+}
 

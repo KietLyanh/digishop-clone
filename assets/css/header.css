@@ -1,6 +1,7 @@
 .app{
     position: relative;
     height: 100%;
+    /* transition: all 0.3s; */
 }
 
 .header-wrapper-top{
@@ -14,14 +15,15 @@
 
 
 .header-wrapper-top-a{
+    position: relative;
     display: flex;
     flex-direction: row;
     margin-right: 20px;
-    padding-right: 15px;
-    padding-left: 15px;
+    /* padding-right: 15px;
+    padding-left: 15px; */
     gap: 8px;
     cursor: pointer;
-    transition: all 0.3s;
+    
 }
 
 
@@ -61,6 +63,7 @@
 
 
 .header-wrapper-nav-item-phone,.header-wrapper-nav-item-internet{
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -84,3 +87,64 @@
     cursor: pointer;
 }
 
+/* xử lý hiệu ứng hover vào các icon, thanh */
+.header-wrapper-top-a::after {
+    content: '';
+    width: 0%;
+    left: 3px;
+    bottom: -2px;
+    height: 1px;
+    position: absolute;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.header-wrapper-nav-item-phone::after,.header-wrapper-nav-item-internet::after{
+    content: '';
+    width: 0%;
+    left: 3px;
+    bottom: -15px;
+    height: 1.5px;
+    position: absolute;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.header-wrapper-top-a:hover{
+    color: #0095d9;
+}
+
+
+.header-wrapper-nav-item-phone:hover,.header-wrapper-nav-item-internet:hover{
+    color: #0095d9;
+}
+
+.header-wrapper-nav-item-phone:hover .header-wrapper-nav-item-phone-img{
+    color: #0095d9;
+}
+
+
+.header-wrapper-top-a:hover::after {
+    width: 100%;
+    background-color: #0095d9;
+}
+
+.header-wrapper-nav-item-phone:hover::after{
+    width: 72%;
+    background-color: #0095d9;
+}
+
+.header-wrapper-nav-item-internet:hover::after{
+    width: 80%;
+    background-color: #0095d9;
+}
+
+
+.header-wrapper-top-a:hover .header-wrapper-top-icon svg #headset-mic-path {
+    fill: #0095d9; /* Màu của biểu tượng khi hover */
+  }
+  
+  .fa-w-20:hover,.fa-w-16:hover,.fa-w-14:hover{
+    color: #0095d9;
+}

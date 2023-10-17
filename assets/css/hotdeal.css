@@ -32,16 +32,19 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 20px;
     box-sizing: content-box;
     width: 100%;
     height: 78%;
     z-index: 1;
+    gap: 20px;
 }
 
 
 .hotdeal-row-box{
+    /* padding: 0 8px 0; */
+    border-radius: 8px;
     cursor: pointer;
     /* padding: 0 10px; */
     position: relative;
@@ -96,11 +99,36 @@
 
 
 .hotdeal-row-box-sold{
+   
     margin-top: 15px;
 }
 
 
-.hotdeal-row-box-sold button{
+/* .hotdeal-row-box-sold-btn{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center;
+    align-items: center; 
+} */
+
+.hotdeal-row-box-sold-btn button:nth-child(1){
+    visibility:hidden;
+    color: #fff;
+    text-transform: uppercase;
+    background-color: #3AA4F6;
+    border-style: none;
+    border-radius: 100px;
+    font-size: 1.3rem;
+    width: 36%;
+    padding: 8px 0;
+    cursor: pointer;
+    line-height: 18px;
+    text-align: center;
+    margin-right: calc(64%/2);
+    margin-left: calc(64%/2);
+}
+.hotdeal-row-box-sold-btn button:nth-child(2){
+    /* display: block; */
     color: #fff;
     text-transform: uppercase;
     background-color: #3AA4F6;
@@ -249,3 +277,16 @@
     font-weight: bold;
 }
 /* hotdeal-items */
+
+/*Phần hiệu ứng hover và animtion*/
+
+.hotdeal-row-box:hover{
+    box-shadow: 0 5px 25px 1px #afafaf;
+}
+
+/* .hotdeal-row-box-sold-btn button:nth-child(2):hover{
+    transform: translateX(15px);
+}
+.hotdeal-row-box-sold-btn button:nth-child(2):hover .hotdeal-row-box-sold-btn button:nth-child(1){
+    visibility: hidden;
+} */
