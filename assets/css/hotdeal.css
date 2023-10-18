@@ -51,7 +51,7 @@
     /* border: solid red 1px; */
     height: 100%;
     box-shadow: 0px 0px 10px rgba(146, 146, 146, 0.25);
-    overflow-x: hidden;
+    
 }
 
 
@@ -102,6 +102,7 @@
 .hotdeal-row-box-sold{
    
     margin-top: 8px;
+    overflow-x: hidden;
 }
 
 
