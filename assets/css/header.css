@@ -145,6 +145,11 @@
     fill: #0095d9; /* Màu của biểu tượng khi hover */
   }
   
-  .fa-w-20:hover,.fa-w-16:hover,.fa-w-14:hover{
+.fa-w-20:hover,.fa-w-16:hover,.fa-w-14:hover{
     color: #0095d9;
+}
+
+
+.header-wrapper-nav-item-internet:hover img,.header-wrapper-nav-item-phone:hover img{
+    filter: invert(60%) sepia(100%) saturate(85) hue-rotate(205deg);
 }

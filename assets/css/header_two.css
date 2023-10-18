@@ -71,10 +71,10 @@
         transform: translateX(0px);
     }
     12.5%{
-        transform: translateX(-3px);
+        transform: translateX(-5px);
     }
     25%{
-        transform: translateX(3px);
+        transform: translateX(5px);
     }
     37.5%{
         transform: translateX(-3px);
