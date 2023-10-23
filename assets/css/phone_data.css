@@ -154,12 +154,14 @@
 
 .phonedata-row-box-btn{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 
 
-.phonedata-row-box-btn button{
+.phonedata-row-box-btn{
     width: 53%;
     text-align: center;
     text-transform: uppercase;
@@ -172,4 +174,83 @@
     cursor: pointer;
 }
 
+.phonedata-row-box-btn span{
+    transform: translateX(10px);
+    transition: all 0.8s ease;
+}
+
+.phonedata-row-box-btn svg{
+    width: 13px;
+    height: 13px;
+}
 /* phonedata-container */
+
+/*Phần hiệu ứng hover và animation*/
+
+.phonedata-title a:hover{
+    color: #0095d9;
+}
+
+
+.phonedata-title a:last-child:hover{
+    text-decoration: underline;
+}
+
+.phonedata-row-box-item:hover{
+    box-shadow: 0 5px 25px 1px #afafaf;
+}
+
+.phonedata-row-box-item:hover .phonedata-row-box-title{
+    background-color: #3AA4F6 ;
+}
+
+.phonedata-row-box-btn:hover{
+    background-color: #0071bc;
+}
+
+
+.phonedata-row-box-btn:hover{
+    gap: 6px;
+}
+
+
+.phonedata-row-box-btn:hover span{
+    transform: translate(0);
+    transition: all 0.8s ease;
+}
+
+
+.phonedata-row-box-btn:hover svg{
+    color: yellow;
+    animation: ring 2s infinite;
+} 
+
+@keyframes ring{
+    0%{
+        transform: translateX(0);
+    }
+    12.5%{
+        transform: translateX(5px);
+    }
+    25%{
+        transform: translateX(-5px);
+    }
+    37.5%{
+        transform: translateX(5px);
+    }
+    50%{
+        transform: translateX(-5px);
+    }
+    62.5%{
+        transform: translateX(5px);
+    }
+    75%{
+        transform: translateX(-3px);
+    }
+    87.5%{
+        transform: translateX(3px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}

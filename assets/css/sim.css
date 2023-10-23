@@ -81,6 +81,7 @@
     padding-top: 5px;
     border-bottom: solid 1px #eaeff7;
     overflow: hidden;
+    cursor: pointer;
     /* border: solid red 1px; */
 }
 
@@ -258,3 +259,22 @@
     color: #fff;
 }
 /* sim-container */  
+
+/*Phần hiệu ứng hover và animation*/
+
+.sim-row-item:hover h3{
+    color: #196fb0;
+}
+
+
+.sim-row-item:hover{
+    background-color: rgba(64, 192, 255, 0.3);
+}
+
+.sim-phonenumber-btn button:nth-child(2):hover{
+    opacity: 0.8;
+}
+
+.sim-phonenumber-btn button:nth-child(1):hover{
+    background-color: #eaeaea;
+}

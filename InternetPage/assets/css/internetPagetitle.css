@@ -1,0 +1,14 @@
+.internetPage-title{
+    margin-right: 15px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+.internetPage-hometitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}

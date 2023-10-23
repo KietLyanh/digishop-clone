@@ -1,7 +1,7 @@
 .home-header2-container{
     padding-right: 15px;
     padding-left: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
     margin-top: 3rem !important;
 }
 
@@ -28,14 +28,14 @@
 
 
 .img1,.img2,.img3,.img4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
     border-radius: 50%;
     width: 80px;
     height: 80px;
     box-shadow: 0px 4px 15px rgba(57, 57, 57, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 
@@ -45,4 +45,54 @@
     margin-bottom: 0px;
     margin-left: 10px;
     max-width: 200px;
+}
+
+/*Phần hiệu ứng hover, animation các phần tử*/
+
+.home-header2-item1:hover p,.home-header2-item2:hover p,.home-header2-item3:hover p,.home-header2-item4:hover p{
+    color: rgb(25, 111, 176);
+    text-decoration-line: underline;
+    text-decoration-color: rgb(25, 111, 176);
+}
+
+
+.img1:hover,.img2:hover,.img3:hover,.img4:hover{
+    border: solid 1px #0095d9;
+}
+
+.img1:hover img,.img2:hover img,.img3:hover img,.img4:hover img{
+    animation: ring 0.6s infinite;
+    animation-iteration-count:1;
+}
+
+
+@keyframes ring{
+    0%{
+        transform: translateX(0px);
+    }
+    12.5%{
+        transform: translateX(-5px);
+    }
+    25%{
+        transform: translateX(5px);
+    }
+    37.5%{
+        transform: translateX(-3px);
+    }
+    50%{
+        transform: translateX(3px);
+    }
+    62.5%{
+        transform: translateX(-3px);
+    }
+    75%{
+        transform: translateX(3px);
+    }
+    87.5%{
+        transform: translateX(-3px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+
 }
