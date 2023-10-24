@@ -45,6 +45,7 @@
     margin-bottom: 0px;
     margin-left: 10px;
     max-width: 200px;
+    color: #4D4D4D;
 }
 
 /*Phần hiệu ứng hover, animation các phần tử*/
@@ -61,7 +62,7 @@
 }
 
 .img1:hover img,.img2:hover img,.img3:hover img,.img4:hover img{
-    animation: ring 0.6s infinite;
+    animation: ring 0.8s ease;
     animation-iteration-count:1;
 }
 
@@ -71,10 +72,10 @@
         transform: translateX(0px);
     }
     12.5%{
-        transform: translateX(-5px);
+        transform: translateX(-4px);
     }
     25%{
-        transform: translateX(5px);
+        transform: translateX(4px);
     }
     37.5%{
         transform: translateX(-3px);
@@ -96,3 +97,29 @@
     }
 
 }
+
+
+/* header-two-responsive */
+    @media only screen and (max-width:981px)
+    {
+        .home-header2-container{
+            max-width: 720px;
+            margin: auto;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+
+        .home-header2-item1,.home-header2-item2,.home-header2-item3,.home-header2-item4{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 15px;
+        }
+
+        .home-header2-item1 p,.home-header2-item2 p,.home-header2-item3 p,.home-header2-item4 p{
+            font-size: 1.5rem;
+        }
+    }
+
+/* header-two-responsive */

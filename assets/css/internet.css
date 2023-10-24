@@ -96,6 +96,7 @@
 .internet-row-item-top{
     padding: 10px 8% 20px;
     border-bottom: 0.8px solid #D0DDDD;
+    overflow: hidden;
 }
 
 
@@ -234,3 +235,23 @@
 .internet-row-item-btn button:nth-child(1):hover{
     border-color: #3AA4F6;
 }
+
+/* internet-responsive */
+
+   @media only screen and (max-width:981px)
+   {
+    .internet-container{
+        max-width: 720px;
+        margin: auto;
+    }   
+
+    .phonedata-row{
+        height: 82%;
+    }
+
+    .phonedata-row-box-price h4{
+        font-size: 2.2rem;
+    }
+   }
+
+/* internet-responsive */

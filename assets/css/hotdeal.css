@@ -68,8 +68,9 @@
     text-transform: uppercase;
     color: rgb(25, 111, 176);
     text-align: center;
+    text-wrap: nowrap;
     line-height: 56px;
-    overflow-y: hidden;
+    overflow: hidden;
     margin: 0;
     margin-top: 15px;
 }
@@ -128,7 +129,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 3px;
+    /* gap: 3px; */
     color: #3AA4F6;
     text-transform: uppercase;
     background-color: #fff;
@@ -257,6 +258,7 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
+    color: #5c5c5c;
     /* white-space: nowrap; */
     
 }
@@ -337,5 +339,67 @@
 .hotdeal-row-box-sold-btn button:nth-child(1):hover span{
     color: #196fb0;
 }
+
+/* hotdeal-responsive */
+
+    @media only screen and (max-width:981px)
+    {
+        .hotdeal-container{
+            max-width: 720px;
+            margin: auto;
+        }
+
+        .hotdeal-row{
+            height: 60%;
+        }
+
+        .hotdeal-row-box:last-child{
+            display: none;
+        }
+
+        .hotdeal-col_3{
+            flex: 0 0 calc(650px/3);
+            max-width: calc(650px/3);
+        }
+
+        .hotdeal-row-box-content-text{
+            height: 130px;
+            font-size: 1.5rem;
+            line-height: 25px;
+        }
+
+        .hotdeal-row-box-content{
+            height: 68%;
+        }
+
+        .hotdeal-row-box-sold-btn button:nth-child(1),.hotdeal-row-box-sold-btn button:nth-child(2){
+            width: 60%;
+            font-size: 1.3rem;
+        }
+
+        .hotdeal-row-box-sold-btn button:nth-child(2){
+            transform: translateX(-40px);
+        }
+
+        .hotdeal-row-box-sold{
+            margin-top: 30px;
+        }
+
+        .hotdeal-row-box-soldout{
+            margin-left: 20px;
+            margin-right: 15px;
+            margin-top: 20px;
+        }
+
+        .hotdeal-row-box-countdown{
+            gap: 2px;
+        }
+        
+        .hotdeal-row-box-countdown span{
+            font-size: 1.3rem;
+        }
+    }
+
+/* hotdeal-responsive */
 
 
