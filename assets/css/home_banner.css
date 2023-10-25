@@ -54,3 +54,32 @@
     /* background-size: auto; */
     object-fit:inherit; /*dính liền với phần tử cha gần nó*/
 }
+
+
+/* home-banner-responsive */
+    @media only screen and (max-width:981px)
+    {
+        .home-banner-container{
+            max-width: 720px;
+            margin: auto;
+        }
+        .home-banner-4{
+            display: none;
+        }
+        .home-banner-container-row{
+            margin: 0;
+        }
+        .col-lg-8{
+            max-width: 100%;
+            flex: 1;
+        }
+        .home-banner-container-img1 img{
+            width: 100%;
+            height: 100%;
+            height: calc(100%-10px);
+            max-height: 384px;
+            object-fit:inherit;
+        }
+    }
+
+/* home-banner-responsive */

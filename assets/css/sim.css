@@ -278,3 +278,15 @@
 .sim-phonenumber-btn button:nth-child(1):hover{
     background-color: #eaeaea;
 }
+
+/* sim-responsive */
+
+    @media only screen and (max-width:981px)
+    {
+        .sim-container{
+            max-width: 720px;
+            margin: auto;
+        }
+    }
+
+/* sim-responsive */

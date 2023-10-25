@@ -152,16 +152,13 @@
 }
 
 
+
 .phonedata-row-box-btn{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin: auto;
-}
-
-
-.phonedata-row-box-btn{
     width: 53%;
     text-align: center;
     text-transform: uppercase;
@@ -254,3 +251,21 @@
         transform: translateX(0px);
     }
 }
+
+/* phone-data-responsive */
+
+    @media only screen and (max-width:981px)
+    {
+        .phonedata-container{
+            max-width: 720px;
+            margin: auto;
+        }
+    
+        .phonedata-row-box-btn{
+            width: 60%;
+            padding: 3px 1px 3px;
+            font-size: 1.4rem;
+        }
+    }
+
+/* phone-data-responsive */
