@@ -281,7 +281,7 @@
 
 /* sim-responsive */
 
-    @media only screen and (max-width:981px)
+    @media only screen and (max-width:992px)
     {
         .sim-container{
             max-width: 720px;

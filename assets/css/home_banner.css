@@ -57,7 +57,7 @@
 
 
 /* home-banner-responsive */
-    @media only screen and (max-width:981px)
+    @media only screen and (max-width:992px)
     {
         .home-banner-container{
             max-width: 720px;

@@ -51,6 +51,7 @@
     align-items: center;
     /* justify-content: flex-start; */
     /* gap: 10px; */
+    max-height: 636px;
     height: 85%;
     width: 100%;
     overflow: hidden;
@@ -238,20 +239,21 @@
 
 /* internet-responsive */
 
-   @media only screen and (max-width:981px)
+   @media only screen and (max-width:992px)
    {
     .internet-container{
         max-width: 720px;
         margin: auto;
     }   
 
-    .phonedata-row{
-        height: 82%;
+    .internet-col-3{
+        flex:none;
+        max-width: 350px;
+    }
+    .internet-row-item{
+        width: 320px;
     }
 
-    .phonedata-row-box-price h4{
-        font-size: 2.2rem;
-    }
    }
 
 /* internet-responsive */
