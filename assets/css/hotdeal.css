@@ -475,13 +475,13 @@
         }
 
         .hotdeal-row-box-sold-btn button:nth-child(1),.hotdeal-row-box-sold-btn button:nth-child(2){
-            width: 60%;
-            font-size: 1.3rem;
+            width: 65%;
+            font-size: 1.1rem;
             padding: 4px 0;
         }
 
         .hotdeal-row-box-sold-btn button:nth-child(2){
-            transform: translateX(-40px);
+            transform: translateX(-37px);
         }
 
         .hotdeal-row-box-sold{
