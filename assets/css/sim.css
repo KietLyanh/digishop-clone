@@ -6,7 +6,6 @@
     text-transform: uppercase;
 }
 
-
 /* sim title */
 .sim-title{
     display: flex;
@@ -36,7 +35,7 @@
 /* sim-container */  
 
 
-.sim-row{
+.sim-row-noresponsive{
     background: #ffffff;
     box-shadow: 0px 4px 30px rgba(149, 149, 149, 0.25);
     border-radius: 8px;
@@ -45,6 +44,10 @@
     height: 594px;
 }
 
+
+.sim-row-responsive{
+    display: none;
+}
 
 .col-3-sim{
     flex: 0 0 25%;
@@ -66,6 +69,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+   
 }
 
 
@@ -287,6 +291,60 @@
             max-width: 720px;
             margin: auto;
         }
+
+        .sim-row-noresponsive{
+            display: none;
+        }
+
+        .col-3-sim{
+            flex: none;
+            max-width: 100%;
+        }
+
+        .sim-row-responsive{
+            display: block;
+            overflow-y: scroll;
+            height: 594px;
+            border-radius: 8px;
+        }
+
+        .sim-item-1{
+            background-color: rgba(64, 192, 255, 0.3);
+        }
+
+        .sim-row-item img{
+            height: 50px;
+            width: 50px;
+            margin-right: 15px;
+            background-color: rgba(228, 246, 255, 0.9);
+            border-radius: 50%;
+        }
+
+        
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey; 
+            border-radius: 10px;
+        }
+    }
+
+    @media only screen and (max-width:768px)
+    {
+        .sim-container{
+            max-width: 650px;
+        }
+    }
+
+    @media only screen and (max-width:600px)
+    {
+        .sim-container{
+            max-width: 350px;
+        }
+
+        .sim-title h2{
+            font-size: 24px;
+        }
+
+
     }
 
 /* sim-responsive */

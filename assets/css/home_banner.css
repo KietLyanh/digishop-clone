@@ -82,4 +82,18 @@
         }
     }
 
+@media only screen and (max-width:768px)
+{
+    .home-banner-container{
+        max-width: 650px;
+    }
+}
+
+@media only screen and (max-width:600px)
+{
+    .home-banner-container{
+        max-width: 350px;
+    }
+}
+
 /* home-banner-responsive */

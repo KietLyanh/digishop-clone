@@ -243,4 +243,20 @@
 
 }
 
+@media only screen and (max-width:768px)
+{
+    .container-header{
+        margin: auto;
+        max-width: 650px;
+    }
+}
+
+@media only screen and (max-width:600px)
+{
+    .container-header{
+        margin: auto;
+        max-width: 350px;
+    }
+}
+
 /* header-responsive */

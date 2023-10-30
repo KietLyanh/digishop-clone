@@ -42,6 +42,11 @@
     gap: 20px;
     margin-left: 15px;
     margin-right: 15px;
+    overflow: hidden;
+    padding-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
 }
 
 .hotdeal-col_4{
@@ -369,13 +374,104 @@
         }
 
         .hotdeal-row-box-content-text{
-            height: 130px;
+            height: 130px;  
             font-size: 1.5rem;
             line-height: 25px;
         }
 
         .hotdeal-row-box-content{
             height: 70%;
+        }
+
+        .hotdeal-row-box-sold-btn button:nth-child(1),.hotdeal-row-box-sold-btn button:nth-child(2){
+            width: 60%;
+            font-size: 1.3rem;
+            padding: 4px 0;
+        }
+
+        .hotdeal-row-box-sold-btn button:nth-child(2){
+            transform: translateX(-40px);
+        }
+
+        .hotdeal-row-box-sold{
+            margin-top: 30px;
+        }
+
+        .hotdeal-row-box-soldout{
+            margin: auto;
+            margin-left: 15px;
+            margin-top: 20px;
+        }
+
+        .hotdeal-row-box-sell{
+            width: 60%;
+        }
+
+        .hotdeal-row-box-countdown{
+            gap: 2px;
+        }
+        
+        .hotdeal-row-box-countdown span{
+            font-size: 1.3rem;
+        }
+    }
+
+    @media only screen and (max-width:768px)
+    {
+        .hotdeal-container{
+      
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .hotdeal-col_6{
+            flex: 0 0 calc(600px/3);
+            max-width: calc(600px/3);
+        }
+    }
+
+    @media only screen and (max-width:600px)
+    {
+        .hotdeal-container{
+            max-width: 350px;
+            margin: auto;
+        }
+
+        .hotdeal-row{
+            height: 65%;
+            max-height: 450px;
+            justify-content: flex-start;
+            padding-left: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .hotdeal-title h2{
+            font-size: 24px;
+        }
+        
+        .hotdeal-row-box:last-child{
+            display: none;
+        }
+
+        .hotdeal-col_4{
+            flex: none;
+            max-width: 200px;
+         }
+
+        .hotdeal-col_6{
+           flex: none;
+           max-width: 200px;
+        }
+
+        .hotdeal-row-box-content-text{
+            height: 110px;
+            font-size: 1.4rem;
+            line-height: 22px;
+        }
+
+        .hotdeal-row-box-content{
+            height: 65%;
         }
 
         .hotdeal-row-box-sold-btn button:nth-child(1),.hotdeal-row-box-sold-btn button:nth-child(2){

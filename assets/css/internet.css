@@ -253,7 +253,36 @@
     .internet-row-item{
         width: 320px;
     }
+   }
 
+   @media only screen and (max-width:768px)
+   {
+    .internet-container{
+        max-width: 650px;
+    }
+
+    .internet-col-3{
+        flex:none;
+        max-width: 320px;
+    }
+    .internet-row-item{
+        width: 300px;
+    }
+   }
+
+   @media only screen and (max-width:600px)
+   {
+        .internet-container{
+            max-width: 350px;
+        }
+
+        .internet-title h2{
+            font-size: 24px;
+        }
+
+        .internet-title a{
+            font-size: 1.4rem;
+        }
    }
 
 /* internet-responsive */

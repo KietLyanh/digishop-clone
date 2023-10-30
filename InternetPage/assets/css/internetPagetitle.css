@@ -63,3 +63,25 @@
 
 
 /*Hover and animation*/
+
+/* internet-responsive */
+
+@media only screen and (max-width:992px)
+{
+    .internetPage-title{
+     max-width: 720px;
+     margin: auto;
+     margin-top: 25px;
+ }   
+}
+
+@media only screen and (max-width:768px)
+{
+    .internetPage-title{
+     max-width: 650px;
+     margin: auto;
+     margin-top: 25px;
+ }
+}
+
+/* internet-responsive */

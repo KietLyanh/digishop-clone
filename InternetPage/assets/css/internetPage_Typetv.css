@@ -3,7 +3,7 @@
     margin-left: 15px;
     margin-top: 15px;
     /* position: relative; */
-    height: 100%;
+
 }
 
 /*internet-Typetv-title*/
@@ -110,6 +110,7 @@
     /* justify-content: flex-start; */
     /* gap: 10px; */
     height: 85%;
+    max-height: 636px;
     width: 100%;
     overflow: hidden;
 }
@@ -330,3 +331,38 @@
 }
 
 /*internet-Typetv-pagination*/
+
+/* internet-Typetv-responsive */
+
+@media only screen and (max-width:992px)
+{
+ .internet-Typetv-container{
+     max-width: 720px;
+     margin: auto;
+ }   
+
+ .internet-Typetv-col-3{
+     flex:none;
+     max-width: 350px;
+ }
+ .internet-Typetv-row-item{
+     width: 320px;
+ }
+}
+
+@media only screen and (max-width:768px)
+{
+ .internet-Typetv-container{
+     max-width: 650px;
+ }
+
+ .internet-Typetv-col-3{
+     flex:none;
+     max-width: 320px;
+ }
+ .internet-Typetv-row-item{
+     width: 300px;
+ }
+}
+
+/* internet-Typetv-responsive */
