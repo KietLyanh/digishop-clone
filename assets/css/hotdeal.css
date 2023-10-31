@@ -37,16 +37,13 @@
     box-sizing: content-box;
     /* max-width: calc(100%-30px); */
     height: 78%;
-    max-height: 590px;
+    max-height: 595px;
     z-index: 1;
     gap: 20px;
     margin-left: 15px;
     margin-right: 15px;
     overflow: hidden;
-    padding-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 15px;
+    padding: 15px;
 }
 
 .hotdeal-col_4{
