@@ -145,6 +145,10 @@
     font-size: 1.4rem;
 }
 
+.footer-menu-res,.footer-content-res,.footer-bottom-res{
+    display: none;
+}
+
 /*responsive*/
 @media only screen and (min-width:1536px)
 {
