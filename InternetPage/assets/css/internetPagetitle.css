@@ -1,0 +1,96 @@
+
+/* .internetPage-title */
+.internetPage-title{
+    margin-top: 25px;
+    margin-right: 15px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+
+.internetPage-hometitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.internetPage-hometitle a{
+    color: #4d4d4d;
+    font-size: 1.4rem;
+    font-weight: bold;
+    /* position: relative; */
+    cursor: pointer;
+}
+
+
+.internetPage-hometitle svg{
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+
+.internetPage-path a{
+    color: #40C3FF;
+    font-size: 1.4rem;
+    font-weight: bold;
+    /* position: relative; */
+}
+
+
+/* .internetPage-title */
+
+/*Hover and animation*/
+
+
+.internetPage-hometitle a:hover{
+    text-decoration-line: underline;
+    color: #4d4d4d; 
+}
+
+
+.internetPage-path a:hover{
+    text-decoration-line: underline;
+    color: #40C3FF;
+}
+
+
+/*Hover and animation*/
+
+/* internet-responsive */
+
+@media only screen and (max-width:992px)
+{
+    .internetPage-title{
+     max-width: 720px;
+     margin: auto;
+     margin-top: 25px;
+ }   
+}
+
+@media only screen and (max-width:768px)
+{
+    .internetPage-title{
+     max-width: 650px;
+     margin: auto;
+     margin-top: 25px;
+ }
+}
+@media only screen and (max-width:600px)
+{
+    .internetPage-title{
+        max-width: 350px;
+        margin: auto;
+        margin-top: 25px;
+    }
+}
+
+
+/* internet-responsive */

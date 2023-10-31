@@ -1,0 +1,44 @@
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+}
+
+*{
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto',sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: #f4f7fb;
+}
+
+/* .grid{
+    width: 1520px;
+    
+    margin: 0 auto; /*để căn giữa bố cục
+    
+} */
+
+.grid__full-width{
+    width: 100% !important;
+}
+
+
+a{
+    text-decoration: none   ;
+}
+
+p{
+    margin: 0 0;
+}
+
+.app{
+    position: relative;
+    height: 100%;
+    /* transition: all 0.3s; */
+}
