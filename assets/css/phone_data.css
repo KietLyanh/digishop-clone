@@ -312,6 +312,7 @@
     {
         .phonedata-container{
             max-width: 350px;
+            overflow-x: scroll;
         }
 
         .phonedata-title h2{
@@ -323,18 +324,28 @@
         }
 
         .phonedata-row{
-            flex-direction: row;
-            max-width: fit-content;
+            display: flex;
+            flex-direction: column;
+            /* max-width: fit-content; */
+            overflow-x: scroll;
+            justify-content: center;
+            align-content: space-between;
+            flex-wrap: nowrap;
         }
 
         .phonedata-row-res{
             max-width: 80%;
             flex-wrap: wrap;
+            flex-direction: column;
         }
 
         .col-3-phonedata{
             flex: none;
             max-width: 155px;
+        }
+
+        .phonedata-row-box{
+            padding: 10px 10px;
         }
 
        

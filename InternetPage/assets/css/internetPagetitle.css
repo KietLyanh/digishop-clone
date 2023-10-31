@@ -83,5 +83,14 @@
      margin-top: 25px;
  }
 }
+@media only screen and (max-width:600px)
+{
+    .internetPage-title{
+        max-width: 350px;
+        margin: auto;
+        margin-top: 25px;
+    }
+}
+
 
 /* internet-responsive */

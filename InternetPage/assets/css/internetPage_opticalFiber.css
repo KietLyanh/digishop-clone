@@ -344,4 +344,40 @@
  }
 }
 
+@media only screen and (max-width:600px)
+{
+    .internet-fiber-container{
+        margin-top: 20px;
+        max-width: 350px;
+        /* overflow-x: scroll; */
+    }
+
+    .internet-fiber-name h2{
+        font-size: 2rem;
+        color: #0095d9;
+        font-weight: 600;
+    }
+   
+    .internet-fiber-col-3{
+        flex:none;
+        max-width: 320px;
+    }
+    .internet-fiber-row-item{
+        width: 300px;
+    }
+
+    .internet-fiber-row-items{
+        max-height: 616px;
+    }
+
+    .internet-fiber-row-item-btn button:nth-child(1), .internet-fiber-row-item-btn button:nth-child(2){
+        font-size: 1.2rem;
+    }
+
+    .internet-fiber-row-item-btn button:nth-child(1) svg{
+        width: 12px;
+        height: 12px;
+    }
+}
+
 /* internet-fiber-responsive */

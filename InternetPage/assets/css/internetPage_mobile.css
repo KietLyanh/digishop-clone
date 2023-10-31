@@ -341,4 +341,44 @@
  }
 }
 
+
+@media only screen and (max-width:600px)
+{
+    .internet-mobile-container{
+        margin-top: 20px;
+        max-width: 350px;
+        /* overflow-x: scroll; */
+    }
+
+    .internet-mobile-name h2{
+        font-size: 2rem;
+        color: #0095d9;
+        font-weight: 600;
+    }
+
+    .internet-mobile-route a{
+        margin-left: 10px;
+    }
+   
+    .internet-mobile-col-3{
+        flex:none;
+        max-width: 320px;
+    }
+    .internet-mobile-row-item{
+        width: 300px;
+    }
+
+    .internet-mobile-row-items{
+        max-height: 616px;
+    }
+
+    .internet-mobile-row-item-btn button:nth-child(1), .internet-mobile-row-item-btn button:nth-child(2){
+        font-size: 1.2rem;
+    }
+
+    .internet-mobile-row-item-btn button:nth-child(1) svg{
+        width: 12px;
+        height: 12px;
+    }
+}
 /* internet-mobile-responsive */
