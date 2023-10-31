@@ -1,11 +1,7 @@
-.app{
-    position: relative;
-    height: 100%;
-    /* transition: all 0.3s; */
-}
+
 
 .header-wrapper-top{
-   background-color: #f2f2f2;
+  
    color: #5c5c5c;
    height: 35px;
    display: flex;
@@ -155,8 +151,22 @@
 
 
 /* header-responsive */
+@media only screen and (min-width:1536px)
+{
+    .header-wrapper-top{
+        max-width: 100%;
+        width: 1520px;
+        margin: auto;
+    }
+    .header-wrapper{
+        max-width: 100%;
+        width: 1520px;
+        margin: auto;
+    }
+}
 
-@media only screen and (max-width:981px)
+
+@media only screen and (max-width:992px)
 {
    .header-wrapper{
     display: none;
@@ -231,6 +241,22 @@
         margin: auto;
     }
 
+}
+
+@media only screen and (max-width:768px)
+{
+    .container-header{
+        margin: auto;
+        max-width: 650px;
+    }
+}
+
+@media only screen and (max-width:600px)
+{
+    .container-header{
+        margin: auto;
+        max-width: 350px;
+    }
 }
 
 /* header-responsive */

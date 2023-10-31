@@ -51,6 +51,7 @@
     align-items: center;
     /* justify-content: flex-start; */
     /* gap: 10px; */
+    max-height: 636px;
     height: 85%;
     width: 100%;
     overflow: hidden;
@@ -238,20 +239,75 @@
 
 /* internet-responsive */
 
-   @media only screen and (max-width:981px)
+   @media only screen and (max-width:992px)
    {
     .internet-container{
         max-width: 720px;
         margin: auto;
     }   
 
-    .phonedata-row{
-        height: 82%;
+    .internet-col-3{
+        flex:none;
+        max-width: 350px;
+    }
+    .internet-row-item{
+        width: 320px;
+    }
+   }
+
+   @media only screen and (max-width:768px)
+   {
+    .internet-container{
+        max-width: 650px;
     }
 
-    .phonedata-row-box-price h4{
-        font-size: 2.2rem;
+    .internet-col-3{
+        flex:none;
+        max-width: 320px;
     }
+    .internet-row-item{
+        width: 300px;
+    }
+   }
+
+   @media only screen and (max-width:600px)
+   {
+       .internet-container{
+           margin-top: 20px;
+           max-width: 350px;
+           /* overflow-x: scroll; */
+       }
+   
+       .internet-title h2{
+           font-size: 24px;
+           color: #0095d9;
+           font-weight: 600;
+       }
+      
+       .internet-title a{
+        font-size: 1.4rem;
+       }
+
+       .internet-col-3{
+           flex:none;
+           max-width: 320px;
+       }
+       .internet-row-item{
+           width: 300px;
+       }
+   
+       .internet-row-items{
+           max-height: 616px;
+       }
+   
+       .internet-row-item-btn button:nth-child(1), .internet-row-item-btn button:nth-child(2){
+           font-size: 1.2rem;
+       }
+   
+       .internet-row-item-btn button:nth-child(1) svg{
+           width: 12px;
+           height: 12px;
+       }
    }
 
 /* internet-responsive */

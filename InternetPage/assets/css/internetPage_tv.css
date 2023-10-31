@@ -3,7 +3,7 @@
     margin-left: 15px;
     margin-top: 15px;
     /* position: relative; */
-    height: 100%;
+
 }
 
 /*internet-tv-title*/
@@ -97,6 +97,7 @@
     /* justify-content: flex-start; */
     /* gap: 10px; */
     height: 85%;
+    max-height: 636px;
     width: 100%;
     overflow: hidden;
 }
@@ -307,3 +308,74 @@
 }
 
 /*internet-tv-pagination*/
+
+
+/* internet-tv-responsive */
+
+@media only screen and (max-width:992px)
+{
+ .internet-tv-container{
+     max-width: 720px;
+     margin: auto;
+ }   
+
+ .internet-tv-col-3{
+     flex:none;
+     max-width: 350px;
+ }
+ .internet-tv-row-item{
+     width: 320px;
+ }
+}
+
+@media only screen and (max-width:768px)
+{
+ .internet-tv-container{
+     max-width: 650px;
+ }
+
+ .internet-tv-col-3{
+     flex:none;
+     max-width: 320px;
+ }
+ .internet-tv-row-item{
+     width: 300px;
+ }
+}
+
+@media only screen and (max-width:600px)
+{
+    .internet-tv-container{
+        margin-top: 20px;
+        max-width: 350px;
+        /* overflow-x: scroll; */
+    }
+
+    .internet-tv-name h2{
+        font-size: 2rem;
+        color: #0095d9;
+        font-weight: 600;
+    }
+   
+    .internet-tv-col-3{
+        flex:none;
+        max-width: 320px;
+    }
+    .internet-tv-row-item{
+        width: 300px;
+    }
+
+    .internet-tv-row-items{
+        max-height: 616px;
+    }
+
+    .internet-tv-row-item-btn button:nth-child(1), .internet-tv-row-item-btn button:nth-child(2){
+        font-size: 1.2rem;
+    }
+
+    .internet-tv-row-item-btn button:nth-child(1) svg{
+        width: 12px;
+        height: 12px;
+    }
+}
+/* internet-tv-responsive */

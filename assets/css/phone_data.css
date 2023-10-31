@@ -49,6 +49,9 @@
     flex-wrap: nowrap;
     width: 100%;
     height: 90%;
+    max-height: 763px;
+    overflow-y: scroll;
+   
 }
 
 
@@ -65,6 +68,7 @@
 
 .phonedata-row-box{
     padding: 0 10px;
+    
 }
 
 
@@ -75,6 +79,7 @@
     border-radius: 8px;
     text-align: center;
     height: 100%;
+
 } 
 
 
@@ -105,8 +110,8 @@
     height: 131px;
     padding: 10px 20% 5px;
     margin: 5px;
-    font-size: 1.45rem;
-    line-height: 28px;
+
+    line-height: 29px;
     color: #4d4d4d;
     overflow: hidden;
     display: -webkit-box;
@@ -114,6 +119,9 @@
     -webkit-line-clamp: 4;
 }
 
+.phonedata-row-box-desc p{
+    font-size: 1.5rem;
+}
 
 .phonedata-row-box-desc::after{
     position: absolute;
@@ -136,7 +144,7 @@
     margin-top: 15px;
     gap: 5px;
     color: #000;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 
@@ -254,18 +262,92 @@
 
 /* phone-data-responsive */
 
-    @media only screen and (max-width:981px)
+    @media only screen and (max-width:992px)
     {
         .phonedata-container{
             max-width: 720px;
             margin: auto;
         }
-    
+        
+        .phonedata-row{
+            height: 95%;
+            max-height: 600px;
+        }
+
         .phonedata-row-box-btn{
             width: 60%;
             padding: 3px 1px 3px;
             font-size: 1.4rem;
         }
+
+        .phonedata-row-box-desc{
+            height: 125px;
+        }
+
+        .phonedata-row-box-price h4{
+            font-size: 2.1rem;
+        }
+
+        .phonedata-row-box-price p{
+            font-size: 1.7rem;
+        }
+
+        .phonedata-row-box-desc::after{
+            height: 0.85px;
+        }
+
+        .phonedata-row-box-btn{
+            padding: 7px 1px 7px;
+        }
     }
 
+    @media only screen and (max-width:768px)
+    {
+        .phonedata-container{
+            max-width: 650px;
+        }
+    }
+
+    @media only screen and (max-width:600px)
+    {
+        .phonedata-container{
+            max-width: 350px;
+            overflow-x: scroll;
+        }
+
+        .phonedata-title h2{
+            font-size: 24px;
+        }
+
+        .phonedata-title a{
+            font-size: 1.4rem;
+        }
+
+        .phonedata-row{
+            display: flex;
+            flex-direction: column;
+            /* max-width: fit-content; */
+            overflow-x: scroll;
+            justify-content: center;
+            align-content: space-between;
+            flex-wrap: nowrap;
+        }
+
+        .phonedata-row-res{
+            max-width: 80%;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .col-3-phonedata{
+            flex: none;
+            max-width: 155px;
+        }
+
+        .phonedata-row-box{
+            padding: 10px 10px;
+        }
+
+       
+    }
 /* phone-data-responsive */

@@ -14,24 +14,20 @@ html{
     font-family: 'Roboto',sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
+    background-color: #f4f7fb;
 }
 
-.grid{
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto; /*để căn giữa bố cục*/
+/* .grid{
+    width: 1520px;
     
-}
+    margin: 0 auto; /*để căn giữa bố cục
+    
+} */
 
 .grid__full-width{
-    width: 100%;
+    width: 100% !important;
 }
 
-.grid__row{
-    /* để cho bố cục nằm ngang*/
-    display: flex;
-    flex-wrap: wrap; /*để khi max-width thì nó sẽ tự động xuống dòng*/
-}
 
 a{
     text-decoration: none   ;
@@ -39,4 +35,10 @@ a{
 
 p{
     margin: 0 0;
+}
+
+.app{
+    position: relative;
+    height: 100%;
+    /* transition: all 0.3s; */
 }
