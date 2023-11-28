@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Slideshow.scss';
 import banner1 from "./image/16952607338251695176510280Gian hang VNPT Shopee_Tiktok_ bannerChinh-compressed.jpg"
 import banner2 from "./image/1695260766541475x180 VD90.jpg"
 import banner3 from "./image/anh2.jpg"
 function Slideshow()
 {
+    const [avatar,setAvatar] = useState();
+    useEffect(()=>{
+      setInterval(()=>{
+
+      },)
+
+    },[avatar])
     return(
         <div class="home-banner-container">
         <div class="home-banner-container-row">
