@@ -1,0 +1,98 @@
+.home-banner-container{
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 0;
+}
+
+.home-banner-container-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+
+.col-lg-8{
+    flex: 0 0 calc(100% * 2/3);
+    max-width:calc(100% * 2/3) ;
+}
+
+
+.home-banner-container-img1 img{
+    width: 100%;
+    height: 100%;
+    height: calc(100% - 10px);
+    max-height: 384px;
+    object-fit:inherit;
+}
+
+
+.home-banner-4{
+    /* display:flex;
+    flex-direction: column; */
+    /* align-items: center; */
+    padding-left: 10px;
+}
+
+
+.col-lg-4{
+    flex: 0 0 calc(100% * 1/3);
+    max-width: calc(100% * 1/3);
+}
+
+
+.home-banner-container-img2{
+    margin-bottom: 5px;
+}
+
+
+.home-banner-container-img2 img,.home-banner-container-img3 img{
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+    /* background-size: auto; */
+    object-fit:inherit; /*dính liền với phần tử cha gần nó*/
+}
+
+
+/* home-banner-responsive */
+    @media only screen and (max-width:992px)
+    {
+        .home-banner-container{
+            max-width: 720px;
+            margin: auto;
+        }
+        .home-banner-4{
+            display: none;
+        }
+        .home-banner-container-row{
+            margin: 0;
+        }
+        .col-lg-8{
+            max-width: 100%;
+            flex: 1;
+        }
+        .home-banner-container-img1 img{
+            width: 100%;
+            height: 100%;
+            height: calc(100% - 10px);
+            max-height: 384px;
+            object-fit:inherit;
+        }
+    }
+
+@media only screen and (max-width:768px)
+{
+    .home-banner-container{
+        max-width: 650px;
+    }
+}
+
+@media only screen and (max-width:600px)
+{
+    .home-banner-container{
+        max-width: 350px;
+    }
+}
+
+/* home-banner-responsive */
