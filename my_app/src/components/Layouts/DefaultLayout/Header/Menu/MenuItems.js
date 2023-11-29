@@ -29,7 +29,6 @@ function MenuItems({
     return(
         
         <NavLink 
-            
          onMouseOver={handleDropdownOpen} onMouseOut={handleDropdownClose}
              to={to}>
             <div className={className}
