@@ -60,6 +60,7 @@
     height: calc(100% - 10px);
     max-height: 384px;
     object-fit:inherit;
+    transition: transform 0.5s ease;
 }
 
 
@@ -88,6 +89,7 @@
     max-height: 250px;
     /* background-size: auto; */
     object-fit:inherit; /*dính liền với phần tử cha gần nó*/
+    cursor: pointer;
 }
 
 

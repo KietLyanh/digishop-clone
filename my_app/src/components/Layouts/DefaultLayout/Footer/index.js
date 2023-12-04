@@ -1,4 +1,5 @@
 import React from "react";
+import '~/components/GlobalStyles/GlobalStyles.scss'
 import './Footer.scss';
 import insta from "./images/instagram_grey_ic.png"
 import fb from "./images/facebook.png"
