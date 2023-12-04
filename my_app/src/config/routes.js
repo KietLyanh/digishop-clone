@@ -4,5 +4,7 @@ const routes = {
     mobile: "/di-dong",
     internetTV: "/internet-tv",
     store: "/cua-hang-giao-dich",
+    news:"/tin-tuc",
+    
 }
 export default routes;
