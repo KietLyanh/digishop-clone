@@ -1,10 +1,13 @@
 import React from "react";
 import './home.scss';
+import LinkPage from "./LinkPage";
 
 function home()
 {
     return(
-        <div><h1>this is homePage!</h1></div>
+        <div className="body-content">
+            <LinkPage/>
+        </div>
     );
 }
 export default home;
