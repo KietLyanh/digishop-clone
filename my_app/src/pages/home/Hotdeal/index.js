@@ -1,1 +1,1 @@
-export {default} from "./hotdeal"
+export {default} from "./Hotdeal"
