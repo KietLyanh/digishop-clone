@@ -2,6 +2,7 @@ import React from "react";
 import './home.scss';
 import LinkPage from "./LinkPage";
 import Hotdeal from "./Hotdeal";
+import Sims from "./Sims";
 
 function home()
 {
@@ -9,6 +10,7 @@ function home()
         <div className="body-content">
             <LinkPage/>
             <Hotdeal/>
+            <Sims/>
         </div>
     );
 }

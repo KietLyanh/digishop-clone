@@ -19,16 +19,17 @@ function Slideshow()
        if(currentBanner === list.length-1)
        {
         setCurrentBanner(0);
-        console.log("đã lưu");
+        // console.log("đã lưu");
        }
        else{
         setCurrentBanner(currentBanner+1);
-        console.log("đã lưu");
+        // console.log("đã lưu");
        }
       },3000)
       return () => 
       {clearInterval(loop)
-      console.log("delete");}
+      // console.log("delete");
+    }
 
     
     },[currentBanner])
