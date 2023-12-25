@@ -12,6 +12,7 @@ import java.util.List;
 import model.Child_packages;
 import model.Details;
 import model.Hotdeal;
+import model.MobileData;
 import model.Sim;
 
 /**
@@ -67,8 +68,10 @@ public class AllDAOImpl implements AllDAO {
     public List<Hotdeal> getAllHotdeals() {
         List<Hotdeal> list = new ArrayList<>();
         try (
-                 Connection cnt = DBcontextPrepair_Package.getConnection();  PreparedStatement st = cnt.prepareStatement("SELECT child_name,child_price,detail_treatment \n"
-                + "FROM child_package INNER JOIN details WHERE details.detail_id = child_package.detail_id");  ResultSet rs = st.executeQuery()) {
+                 Connection cnt = DBcontextPrepair_Package.getConnection(); 
+                PreparedStatement st = cnt.prepareStatement("SELECT child_name,child_price,detail_treatment \n"
+                + "FROM child_package INNER JOIN details WHERE details.detail_id = child_package.detail_id");
+                ResultSet rs = st.executeQuery()) {
             while (rs.next()) {
                 Hotdeal h = new Hotdeal(
                         rs.getString("child_name"), rs.getString("detail_treatment"), rs.getInt("child_price"));
@@ -83,7 +86,9 @@ public class AllDAOImpl implements AllDAO {
     @Override
     public List<Sim> getSimNames() {
      List<Sim> list = new ArrayList<>();
-     try( Connection cnt = DBcontextSims.getConnection();  PreparedStatement st = cnt.prepareStatement("select sim_number_name from sim_numbers");  ResultSet rs = st.executeQuery()
+     try( Connection cnt = DBcontextSims.getConnection(); 
+             PreparedStatement st = cnt.prepareStatement("select sim_number_name from sim_numbers");  
+             ResultSet rs = st.executeQuery()
              ){
          while(rs.next())
          {
@@ -97,5 +102,29 @@ public class AllDAOImpl implements AllDAO {
      }
      return list;
     }
-    
+
+    @Override
+    public List<MobileData> getMobiledatas() {
+      List<MobileData> list = new ArrayList<>();
+      try(
+              Connection cnt = DBcontextPrepair_Package.getConnection();
+              PreparedStatement st = cnt.prepareStatement("SELECT standard_name,standard_price,detail_treatment FROM \n" +
+                "standard_package INNER JOIN details WHERE standard_package.detail_id = details.detail_id");
+              ResultSet rs = st.executeQuery()
+          ){
+          while (rs.next())
+          {
+              MobileData mb = new MobileData(
+                      rs.getString("standard_name"), 
+                      rs.getString("detail_treatment"),
+                      rs.getInt("standard_price"));
+              list.add(mb);
+          }
+      }
+      catch(Exception e)
+      {
+          e.printStackTrace();
+      }
+      return list;
+    }
 }

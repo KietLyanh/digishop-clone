@@ -4,6 +4,7 @@ import java.util.List;
 import model.Child_packages;
 import model.Details;
 import model.Hotdeal;
+import model.MobileData;
 import model.Sim;
 
 /*
@@ -20,4 +21,5 @@ public interface AllDAO {
     List<Child_packages> getAllChild();
     List<Hotdeal> getAllHotdeals();
     List<Sim> getSimNames();
+    List<MobileData> getMobiledatas();
 }
