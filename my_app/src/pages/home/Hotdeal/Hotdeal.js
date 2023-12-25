@@ -11,7 +11,7 @@ function Hotdeal()
     const fetchData = async () => 
     {
       try{
-        const response = await fetch('http://localhost:9999/api/listhotdeal');
+        const response = await fetch('http://localhost:9999/backend-forReact/listhotdeal');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -31,7 +31,7 @@ function Hotdeal()
       }
     }
     fetchData()
-  },[data]) // theo doi data
+  },[]) // theo doi data
     return(
         <div className="hotdeal-container">
           <div className="hotdeal-title">

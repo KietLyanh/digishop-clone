@@ -60,7 +60,10 @@
     max-width: 50%;
 }
 
-
+.col-3-simMobile{
+    flex: 0 0 calc(100%/3);
+    max-height: calc(100%/3);
+}
 .sim-row-items{
     position: relative;
     height: 100%;
@@ -69,7 +72,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-   
+    overflow-y: scroll;
+    
 }
 
 
@@ -125,7 +129,13 @@
     padding: 3%;
    
 }
-
+.sim-row-item-desc p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    color: #5c5c5c;
+}
 
 .sim-row-desc-container h3{
     width: 100%;
@@ -140,7 +150,7 @@
 
 
 .sim-row-desc-container p{
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 26px;
     overflow: hidden;
     display: -webkit-box;

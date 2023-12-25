@@ -3,6 +3,7 @@ import './home.scss';
 import LinkPage from "./LinkPage";
 import Hotdeal from "./Hotdeal";
 import Sims from "./Sims";
+import PhoneData from "./PhoneData";
 
 function home()
 {
@@ -11,6 +12,7 @@ function home()
             <LinkPage/>
             <Hotdeal/>
             <Sims/>
+            <PhoneData/>
         </div>
     );
 }
