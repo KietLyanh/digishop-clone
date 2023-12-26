@@ -4,6 +4,7 @@ import LinkPage from "./LinkPage";
 import Hotdeal from "./Hotdeal";
 import Sims from "./Sims";
 import PhoneData from "./PhoneData";
+import Internettv from "./InternetTV/Internettv";
 
 function home()
 {
@@ -13,6 +14,7 @@ function home()
             <Hotdeal/>
             <Sims/>
             <PhoneData/>
+            <Internettv/>
         </div>
     );
 }

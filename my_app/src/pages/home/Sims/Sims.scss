@@ -72,7 +72,47 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    overflow-y: scroll;
+    overflow-y: hidden;
+    z-index: 1;
+
+
+    .sim-row-items-icon{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            z-index: 999;
+            bottom: 15px;
+            right: 15px;
+            gap: 10px;
+        .sim-row-items-transfomicon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0095d9;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+        .sim-row-items-transfomicon2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color:#c4c4c4;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transform: rotate(180deg);
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+    }
+    
     
 }
 
@@ -133,7 +173,7 @@
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     color: #5c5c5c;
 }
 

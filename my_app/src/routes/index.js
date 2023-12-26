@@ -8,8 +8,8 @@ import home from "~/pages/home";
 import MobileSim from "~/pages/MobileSim/MobileSim";
 import Card from "~/pages/Card";
 const publicRoutes = [
-    {path: routesConfig.support, component: SupportPage , layout: null},
-    {path: routesConfig.home,component:home},
+    {path:routesConfig.support, component: SupportPage , layout: null},
+    {path:routesConfig.home,component:home},
     {path:routesConfig.internetTV,component:InternetPage},
     {path:routesConfig.mobile,component:MobilePage},
     {path:routesConfig.store,component:StorePage},
