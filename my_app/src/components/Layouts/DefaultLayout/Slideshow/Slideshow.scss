@@ -11,7 +11,9 @@
     flex-wrap: nowrap;
 }
 
-
+.home-banner-8{
+    position: relative;
+}
 .col-lg-8{
     flex: 0 0 calc(100% * 2/3);
     max-width:calc(100% * 2/3) ;
@@ -19,9 +21,9 @@
 
 
 .home-banner-container-img1{
-    position: relative;
+    // position: relative;
     cursor: pointer;
-
+    z-index: 900;
     .prevIcon{
         position: absolute;
         top: 50%;

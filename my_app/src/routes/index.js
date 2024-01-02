@@ -1,7 +1,7 @@
 import routesConfig from "~/config/routes";
 
 import SupportPage from "~/pages/SupportPage";
-import MobilePage from "~/pages/MobilePage";
+import MobilePage from "~/pages/MobilePage/MobilePage";
 import InternetPage from "~/pages/InternetPage";
 import StorePage from "~/pages/StorePage";
 import home from "~/pages/home";

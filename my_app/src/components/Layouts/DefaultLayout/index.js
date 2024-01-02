@@ -14,6 +14,7 @@ function DefaultLayout({children})
                 <Header/>
             </div>
             <Slideshow/>
+            
             <div className="container">
                 {children}
             </div>
