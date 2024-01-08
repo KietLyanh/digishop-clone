@@ -52,7 +52,7 @@ function Header() {
                             displayIcon="none"
                             className="header-wrapper-nav-item-phone"
                             classNameImg="header-wrapper-nav-item-phone-img"
-                            dropdown={<Dropdownlist list={Datamobile} height="170px" width="170px" />}
+                            dropdown={<Dropdownlist list={Datamobile} height="170px" width="170px" flexIndex='25%' fontWeight='600' fontSize='1.4rem' />}
                         />
                         <MenuItems
                             to={config.routes.internetTV}
@@ -61,7 +61,7 @@ function Header() {
                             displayIcon="none"
                             className="header-wrapper-nav-item-internet"
                             classNameImg="header-wrapper-nav-item-internet-img"
-                            dropdown={<Dropdownlist list={Datainternet} height="170px" width="250px" />}
+                            dropdown={<Dropdownlist list={Datainternet} height="170px" width="250px" flexIndex='25%' fontWeight='600' fontSize='1.4rem' />}
                             marginLeftDropdown="-22px"
                         />
                         <MenuItems
