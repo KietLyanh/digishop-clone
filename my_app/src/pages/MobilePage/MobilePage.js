@@ -15,7 +15,6 @@ function MobilePage()
     const handleOnclick = () => {
         setIsDisplay(!isDisplay);
     }
-
     return (
         <div className="mobile-container">
             <div className='mobile-linkpage'>
@@ -32,19 +31,28 @@ function MobilePage()
             <div className='mobile-features'>
                 {/* xử lý phần header */}
                 <div className='mobile-features-header'>
-                    <h4>Gói trả trước</h4>
-                    <h4>Gói DATA</h4>
-                    <button onClick={handleOnclick}>
-                        <p>Tìm kiếm gói cước theo</p>
-                        <MobilePageTitleIcon height="15px" width="15px"/>
-                    </button>
-                    {isDisplay ? 
-                        <DropdownList
-                            list={data}
-                            height="250px"
-                            width="250px"
-                        />
-                     : <></>}
+                    <div className='mobile-features-header-link'>
+                        <h4>Gói trả trước</h4>
+                        <h4>Gói DATA</h4>
+                    </div>
+                   <div className='mobile-features-header-btn'>
+                       <button onClick={handleOnclick} >
+                           <p>Tìm kiếm gói cước theo</p>
+                           <div className='mobile-features-header-link-icon'><MobilePageTitleIcon height="15px" width="15px"/></div>
+                       </button>
+                       {isDisplay ?
+                           <div className='mobile-features-header-dropdown'>
+                               <DropdownList
+                                   list={data}
+                                   height="100px"
+                                   width="250px"
+                                   fontWeight='normal'
+                                   flexIndex= '33%'
+                                   fontSize='1.6rem'
+                               />
+                           </div>
+                           : <></>}
+                   </div>
                 </div>
                 
 

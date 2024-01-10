@@ -1,6 +1,6 @@
 import React from "react";
 import './Dropdownlist.scss';
-function Dropdownlist({list,height,width})
+function Dropdownlist({list,height,width,fontWeight,flexIndex,fontSize})
 {
     // const data = ["Sim số", "Gói cước di động", "Chuyển mạng giữ số", "Nạp thẻ"];
 
@@ -12,7 +12,14 @@ function Dropdownlist({list,height,width})
            <span></span>
            <div className="dropdown-list">
             {list.map((cp,index) => {
-                return <a className="dropdown-list-child card-4" key={index}>{cp}</a> 
+                return <a className="dropdown-list-child " key={index}
+                style={{
+                    fontWeight:fontWeight,
+                    flex:`0 0 ${flexIndex}`,
+                    maxHeight: `${flexIndex}`,
+                    fontSize:fontSize
+                }}
+                >{cp}</a>
             })}
             </div>
         </div>
