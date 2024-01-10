@@ -60,7 +60,7 @@ function MobilePage()
 
                 <div className='mobile-features-search'>
                     <h3>Tìm kiếm gói cước theo tên gói cước và số thuê bao</h3>
-                    <input></input>
+                    <input type='text' placeholder='Nhập vào tên gói cước hoặc số thuê bao'></input>
                     <button>XÁC NHẬN</button>
                 </div>
 
