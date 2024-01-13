@@ -3,6 +3,7 @@ import './Hotdeal.scss';
 import pictureTitle from "./image/set.svg"
 import HotdealItems from "./HotdealItems";
 import { HotdealIcon } from "~/components/icons";
+import Listhotdeal from "~/api/listhotdeal";
 function Hotdeal()
 {
   const [infomation,setInfomation] = useState([]);
@@ -11,12 +12,8 @@ function Hotdeal()
     const fetchData = async () => 
     {
       try{
-        const response = await fetch('http://localhost:9999/backend-forReact/listhotdeal');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const result = await response.json();
-        const jsonString = JSON.stringify(result);
+        const response = await Listhotdeal.getAll();
+        const jsonString = JSON.stringify(response);
         const dataArray = JSON.parse(jsonString);
         if(!data.length){ // kiem tra neu data rong thi moi cho push de han che so lan push
           for(let i = 0; i < 4; i++)

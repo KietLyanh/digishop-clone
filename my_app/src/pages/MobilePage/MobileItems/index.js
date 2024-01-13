@@ -1,34 +1,44 @@
 import React from "react";
 import './MobileItems.scss'
+import '~/components/GlobalStyles/GlobalStyles.scss'
 import {NavLink} from "react-router-dom";
 import {MobilePageTitleIcon} from "~/components/icons";
 import imgAvt from "./../images/1689580046873VD-17.jpg"
 function MobileItems({name,price,detail})
 {
     return(
-        <div className='mobileitems-container'>
+        <div className='mobileitems-container card-2'>
             <div className='mobileitems-img'>
                 <img src={imgAvt}
                 style={
                     {
-                        height:'150px',
-                        width:'150px'
+                        height:'130px',
+                        width:'130px'
                     }
                 }
                 />
             </div>
             <div className='mobileitems-content'>
                 <div className='mobileitems-info'>
-                    <div className='mobileitems-info-name'>{name}</div>
-                    <div className='mobileitems-info-price'>{price}</div>
-                    <div className='mobileitems-info-detail'>{detail}</div>
+                    <NavLink>
+                         <h3>{name}</h3>
+                    </NavLink>
+                    <NavLink>
+                        <h4>{price}đ</h4>
+                    </NavLink>
+                    <NavLink>
+                        <div className="mobileitems-info-p">
+                            <p>{detail}</p>
+                        </div>
+                    </NavLink>
+                    <NavLink >
                     <div className='mobileitems-info-btn'>
-                        <NavLink >
                             <p>Xem thêm</p>
                             <MobilePageTitleIcon height='15px'
-                            width='15px'/>
-                        </NavLink>
+                            width='15px'
+                            />
                     </div>
+                    </NavLink>
                 </div>
                 <button> Đăng Ký </button>
             </div>

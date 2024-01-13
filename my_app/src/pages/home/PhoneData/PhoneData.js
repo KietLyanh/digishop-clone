@@ -2,21 +2,18 @@ import React, { useEffect, useState } from 'react';
 import './PhoneData.scss';
 import iconTitle from './images/1677836500566ico_didong.png';
 import { PhondataIcon } from '~/components/icons';
+import listmobiledata from '~/api/listmobiledata';
 function PhoneData() {
     const [phoneData,setPhoneData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch("http://localhost:9999/backend-forReact/listmobiledata");
-            if(!response.ok)
-            {
-                throw new Error("network response was not ok");
-            }
-            const result = await response.json();
-            const jsonString = JSON.stringify(result);
+            const response = await listmobiledata.getAll();
+            const jsonString = JSON.stringify(response);
             const dataArray = JSON.parse(jsonString);
             setPhoneData(dataArray);
         }
         fetchData();
+        // console.log(phoneData[0].detail_treatment);
     },[])
     return (
         <div className="phonedata-container">

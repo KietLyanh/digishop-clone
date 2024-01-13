@@ -10,9 +10,16 @@ import prevImg from "./image/prev-icon.png";
 import Pagination from "~/components/Pagination/Pagination";
 function Slideshow()
 {
+    const list = [banner1,banner2,banner3,banner4,banner5,banner6]
     const [banner,setBanner] = useState();
     const [currentBanner,setCurrentBanner] = useState(0);
-    const list = [banner1,banner2,banner3,banner4,banner5,banner6]
+    const totalPage = list.length-1;
+    const isOpenPagination = true;
+    const pagination = {
+      totalPages: totalPage,
+      page: currentBanner
+    }
+    
     useEffect(()=>{
       setBanner(list[currentBanner]);
       const loop = setInterval(()=>{
@@ -74,10 +81,10 @@ function Slideshow()
               <img className="nextIcon" onClick={nextBanner} src={prevImg} style={{rotate:"180deg"}}/>
              <div className="pagination">
                <Pagination
-                totalChild={list.length}
-                childPerPage={parseInt("1")}
-                currentPage={currentBanner}
-                setCurrentPage={setCurrentBanner}
+               isOpen={isOpenPagination}
+               start={0}
+               pagination={pagination}
+               onChangeValue={setCurrentBanner}
               />
              </div>
             </div>

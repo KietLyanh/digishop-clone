@@ -3,6 +3,9 @@ import './Sims.scss';
 import iconSite from './images/1677836489077ico_sim.png';
 import iconItems from './images/icon-pack-sim.png';
 import { SimsTransfomIcon } from '~/components/icons';
+import Listsim from '~/api/listsim';
+import Listphonedata from '~/api/listmobiledata';
+import listmobiledata from '~/api/listmobiledata';
 function Sims() {
     const [simData, setSimData] = useState([]);
     const [mobileData, setMobileData] = useState([]);
@@ -16,12 +19,8 @@ function Sims() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:9999/backend-forReact/listsimname');
-                if (!response.ok) {
-                    throw new Error('network response was not ok');
-                }
-                const result = await response.json();
-                const jsonString = JSON.stringify(result);
+                const response = await Listsim.getAll();
+                const jsonString = JSON.stringify(response);
                 const dataArray = JSON.parse(jsonString);
                 setSimData(dataArray);
              
@@ -35,12 +34,8 @@ function Sims() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:9999/backend-forReact/listmobiledata');
-                if (!response.ok) {
-                    throw new Error('network response was not ok');
-                }
-                const result = await response.json();
-                const jsonString = JSON.stringify(result);
+                const response = await listmobiledata.getAll();
+                const jsonString = JSON.stringify(response);
                 const dataArray = JSON.parse(jsonString);
                 setMobileData(dataArray);
                 let data = [];
