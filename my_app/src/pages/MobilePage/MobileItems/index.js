@@ -20,7 +20,7 @@ function MobileItems({name,price,detail})
             </div>
             <div className='mobileitems-content'>
                 <div className='mobileitems-info'>
-                    <NavLink>
+                    <NavLink >
                          <h3>{name}</h3>
                     </NavLink>
                     <NavLink>

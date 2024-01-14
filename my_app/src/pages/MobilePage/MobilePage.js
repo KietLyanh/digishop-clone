@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import queryString from 'query-string';
 import './MobilePage.scss';
 import { NavLink } from 'react-router-dom';
 import { MobilePageTitleIcon } from '~/components/icons';
 import iconTitle from '~/pages/home/PhoneData/images/1677836500566ico_didong.png'
 import config from '~/config';
-import DropdownList from '~/components/DropdownList';
 import MobileItems from './MobileItems';
 import Pagination from '~/components/Pagination/Pagination';
 import Listmobilestandard from '~/api/listmobilestandard';
 function MobilePage() {
+
     // xu ly bien lay du lieu
     const [mobileData, setMobileData] = useState([]);
     const [pagination, setPagination] = useState({
@@ -34,12 +33,18 @@ function MobilePage() {
         },
         {
             title: "Giá từ cao - thấp",
-            sql: "ORDER BY Standard_price ASC"
+            sql: "ORDER BY Standard_price DESC"
         }];
-    const [isDisplay, setIsDisplay] = useState(false);
-    const handleOnclick = () => {
-        setIsDisplay(!isDisplay);
-    }
+    const [value, setValue] = useState(list[0].title);
+    // console.log(list[0].title);
+
+
+      // xu ly tim kiem
+      const [isToggle,setToggle] = useState(false);
+      const [selectedValue,setSelectedValue] = useState(list[0].title);
+      const toggleOpen = () => {
+          setToggle(!isToggle);
+      }
 
     // xu ly lay du lieu
     useEffect(() => {
@@ -73,13 +78,15 @@ function MobilePage() {
     }
 
     // xu ly sort
-    const handleSort = (sql) => {
+    const handleChangeValue = (value) => {
+        setSelectedValue(value)
+        const list_child = list.find(items => items.title === value) // tìm items có title giống với value trong select
+        console.log(list_child.sql);
         setFilters({
             ...filters,
-            orderby: sql
+            orderby: list_child.sql
         })
     }
-
     return (
         <div className="mobile-container">
             <div className='mobile-linkpage'>
@@ -101,22 +108,19 @@ function MobilePage() {
                         <h4>Gói DATA</h4>
                     </div>
                     <div className='mobile-features-header-btn'>
-                        <button onClick={handleOnclick} >
-                            <p>Tìm kiếm gói cước theo</p>
-                            <div className='mobile-features-header-link-icon'><MobilePageTitleIcon height="15px" width="15px" /></div>
+                        <button onClick={toggleOpen}>
+                            <p>{selectedValue}</p>
+                        <div className='mobile-features-header-link-icon'><MobilePageTitleIcon height="15px" width="15px" /></div>
                         </button>
-                        {isDisplay ?
-                            <div className='mobile-features-header-dropdown'>
-                                <DropdownList
-                                    list={list}
-                                    height="100px"
-                                    width="250px"
-                                    fontWeight='normal'
-                                    flexIndex='33%'
-                                    fontSize='1.6rem'
-                                />
-                            </div>
-                            : <></>}
+                          {isToggle ? 
+                        <ul className={`mobile-features-header-dropdown ${isToggle ? 'open' : ''}`}>
+                            {list.map((cp,index) => (
+                                    <li key={index}  onClick={() => handleChangeValue(cp.title)}>{cp.title}</li>
+                            ))}
+                          </ul>
+                          
+                          : <></>}
+                            
                     </div>
                 </div>
 
@@ -125,7 +129,7 @@ function MobilePage() {
 
                 <div className='mobile-features-search'>
                     <h3>Tìm kiếm gói cước theo tên gói cước và số thuê bao</h3>
-                    <input type='text' placeholder='Nhập vào tên gói cước hoặc số thuê bao'></input>
+                    <input type='text' placeholder='Nhập vào tên gói cước hoặc số thuê bao' ></input>
                     <button>XÁC NHẬN</button>
                 </div>
 
