@@ -7,6 +7,7 @@ import StorePage from "~/pages/StorePage";
 import home from "~/pages/home";
 import MobileSim from "~/pages/MobileSim/MobileSim";
 import Card from "~/pages/Card";
+import MobileChildPage from "~/pages/MobilePage/MobileChildPage";
 const publicRoutes = [
     {path:routesConfig.support, component: SupportPage , layout: null},
     {path:routesConfig.home,component:home},
@@ -15,6 +16,8 @@ const publicRoutes = [
     {path:routesConfig.store,component:StorePage},
     {path:routesConfig.mobileSim,component:MobileSim},
     {path:routesConfig.cardReaload,component:Card},
+    {path:routesConfig.mobileStandardPackage,component:MobileChildPage}
+
 ]
 const privateRoutes = {
 

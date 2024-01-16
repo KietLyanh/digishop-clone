@@ -151,7 +151,7 @@ export const MobilePageTitleIcon = ({ className, width, height }) => (
         role="img"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 192 512"
-        color="#40c3ff"
+        color="#4D4D4D"
     >
         <path
             fill="currentColor"

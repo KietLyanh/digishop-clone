@@ -20,18 +20,18 @@ function MobileItems({name,price,detail})
             </div>
             <div className='mobileitems-content'>
                 <div className='mobileitems-info'>
-                    <NavLink >
+                    <NavLink to = {`/di-dong/${name}`}>
                          <h3>{name}</h3>
                     </NavLink>
-                    <NavLink>
+                    <NavLink to = {`/di-dong/${name}`}>
                         <h4>{price}đ</h4>
                     </NavLink>
-                    <NavLink>
+                    <NavLink to = {`/di-dong/${name}`}>
                         <div className="mobileitems-info-p">
                             <p>{detail}</p>
                         </div>
                     </NavLink>
-                    <NavLink >
+                    <NavLink to = {`/di-dong/${name}`} >
                     <div className='mobileitems-info-btn'>
                             <p>Xem thêm</p>
                             <MobilePageTitleIcon height='15px'
