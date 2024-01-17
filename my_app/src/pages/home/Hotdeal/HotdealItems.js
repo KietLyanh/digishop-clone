@@ -1,36 +1,40 @@
 import React from 'react';
 import './Hotdeal.scss';
-function HotdealItems({ picture,icon, child_name, detail_treatment, child_price,displayImg,displayContent }) {
+import { NavLink } from 'react-router-dom';
+function HotdealItems({ picture, icon, standard_name, detail_treatment, standard_price, displayImg, displayContent }) {
     return (
         <div className="hotdeal-row-box hotdeal-col_4 hotdeal-col_6">
             <div className="hotdeal-row-box-content">
-                <h3>{child_name}</h3>
+                <h3>{standard_name}</h3>
                 <div className="hotdeal-row-box-content-img"
                     style={{
-                        display:displayImg
+                        display: displayImg
                     }} >
                     <img src={picture} alt="" />
                 </div>
                 <div className="hotdeal-row-box-content-text"
-                style={{
-                    display:displayContent
-                }}
+                    style={{
+                        display: displayContent
+                    }}
                 >
-                  <p>
-                    {detail_treatment}
-                  </p>
+                    <p>
+                        {detail_treatment}
+                    </p>
                 </div>
                 <div className="hotdeal-row-box-content-text-price">
-                  <h4>{child_price}</h4>
-                  <p>đ/lượt</p>
+                    <h4>{standard_price}</h4>
+                    <p>đ/lượt</p>
                 </div>
             </div>
             <div className="hotdeal-row-box-sold">
                 <div className="hotdeal-row-box-sold-btn">
                     <button>
-                        <span>Chi tiết</span>
-                        {icon}
+                        <NavLink to={`/di-dong/${standard_name}`}>
+                            <span>Chi tiết</span>
+                            {icon}
+                        </NavLink>
                     </button>
+
                     <button>Đăng ký</button>
                 </div>
                 <div className="hotdeal-row-box-soldout">

@@ -19,8 +19,12 @@ function MobilePage() {
     const [filters, setFilters] = useState({
         page: 1,
         limit: 8,
-        orderby: "ORDER BY Standard_price ASC"
+        orderby: "ORDER BY Standard_price ASC",
+        keyword:null
+        
     })
+
+    // const [filter]
     // xử lý dropdownlist
     const list = [
         {
@@ -35,7 +39,7 @@ function MobilePage() {
             title: "Giá từ cao - thấp",
             sql: "ORDER BY Standard_price DESC"
         }];
-    const [value, setValue] = useState(list[0].title);
+    // const [value, setValue] = useState(list[0].title);
     // console.log(list[0].title);
 
 
@@ -78,13 +82,25 @@ function MobilePage() {
     }
 
     // xu ly sort
-    const handleChangeValue = (value) => {
+    const handleChangeValueSort = (value) => {
         setSelectedValue(value)
         const list_child = list.find(items => items.title === value) // tìm items có title giống với value trong select
         console.log(list_child.sql);
         setFilters({
             ...filters,
             orderby: list_child.sql
+        })
+    }
+
+    // xu ly search
+    const [valueInput,setValueInput] = useState("");
+    const handleChangeValueSearch = () => {
+        console.log(valueInput);
+        setFilters({
+            page: "",
+            limit: "",
+            orderby: "",
+            keyword:valueInput
         })
     }
     return (
@@ -115,7 +131,7 @@ function MobilePage() {
                           {isToggle ? 
                         <ul className={`mobile-features-header-dropdown ${isToggle ? 'open' : ''}`}>
                             {list.map((cp,index) => (
-                                    <li key={index}  onClick={() => handleChangeValue(cp.title)}>{cp.title}</li>
+                                    <li key={index}  onClick={() => handleChangeValueSort(cp.title)}>{cp.title}</li>
                             ))}
                           </ul>
                           
@@ -129,8 +145,8 @@ function MobilePage() {
 
                 <div className='mobile-features-search'>
                     <h3>Tìm kiếm gói cước theo tên gói cước và số thuê bao</h3>
-                    <input type='text' placeholder='Nhập vào tên gói cước hoặc số thuê bao' ></input>
-                    <button>XÁC NHẬN</button>
+                    <input type='text' placeholder='Nhập vào tên gói cước hoặc số thuê bao' value={valueInput} onChange={(e) => setValueInput(e.target.value)} ></input>
+                    <button onClick={() => handleChangeValueSearch()}>XÁC NHẬN</button>
                 </div>
 
             </div>

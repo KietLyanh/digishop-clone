@@ -115,7 +115,9 @@ function MobileChildPage() {
 
 
                     {/* MobileChildDetail */}
-                    <MobileChildDetail/>
+                    <MobileChildDetail 
+                    standard_package={standard_package}
+                    />
 
                     
 

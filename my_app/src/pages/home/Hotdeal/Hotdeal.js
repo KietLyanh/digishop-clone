@@ -3,7 +3,7 @@ import './Hotdeal.scss';
 import pictureTitle from "./image/set.svg"
 import HotdealItems from "./HotdealItems";
 import { HotdealIcon } from "~/components/icons";
-import Listhotdeal from "~/api/listhotdeal";
+import listmobiledata from "~/api/listmobiledata";
 function Hotdeal()
 {
   const [infomation,setInfomation] = useState([]);
@@ -12,7 +12,7 @@ function Hotdeal()
     const fetchData = async () => 
     {
       try{
-        const response = await Listhotdeal.getAll();
+        const response = await listmobiledata.getAll();
         const jsonString = JSON.stringify(response);
         const dataArray = JSON.parse(jsonString);
         if(!data.length){ // kiem tra neu data rong thi moi cho push de han che so lan push
@@ -40,9 +40,9 @@ function Hotdeal()
               <HotdealItems
                 key={index}
                 icon={<HotdealIcon/>}
-                child_name={info.child_name}
+                standard_name={info.standard_name}
                 detail_treatment={info.detail_treatment}
-                child_price={info.child_price}
+                standard_price={info.standard_price}
                 displayImg="none"
                 displayContent="block"
               />
