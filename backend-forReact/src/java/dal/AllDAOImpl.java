@@ -7,12 +7,14 @@ package dal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import model.All_Packages;
 import model.Child_packages;
 import model.Details;
-import model.Hotdeal;
 import model.MobileData;
+import model.Standard_packages;
 import model.Sim;
 
 /**
@@ -47,14 +49,18 @@ public class AllDAOImpl implements AllDAO {
     @Override
     public List<Child_packages> getAllChild() {
         List<Child_packages> list = new ArrayList<>();
-        try ( Connection connection = DBcontextPrepair_Package.getConnection();  PreparedStatement st = connection.prepareStatement("SELECT * FROM child_package");  ResultSet rs = st.executeQuery()) {
+        try ( Connection connection = DBcontextPrepair_Package.getConnection();  PreparedStatement st = connection.prepareStatement("SELECT * FROM child_package LEFT JOIN details ON child_package.detail_id=details.detail_id");  ResultSet rs = st.executeQuery()) {
             while (rs.next()) {
                 Child_packages c = new Child_packages(
-                        rs.getString("child_name"),
-                        rs.getString("standard_id"),
-                        rs.getString("detail_id"),
-                        rs.getInt("child_price"),
-                        rs.getInt("child_timeLimit")
+                       rs.getString("child_name"),rs.getString("standard_id"), 
+                        rs.getInt("child_price"),rs.getInt("child_timelimit"),rs.getString("detail_id"),
+                        rs.getString("detail_treatment"),
+                        rs.getString("detail_cancel"),
+                        rs.getString("detail_check"),
+                        rs.getString("detail_legacy"),
+                        rs.getString("detail_extension"),
+                        rs.getString("detail_hotline"),
+                        rs.getString("detail_enrollment")
                 );
                 list.add(c);
             }
@@ -64,24 +70,7 @@ public class AllDAOImpl implements AllDAO {
         return list;
     }
     
-    @Override
-    public List<Hotdeal> getAllHotdeals() {
-        List<Hotdeal> list = new ArrayList<>();
-        try (
-                 Connection cnt = DBcontextPrepair_Package.getConnection(); 
-                PreparedStatement st = cnt.prepareStatement("SELECT child_name,child_price,detail_treatment \n"
-                + "FROM child_package INNER JOIN details WHERE details.detail_id = child_package.detail_id");
-                ResultSet rs = st.executeQuery()) {
-            while (rs.next()) {
-                Hotdeal h = new Hotdeal(
-                        rs.getString("child_name"), rs.getString("detail_treatment"), rs.getInt("child_price"));
-                list.add(h);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
+
 
     @Override
     public List<Sim> getSimNames() {
@@ -127,4 +116,98 @@ public class AllDAOImpl implements AllDAO {
       }
       return list;
     }
+
+    @Override
+    public List<Standard_packages> getMobileStandard(List<Standard_packages> list,int start,int end) {
+        List<Standard_packages> arr = new ArrayList<>();
+        for(int i = start; i < end; i++)
+        {
+            arr.add(list.get(i));
+        }
+        return arr;
+    }
+
+    @Override
+    public List<Standard_packages> getAllMobileStandards(String orderby) {
+      List<Standard_packages> list = new ArrayList<>();
+      String sql = "SELECT * FROM standard_package LEFT JOIN details ON details.detail_id = standard_package.detail_id " + orderby;
+      try(
+              Connection cnt = DBcontextPrepair_Package.getConnection();
+              
+              PreparedStatement st = cnt.prepareStatement(sql);
+              ResultSet rs = st.executeQuery()){
+          while (rs.next()) {
+                Standard_packages mb = new Standard_packages(rs.getString("standard_id"),rs.getString("standard_name"), 
+                        rs.getInt("standard_price"),rs.getInt("standard_timelimit"),rs.getString("detail_id"),
+                        rs.getString("detail_treatment"),
+                        rs.getString("detail_cancel"),
+                        rs.getString("detail_check"),
+                        rs.getString("detail_legacy"),
+                        rs.getString("detail_extension"),
+                        rs.getString("detail_hotline"),
+                        rs.getString("detail_enrollment"));
+                list.add(mb);
+            }
+          
+      }
+      catch(SQLException e)
+      {
+          System.out.println(e);
+      }
+      return list;
+    }
+    
+    
+    
+
+
+    @Override
+    public Standard_packages getMobileStandardByName(String name) {
+        String sql = "SELECT * FROM standard_package LEFT JOIN details ON details.detail_id = standard_package.detail_id WHERE standard_name= ?";
+        try{
+                Connection cnt = DBcontextPrepair_Package.getConnection();
+                PreparedStatement st = cnt.prepareStatement(sql);
+                st.setString(1, name);
+                ResultSet rs = st.executeQuery();
+            if(rs.next())
+            {
+                Standard_packages mb = new Standard_packages(rs.getString("standard_id"),rs.getString("standard_name"), 
+                        rs.getInt("standard_price"),rs.getInt("standard_timelimit"),rs.getString("detail_id"),
+                        rs.getString("detail_treatment"),
+                        rs.getString("detail_cancel"),
+                        rs.getString("detail_check"),
+                        rs.getString("detail_legacy"),
+                        rs.getString("detail_extension"),
+                        rs.getString("detail_hotline"),
+                        rs.getString("detail_enrollment"));
+                return mb;
+            }
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();
+            System.out.println(e);
+        }
+        return null;
+    }
+    
+//       public static void main(String[] args) {
+//        AllDAOImpl c = new AllDAOImpl();
+//        Standard_packages list = c.getMobileStandardByName("VD120N");
+//        System.out.println(list);
+//    }
+
+   
+
+//    public static void main(String[] args) {
+//        AllDAOImpl c = new AllDAOImpl();
+//        List<MobileStandard> list = c.get
+//    }
+
+    
+
+    
+    
+   
 }
+ 

@@ -16,7 +16,7 @@ public class DBcontextPrepair_Package {
          public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String jdbcUrl = "jdbc:mysql://localhost:3306/prepaid_package";
+            String jdbcUrl = "jdbc:mysql://localhost:3306/Prepaid_Package";
             String username = "root";
             String password = "Dodaihoc2003*";
             return DriverManager.getConnection(jdbcUrl, username, password);

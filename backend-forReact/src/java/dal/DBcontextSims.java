@@ -16,7 +16,7 @@ public class DBcontextSims {
            public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String jdbcUrl = "jdbc:mysql://localhost:3306/sims";
+            String jdbcUrl = "jdbc:mysql://localhost:3306/Sims";
             String username = "root";
             String password = "Dodaihoc2003*";
             return DriverManager.getConnection(jdbcUrl, username, password);

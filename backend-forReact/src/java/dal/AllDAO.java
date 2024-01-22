@@ -1,10 +1,12 @@
 package dal;
 
+
 import java.util.List;
+import model.All_Packages;
 import model.Child_packages;
 import model.Details;
-import model.Hotdeal;
 import model.MobileData;
+import model.Standard_packages;
 import model.Sim;
 
 /*
@@ -19,7 +21,10 @@ import model.Sim;
 public interface AllDAO {
     List<Details> getAllDetails();
     List<Child_packages> getAllChild();
-    List<Hotdeal> getAllHotdeals();
     List<Sim> getSimNames();
     List<MobileData> getMobiledatas();
+    List<Standard_packages> getMobileStandard(List<Standard_packages> list,int start,int end);
+    List<Standard_packages> getAllMobileStandards(String orderby);
+    Standard_packages getMobileStandardByName(String name);
+    
 }
