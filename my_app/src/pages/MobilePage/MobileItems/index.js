@@ -4,8 +4,9 @@ import '~/components/GlobalStyles/GlobalStyles.scss'
 import {NavLink} from "react-router-dom";
 import {MobilePageTitleIcon} from "~/components/icons";
 import imgAvt from "./../images/1689580046873VD-17.jpg"
-function MobileItems({name,price,detail})
+function MobileItems({id,name,price,detail})
 {
+    // console.log(id);
     return(
         <div className='mobileitems-container card-2'>
             <div className='mobileitems-img'>
@@ -20,18 +21,18 @@ function MobileItems({name,price,detail})
             </div>
             <div className='mobileitems-content'>
                 <div className='mobileitems-info'>
-                    <NavLink to = {`/di-dong/${name}`}>
+                    <NavLink to = {`/di-dong/${id}/${name}`}>
                          <h3>{name}</h3>
                     </NavLink>
-                    <NavLink to = {`/di-dong/${name}`}>
+                    <NavLink to = {`/di-dong/${id}/${name}`}>
                         <h4>{price}đ</h4>
                     </NavLink>
-                    <NavLink to = {`/di-dong/${name}`}>
+                    <NavLink to = {`/di-dong/${id}/${name}`}>
                         <div className="mobileitems-info-p">
                             <p>{detail}</p>
                         </div>
                     </NavLink>
-                    <NavLink to = {`/di-dong/${name}`} >
+                    <NavLink to = {`/di-dong/${id}/${name}`} >
                     <div className='mobileitems-info-btn'>
                             <p>Xem thêm</p>
                             <MobilePageTitleIcon height='15px'

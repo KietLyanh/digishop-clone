@@ -1,35 +1,35 @@
 import React from "react";
 import './MobileChildPage.scss';
 
-function MobileChildDetail({standard_package}) {
+function MobileChildDetail({allPackages}) {
     const listPackage = [
         {
             title:"Ưu đãi gói cước",
-            detail:standard_package?.detail_treatment
+            detail:allPackages?.detail_treatment
         },
         {
             title:"Điều kiện đăng ký gói cước",
-            detail:standard_package?.detail_enrollment
+            detail:allPackages?.detail_enrollment
         },
         {
             title:"Gia hạn gói cước",
-            detail:standard_package?.detail_extension
+            detail:allPackages?.detail_extension
         },
         {
             title:"Quy định:",
-            detail:standard_package?.detail_legacy
+            detail:allPackages?.detail_legacy
         },
         {
             title:"Cách kiểm tra các ưu đãi còn lại của gói cước",
-            detail:standard_package?.detail_check
+            detail:allPackages?.detail_check
         },
         {
             title:"Cách hủy gói cước",
-            detail:standard_package?.detail_cancel
+            detail:allPackages?.detail_cancel
         },
         {
             title:"Tổng đài hỗ trợ về dịch vụ di động",
-            detail:standard_package?.detail_hotline
+            detail:allPackages?.detail_hotline
         }
     ];
     return (

@@ -7,6 +7,7 @@ import config from '~/config';
 import MobileItems from './MobileItems';
 import Pagination from '~/components/Pagination/Pagination';
 import Listmobilestandard from '~/api/listmobilestandard';
+import MobileBySearch from './MobileBySearch';
 function MobilePage() {
 
     // xu ly bien lay du lieu
@@ -20,8 +21,8 @@ function MobilePage() {
         page: 1,
         limit: 8,
         orderby: "ORDER BY Standard_price ASC",
-        keyword:null
-        
+        keyword: null
+
     })
 
     // const [filter]
@@ -43,12 +44,12 @@ function MobilePage() {
     // console.log(list[0].title);
 
 
-      // xu ly tim kiem
-      const [isToggle,setToggle] = useState(false);
-      const [selectedValue,setSelectedValue] = useState(list[0].title);
-      const toggleOpen = () => {
-          setToggle(!isToggle);
-      }
+    // xu ly tim kiem
+    const [isToggle, setToggle] = useState(false);
+    const [selectedValue, setSelectedValue] = useState(list[0].title);
+    const toggleOpen = () => {
+        setToggle(!isToggle);
+    }
 
     // xu ly lay du lieu
     useEffect(() => {
@@ -93,16 +94,18 @@ function MobilePage() {
     }
 
     // xu ly search
-    const [valueInput,setValueInput] = useState("");
-    const handleChangeValueSearch = () => {
-        console.log(valueInput);
-        setFilters({
-            page: "",
-            limit: "",
-            orderby: "",
-            keyword:valueInput
-        })
-    }
+    // const [isSearched,setValueSearched] = useState(null);
+    const [inputValue, setInputValue] = useState('');
+    const [submittedValue, setSubmittedValue] = useState('');
+
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+    };
+
+    const handleButtonClick = () => {
+        // Lưu giá trị vào state submittedValue khi nút được nhấn
+        setSubmittedValue(inputValue);
+    };
     return (
         <div className="mobile-container">
             <div className='mobile-linkpage'>
@@ -126,17 +129,17 @@ function MobilePage() {
                     <div className='mobile-features-header-btn'>
                         <button onClick={toggleOpen}>
                             <p>{selectedValue}</p>
-                        <div className='mobile-features-header-link-icon'><MobilePageTitleIcon height="15px" width="15px" /></div>
+                            <div className='mobile-features-header-link-icon'><MobilePageTitleIcon height="15px" width="15px" /></div>
                         </button>
-                          {isToggle ? 
-                        <ul className={`mobile-features-header-dropdown ${isToggle ? 'open' : ''}`}>
-                            {list.map((cp,index) => (
-                                    <li key={index}  onClick={() => handleChangeValueSort(cp.title)}>{cp.title}</li>
-                            ))}
-                          </ul>
-                          
-                          : <></>}
-                            
+                        {isToggle ?
+                            <ul className={`mobile-features-header-dropdown ${isToggle ? 'open' : ''}`}>
+                                {list.map((cp, index) => (
+                                    <li key={index} onClick={() => handleChangeValueSort(cp.title)}>{cp.title}</li>
+                                ))}
+                            </ul>
+
+                            : <></>}
+
                     </div>
                 </div>
 
@@ -145,30 +148,35 @@ function MobilePage() {
 
                 <div className='mobile-features-search'>
                     <h3>Tìm kiếm gói cước theo tên gói cước và số thuê bao</h3>
-                    <input type='text' placeholder='Nhập vào tên gói cước hoặc số thuê bao' value={valueInput} onChange={(e) => setValueInput(e.target.value)} ></input>
-                    <button onClick={() => handleChangeValueSearch()}>XÁC NHẬN</button>
+                    <input type='text' placeholder='Nhập vào tên gói cước hoặc số thuê bao' value={inputValue} onChange={handleInputChange} ></input>
+                    <button type="submit" onClick={handleButtonClick}>XÁC NHẬN</button>
                 </div>
 
             </div>
-            <div className='mobile-display'>
-                {/* items */}
-                {mobileData.map((info, index) => (
-                    <MobileItems
-                        key={index}
-                        name={info.standard_name}
-                        price={info.standard_price}
-                        detail={info.detail_treatment}
+
+            {submittedValue === '' ?
+                <div className='mobile-items'>
+                    <div className='mobile-display'>
+                        {/* items */}
+                        {mobileData.map((info, index) => (
+                            <MobileItems
+                                key={index}
+                                isOpen={false}
+                                id = {info.standard_id}
+                                name={info.standard_name}
+                                price={info.standard_price}
+                                detail={info.detail_treatment}
+                            />
+                        ))}
+                        {/* phan trang */}
+                    </div>
+                    <Pagination
+                        start={1}
+                        pagination={pagination}
+                        onChangeValue={handleOnChange}
                     />
-                ))}
-                {/* phan trang */}
-
-
-            </div>
-            <Pagination
-                start={1}
-                pagination={pagination}
-                onChangeValue={handleOnChange}
-            />
+                </div> : <MobileBySearch
+                    valueBySearch={submittedValue} />}
         </div>
     );
 }

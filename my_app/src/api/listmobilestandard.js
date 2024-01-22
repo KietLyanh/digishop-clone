@@ -9,9 +9,14 @@ const Listmobilestandard = {
         const url = '/getmobilestandardbyname?';
         return axiosClient.get(url,{params});
     },
-    getChildByDate : (params) => {
-        const url = '/getmobilechildbydate?';
+    getPackagesByDate : (params) => {
+        const url = '/getpackagesbydate?';
+        return axiosClient.get(url,{params});
+    },
+    getAllPackages: (params) => {
+        const url = '/getallpackages';
         return axiosClient.get(url,{params});
     }
+
 }   
 export default Listmobilestandard;

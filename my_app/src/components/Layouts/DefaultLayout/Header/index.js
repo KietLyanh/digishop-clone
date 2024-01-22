@@ -11,20 +11,36 @@ import Search from '~/components/Search';
 import Popup from '~/components/PopupDialog/popup';
 function Header() {
 
-    const [isHeaderVisible,setIsHeaderVisible] = useState(true);
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
     const handlesScroll = () => {
         setIsHeaderVisible(window.scrollY <= 0);
     }
 
     useEffect(() => {
-        window.addEventListener('scroll',handlesScroll);
+        window.addEventListener('scroll', handlesScroll);
 
         return () => {
-            window.removeEventListener('scroll',handlesScroll);
+            window.removeEventListener('scroll', handlesScroll);
         }
-    },[])
+    }, [])
 
-    const Datamobile = ['Sim số', 'Gói cước di động', 'Chuyển mạng giữ số', 'Nạp thẻ'];
+    const Datamobile = [{
+        title: 'Sim số',
+        linkpage: config.routes.mobileSim
+    },
+    {
+        title: 'Gói cước di động',
+        linkpage: config.routes.mobile
+    },
+    {
+        title: 'Chuyển mạng giữ số',
+        linkpage: null
+    },
+
+    {
+        title: 'Nạp thẻ',
+        linkpage: null
+    }];
     const Datainternet = [
         'Internet cáp quang',
         'Internet và Truyền hình',
