@@ -3,7 +3,7 @@ import './Pagination.scss';
 import { PaginationIcon } from "../icons";
 
 
-function Pagination({ start, pagination, onChangeValue, isOpen }) {
+function Pagination({ start, pagination, setCurrentIndex, isOpen, timeoutRef, onChangeValue}) {
     const {page,totalPages,limit} = pagination;
     let pages = [];
     for (let i = start; i <= totalPages; i++) {
@@ -22,7 +22,8 @@ function Pagination({ start, pagination, onChangeValue, isOpen }) {
                             <button
                                 key={index}
                                 onClick={() => {
-                                    onChangeValue(child_page)
+                                    setCurrentIndex(child_page);
+                                    clearTimeout(timeoutRef);
                                 }}
                                 className={child_page === page ? "active" : ""}
                             >

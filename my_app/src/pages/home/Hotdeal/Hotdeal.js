@@ -41,6 +41,7 @@ function Hotdeal()
                 key={index}
                 icon={<HotdealIcon/>}
                 standard_name={info.standard_name}
+                id={info.standard_id}
                 detail_treatment={info.detail_treatment}
                 standard_price={info.standard_price}
                 displayImg="none"

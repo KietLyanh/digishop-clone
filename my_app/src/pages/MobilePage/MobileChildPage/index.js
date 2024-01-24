@@ -37,19 +37,21 @@ function MobileChildPage() {
         // xu ly loc child package
     const setValueOnChange = (number) => {
         let name;
+        let n = package_id.length;
+        let word = package_id.replace(package_id.substring(n-2,n),'');  
         switch (number) {
             case 30:
-                name = `${package_id.substring(0,4)}`;
+                name = `${word}`;
                 break;
             case 90:
-              name = `3${package_id.substring(0,4)}`;
+              name = `3${word}`;
               break;
             case 180:
-                name = `6${package_id.substring(0,4)}`;
+                name = `6${word}`;
               break;
 
             case 360:
-                name = `12${package_id.substring(0,4)}`;
+                name = `12${word}`;
             break;
 
         }

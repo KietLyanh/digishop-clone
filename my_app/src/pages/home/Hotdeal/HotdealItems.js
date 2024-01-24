@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hotdeal.scss';
 import { NavLink } from 'react-router-dom';
-function HotdealItems({ picture, icon, standard_name, detail_treatment, standard_price, displayImg, displayContent }) {
+function HotdealItems({ picture, icon, standard_name,id, detail_treatment, standard_price, displayImg, displayContent }) {
     return (
         <div className="hotdeal-row-box hotdeal-col_4 hotdeal-col_6">
             <div className="hotdeal-row-box-content">
@@ -29,7 +29,7 @@ function HotdealItems({ picture, icon, standard_name, detail_treatment, standard
             <div className="hotdeal-row-box-sold">
                 <div className="hotdeal-row-box-sold-btn">
                     <button>
-                        <NavLink to={`/di-dong/${standard_name}`}>
+                        <NavLink to={`/di-dong/${id}/${standard_name}`}>
                             <span>Chi tiết</span>
                             {icon}
                         </NavLink>

@@ -4,17 +4,16 @@ import iconSite from './images/1677836489077ico_sim.png';
 import iconItems from './images/icon-pack-sim.png';
 import { SimsTransfomIcon } from '~/components/icons';
 import Listsim from '~/api/listsim';
-import Listphonedata from '~/api/listmobiledata';
 import listmobiledata from '~/api/listmobiledata';
+const list = [0,3,6]
 function Sims() {
     const [simData, setSimData] = useState([]);
     const [mobileData, setMobileData] = useState([]);
     const [detailData, setDetailData] = useState({});
     const [displaySim, setDisplaySim] = useState('none');
-    const [dataTransfom,setDataTransfom] = useState([]);
-    const [itemNumber,setItemNumber] = useState(3);
-    const [nextDisabled,setNextDisabled] = useState(false);
-    const [preDisabled,setPreDisabled] = useState(true);
+    const [numberTrans,setNumberTrans] = useState(0);
+    const [nextDisabled, setNextDisabled] = useState(false);
+    const [preDisabled, setPreDisabled] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,8 +22,8 @@ function Sims() {
                 const jsonString = JSON.stringify(response);
                 const dataArray = JSON.parse(jsonString);
                 setSimData(dataArray);
-             
-                console.log(dataArray);
+
+                // console.log(dataArray);
             } catch (error) {
                 console.log(error);
             }
@@ -38,12 +37,7 @@ function Sims() {
                 const jsonString = JSON.stringify(response);
                 const dataArray = JSON.parse(jsonString);
                 setMobileData(dataArray);
-                let data = [];
-                for(let i = 0; i < 3; i++)
-                {
-                  data.push(dataArray[i]);
-                }
-                setDataTransfom(data);
+                // console.log(dataArray);
                 setDetailData(dataArray[0]);
             } catch (error) {
                 console.log(error);
@@ -51,42 +45,35 @@ function Sims() {
         };
         fetchData();
     }, []);
+    const dataLenght = Math.floor(mobileData?.length/3);
+    // console.log(dataLenght);
+
     const preSimcomponent = () => {
-      const data = [];
-      if(itemNumber > 3)
-      {
-        setPreDisabled(false);
-        for(let j = itemNumber - 6; j < itemNumber-3; j++)
+        setNextDisabled(false);
+        if(numberTrans-1 === 0)
         {
-          data.push(mobileData[j]);
+            setPreDisabled(true);
+            
         }
-        setDataTransfom(data);
-        let number = itemNumber - 3;
-        if(number === 3) // kiểm tra nếu bằng 3 thì mở khóa nút next luôn
-        {
-          setPreDisabled(true);
-          setNextDisabled(false);
-        }
-        setItemNumber(number);
-      }
+        else {
+            setNumberTrans(numberTrans-1)
+        };
+        console.log(numberTrans);
     }
+
     const nextSimcomponent = () => {
-      const data = [];
-      if(itemNumber <= mobileData.length-3)
-      {
-        for(let j = itemNumber; j < itemNumber + 3; j++)
+        setPreDisabled(false);
+        if(numberTrans >= dataLenght-1)
         {
-          data.push(mobileData[j]);
+            setNextDisabled(true);
         }
-        setDataTransfom(data);
-        let number = itemNumber + 3;
-        setItemNumber(number);
-      }
-      else{
-        setNextDisabled(true);
-      }
+        else {
+            setNumberTrans(numberTrans+1)
+        };
+        // console.log(numberTrans+1);
     }
-    
+ 
+
     return (
         <div className="sim-container">
             <div className="sim-title">
@@ -96,28 +83,42 @@ function Sims() {
             <div className="sim-row-noresponsive">
                 <section className="sim-row-items col-3-sim">
                     <div className='sim-row-items-icon'>
-                        <button className="sim-row-items-transfomicon" onClick={nextSimcomponent} disabled={nextDisabled}>
+                        <button className={`sim-row-items-transfomicon ${nextDisabled ? "" : "active"}`} onClick={nextSimcomponent}  disabled={nextDisabled} >
                             <SimsTransfomIcon height="15px" width="15px" />
                         </button>
-                        <button className="sim-row-items-transfomicon2" onClick={preSimcomponent}>
+                        <button className={`sim-row-items-transfomicon2 ${preDisabled ? "" : "active"}`} onClick={preSimcomponent} disabled={preDisabled}>
                             <SimsTransfomIcon height="15px" width="15px" />
                         </button>
                     </div>
-                    {dataTransfom.map((info, index) => (
-                        <div
-                            className="sim-row-item col-3-simMobile"
-                            key={index}
-                            onClick={() => {
-                                setDetailData(info);
-                            }}
-                        >
-                            <img src={iconItems} alt="opps" />
-                            <div className="sim-row-item-desc">
-                                <h3>{info.standard_name}</h3>
-                                <p>{info.detail_treatment}</p>
+                    <div className="sim-row-items-tranform"
+                    >
+                        {
+                            Array.from({length:dataLenght},(_,index) => mobileData.slice(index*dataLenght,index*dataLenght+dataLenght)
+                            ).map((arr,index) => (
+                                <div className="sim-row-items-tranform-item"
+                                key={index}
+                                style={{transform: `translate3d(0, ${-numberTrans*100}%, 0)`}}
+                                >
+                                    {arr.map((info, index) => (
+                                        <div
+                                            className="sim-row-item col-3-simMobile"
+                                            key={index}
+                                            onClick={() => {
+                                                setDetailData(info);
+                                            }}
+                                    >
+                                        <img src={iconItems} alt="opps" />
+                                        <div className="sim-row-item-desc">
+                                            <h3>{info.standard_name}</h3>
+                                            <p>{info.detail_treatment}</p>
+                                        </div>
                             </div>
+                        ))}
+
                         </div>
-                    ))}
+                            ))
+                        }
+                    </div>
                 </section>
                 <section className="sim-row-desc col-3-sim">
                     <div className="sim-row-desc-container">
