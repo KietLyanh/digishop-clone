@@ -50,26 +50,24 @@ function Sims() {
 
     const preSimcomponent = () => {
         setNextDisabled(false);
-        if(numberTrans-1 === 0)
+        setNumberTrans(numberTrans-1)
+        if(numberTrans === 1)
         {
             setPreDisabled(true);
             
         }
-        else {
-            setNumberTrans(numberTrans-1)
-        };
+            
+        
         console.log(numberTrans);
     }
 
     const nextSimcomponent = () => {
         setPreDisabled(false);
-        if(numberTrans >= dataLenght-1)
+        setNumberTrans(numberTrans+1)
+        if(numberTrans >= dataLenght-2)
         {
             setNextDisabled(true);
         }
-        else {
-            setNumberTrans(numberTrans+1)
-        };
         // console.log(numberTrans+1);
     }
  
@@ -147,8 +145,8 @@ function Sims() {
                                             <td>{info.sim_number_name}</td>
                                             <td>
                                                 <div className="sim-phonenumber-td">
-                                                    <span>Chọn số</span>
-                                                    <span></span>
+                                                    <label>Chọn số</label>
+                                                    <input type='radio' name="sim"  ></input>
                                                 </div>
                                             </td>
                                         </tr>
