@@ -4,6 +4,7 @@ import pictureTitle from "./image/set.svg"
 import HotdealItems from "./HotdealItems";
 import { HotdealIcon } from "~/components/icons";
 import listmobiledata from "~/api/listmobiledata";
+import Pagination from "~/components/Pagination/Pagination";
 function Hotdeal()
 {
   const [infomation,setInfomation] = useState([]);
@@ -29,6 +30,49 @@ function Hotdeal()
     }
     fetchData()
   },[]) // theo doi data
+    let widthDefault = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    let itemIndex;
+    if (widthDefault <= 600) {
+      itemIndex = 1;
+    }
+    else if (widthDefault <= 800) {
+        itemIndex = 2;
+    }
+    else {
+        itemIndex = 3;
+    }
+    const [currentItem, setCurrentItem] = useState(itemIndex);
+    useEffect(() => {
+        function handleResize() {
+            // Lấy độ rộng của cửa sổ trình duyệt
+            var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        
+            // In ra console để kiểm tra
+            if(windowWidth <= 768){
+                setCurrentItem(2);
+            }
+             if(windowWidth <= 600)
+            {
+                setCurrentItem(1);
+            }
+            else{
+              setCurrentItem(3)
+            }
+        }
+        
+        // Gắn sự kiện resize vào cửa sổ
+        window.addEventListener('resize', handleResize);
+        
+        // Gọi hàm handleResize khi trang được tải lần đầu
+        return () => {window.removeEventListener('resize',handleResize)}
+    },[])
+  const [currentIndex,setCurrentIndex] = useState(1);
+  const rowItem = 4 - currentItem;
+  const pagination = {
+    page:currentIndex,
+    totalPages:rowItem
+  }
+ 
     return(
         <div className="hotdeal-container">
           <div className="hotdeal-title">
@@ -49,6 +93,15 @@ function Hotdeal()
               />
            ))}
           </div>
+
+          <Pagination
+          start={1}
+          pagination={pagination}
+          setCurrentIndex={setCurrentIndex}
+          timeoutRef={null}
+          isOpen={true}
+
+          />
         </div>
     );
 }

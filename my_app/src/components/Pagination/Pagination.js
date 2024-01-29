@@ -3,7 +3,7 @@ import './Pagination.scss';
 import { PaginationIcon } from "../icons";
 
 
-function Pagination({ start, pagination, setCurrentIndex, isOpen, timeoutRef, onChangeValue}) {
+function Pagination({ start, pagination, setCurrentIndex, isOpen, timeoutRef, onChangeValue,color}) {
     const {page,totalPages,limit} = pagination;
     let pages = [];
     for (let i = start; i <= totalPages; i++) {
@@ -12,6 +12,7 @@ function Pagination({ start, pagination, setCurrentIndex, isOpen, timeoutRef, on
     const handleOnChangeValue = (newpage) => {
           onChangeValue(newpage)
     }
+     color = color === "white" ? "#fff" : "#007aff";
     // const isOpen = false
     return (
         <>
@@ -22,10 +23,14 @@ function Pagination({ start, pagination, setCurrentIndex, isOpen, timeoutRef, on
                             <button
                                 key={index}
                                 onClick={() => {
-                                    setCurrentIndex(child_page);
                                     clearTimeout(timeoutRef);
+                                    setCurrentIndex(child_page);
+                                    
                                 }}
-                                className={child_page === page ? "active" : ""}
+                                style={{
+                                    backgroundColor:`${child_page === page ? color : "#5c5c5c"}`,
+                                    opacity:`${child_page === page ? "1" : "0.4"}`
+                                }}
                             >
                             </button>
                         );

@@ -21,20 +21,18 @@ function Slideshow() {
     totalPages: totalPage,
     page: currentIndex
   }
-
-  useEffect(() => {
-
-    const nextIndex = (prevIndex) => (prevIndex === list.length - 1 ? 0 : prevIndex + 1);
-
-    const handleTimeout = () => {
-      setCurrentIndex(nextIndex);
+  const nextIndex = (prevIndex) => (prevIndex === list.length - 1 ? 0 : prevIndex + 1);
+  const handleTimeout = (nextIndexParam) => {
+      setCurrentIndex(nextIndexParam !== undefined ? nextIndexParam : nextIndex);
       timeoutRef.current = setTimeout(handleTimeout, delay);
     }
-    // console.log("lại gặp");
+  useEffect(() => {
+
     timeoutRef.current = setTimeout(handleTimeout, delay);
+    console.log("unmount");
     return () => clearTimeout(timeoutRef.current);
 
-  }, [currentIndex])
+  }, [])
 
   return (
     <div class="home-banner-container">
@@ -54,21 +52,24 @@ function Slideshow() {
             ))}
           </div>
           <img className="prevIcon" onClick={() => {
-            setCurrentIndex(currentIndex === 0 ? list.length - 1 : currentIndex - 1);
             clearTimeout(timeoutRef.current);
+            handleTimeout(currentIndex === 0 ? list.length - 1 : currentIndex - 1);
+            
           }
           } src={prevImg} />
           <img className="nextIcon" onClick={() => {
-            setCurrentIndex(currentIndex === list.length - 1 ? 0 : currentIndex + 1);
             clearTimeout(timeoutRef.current);
+            handleTimeout(currentIndex === list.length - 1 ? 0 : currentIndex + 1);
+            
           }} src={prevImg} style={{ rotate: "180deg" }} />
           <div className="pagination">
             <Pagination
               isOpen={isOpenPagination}
               start={0}
               pagination={pagination}
-              setCurrentIndex={setCurrentIndex}
+              setCurrentIndex={handleTimeout}
               timeoutRef={timeoutRef.current}
+              color="white"
             />
           </div>
         </div>

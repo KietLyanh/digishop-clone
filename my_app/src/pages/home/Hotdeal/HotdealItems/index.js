@@ -1,5 +1,5 @@
 import React from 'react';
-import './Hotdeal.scss';
+import './HotdealItem.scss';
 import { NavLink } from 'react-router-dom';
 function HotdealItems({ picture, icon, standard_name,id, detail_treatment, standard_price, displayImg, displayContent }) {
     return (

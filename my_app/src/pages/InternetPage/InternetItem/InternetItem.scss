@@ -164,7 +164,7 @@
    
 
     .internet-col-3{
-        flex:none;
+        flex:0 0 calc(100%/3);
         max-width: 350px;
     }
     .internet-row-item{
@@ -177,8 +177,8 @@
  
 
     .internet-col-3{
-        flex:none;
-        max-width: 320px;
+        flex:0 0 calc(50%);
+        max-width: 50%;
     }
     .internet-row-item{
         width: 300px;
@@ -190,8 +190,8 @@
    
 
     .internet-col-3{
-        flex:none;
-        max-width: 320px;
+        flex:0 0 100%;
+        max-width: 100%;
     }
     .internet-row-item{
         width: 300px;

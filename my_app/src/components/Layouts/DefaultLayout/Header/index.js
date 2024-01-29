@@ -42,10 +42,22 @@ function Header() {
         linkpage: null
     }];
     const Datainternet = [
-        'Internet cáp quang',
-        'Internet và Truyền hình',
-        'Internet, Truyền Hình Và Di Động',
-        'Truyền hình MyTV',
+        {
+            title: 'Internet cáp quang',
+            linkpage: "#cap-quang"
+        },
+        {
+            title: 'Internet và Truyền hình',
+            linkpage: "#internet-truyenhinh"
+        },
+        {
+            title:  'Internet, Truyền Hình Và Di Động',
+            linkpage: null
+        },
+        {
+            title:  'Truyền hình MyTV',
+            linkpage: null
+        }
     ];
 
     return (
