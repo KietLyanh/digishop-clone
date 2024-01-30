@@ -4,13 +4,17 @@ import './Menu.scss';
 import { NavLink } from "react-router-dom";
 
 function MenuItems({
-    to,icon,title,image,displayTitle,displayImg,className,classNameImg,dropdown,marginLeftDropdown,search,popup
+    to,icon,title,image,displayTitle,displayImg,className,classNameImg,dropdown,marginLeftDropdown,search,popupOpen
 })
 {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isOpen,setIsOpen] = useState(false);
     
     const handleOnclick = () => {
+        if(popupOpen !== null)
+        {
+            popupOpen(true)
+        }
         setIsOpen(!isOpen);
         if(!isOpen)
         {
@@ -41,7 +45,7 @@ function MenuItems({
                 marginLeft:marginLeftDropdown
             }} >{dropdown}</div>)}
            {isOpen && (<div className="search">{search}</div>)}
-           {isOpen && (<div className="popup" onClick={handleOnclick}>{popup}</div>)}
+           
         </NavLink>
      
     );

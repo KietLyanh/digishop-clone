@@ -1,6 +1,7 @@
 import React from 'react';
 import './HotdealItem.scss';
 import { NavLink } from 'react-router-dom';
+import numeral from 'numeral';
 function HotdealItems({ picture, icon, standard_name,id, detail_treatment, standard_price, displayImg, displayContent }) {
     return (
         <div className="hotdeal-row-box hotdeal-col_4 hotdeal-col_6">
@@ -22,7 +23,7 @@ function HotdealItems({ picture, icon, standard_name,id, detail_treatment, stand
                     </p>
                 </div>
                 <div className="hotdeal-row-box-content-text-price">
-                    <h4>{standard_price}</h4>
+                    <h4>{numeral(standard_price).format('0,0')}</h4>
                     <p>đ/lượt</p>
                 </div>
             </div>

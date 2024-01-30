@@ -9,7 +9,7 @@ import { StoreIcon, UserIcon, SearchIcon } from '~/components/icons/icons';
 import Dropdownlist from '~/components/DropdownList/Dropdownlist';
 import Search from '~/components/Search';
 import Popup from '~/components/PopupDialog/popup';
-function Header() {
+function Header({setOpenOverlay}) {
 
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);
     const handlesScroll = () => {
@@ -34,29 +34,29 @@ function Header() {
     },
     {
         title: 'Chuyển mạng giữ số',
-        linkpage: null
+        linkpage: ''
     },
 
     {
         title: 'Nạp thẻ',
-        linkpage: null
+        linkpage: ''
     }];
     const Datainternet = [
         {
             title: 'Internet cáp quang',
-            linkpage: "#cap-quang"
+            linkpage: "/internet-tv#cap-quang"
         },
         {
             title: 'Internet và Truyền hình',
-            linkpage: "#internet-truyenhinh"
+            linkpage: "/internet-tv#internet-truyenhinh"
         },
         {
             title:  'Internet, Truyền Hình Và Di Động',
-            linkpage: "#internet-truyenhinh-didong"
+            linkpage: "/internet-tv#internet-truyenhinh-didong"
         },
         {
             title:  'Truyền hình MyTV',
-            linkpage: "#truyehinh-tv"
+            linkpage: "/internet-tv#truyehinh-tv"
         }
     ];
 
@@ -73,6 +73,7 @@ function Header() {
                                 displayImg="block"
                                 displayTitle="none"
                                 image={homeLogo}
+                                popupOpen={null}
                             />
                             <MenuItems
                                 to={config.routes.mobile}
@@ -82,6 +83,7 @@ function Header() {
                                 className="header-wrapper-nav-item-phone"
                                 classNameImg="header-wrapper-nav-item-phone-img"
                                 dropdown={<Dropdownlist list={Datamobile} height="170px" width="170px" flexIndex='25%' fontWeight='600' fontSize='1.4rem' />}
+                                popupOpen={null}
                             />
                             <MenuItems
                                 to={config.routes.internetTV}
@@ -92,24 +94,28 @@ function Header() {
                                 classNameImg="header-wrapper-nav-item-internet-img"
                                 dropdown={<Dropdownlist list={Datainternet} height="170px" width="250px" flexIndex='25%' fontWeight='600' fontSize='1.4rem' />}
                                 marginLeftDropdown="-22px"
+                                popupOpen={null}
                             />
                             <MenuItems
                                 to={config.routes.store}
                                 icon={<StoreIcon className="fa-w-20" width="20px" height="20px" />}
                                 displayImg="none"
                                 displayTitle="none"
+                                popupOpen={null}
                             />
                             <MenuItems
                                 icon={<SearchIcon className="fa-w-16" width="20px" height="20px" />}
                                 displayImg="none"
                                 displayTitle="none"
                                 search={<Search width="350px" />}
+                                popupOpen={null}
                             />
                             <MenuItems
                                 icon={<UserIcon className="fa-w-14" width="20px" height="20px" />}
                                 displayImg="none"
                                 displayTitle="none"
-                                popup={<Popup />}
+                                popupOpen={setOpenOverlay}
+                           
                             />
                         </div>
                     </Menu>
@@ -130,7 +136,8 @@ function Header() {
                              icon={<UserIcon className="fa-w-14" width="20px" height="20px" />}
                              displayImg="none"
                              displayTitle="none"
-                             popup={<Popup />}
+                             popupOpen={setOpenOverlay}
+                             
                          />
                     </div>
                 </div>

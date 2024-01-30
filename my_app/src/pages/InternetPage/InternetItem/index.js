@@ -1,5 +1,6 @@
 import React from "react";
 import './InternetItem.scss';
+import numeral from "numeral";
 import { PhondataIcon } from "~/components/icons";
 
 
@@ -19,7 +20,7 @@ function InternetItem({ title, detail, price }) {
             </p>
           </div>
           <div className="internet-row-item-price">
-            <h4>{price}</h4>
+            <h4>{numeral(price).format('0,0')}</h4>
             <span>đ/ 1 tháng</span>
           </div>
         </div>

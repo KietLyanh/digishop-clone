@@ -1,12 +1,12 @@
 import React from "react";
 import './popup.scss';
 
-function Popup()
+function Popup({closeOverlay})
 {
     return(
         <>
             <div className="popup-box">
-                <span className="popup-closebtn">X</span>
+                <span className="popup-closebtn" onClick={() => closeOverlay(false)}>X</span>
                 <div className="popup-content">
                 <h3>Đăng nhập</h3>
                 <h4>Dành cho CBCNV</h4>

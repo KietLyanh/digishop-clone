@@ -1,6 +1,7 @@
 import React from "react";
 import './MobileChildPage.scss';
 import imgAvt from "~/pages/MobilePage/images/1689580046873VD-17.jpg";
+import numeral from "numeral";
 
 function MobileChildItems({ all_packages, setValueOnChange }) {
     const list = [30,90, 180, 360];
@@ -21,7 +22,7 @@ function MobileChildItems({ all_packages, setValueOnChange }) {
                         <span>{all_packages?.packages_timelimit} ngày</span>
                     </div>
                 <div className="mobilechild__content-item-desc-hotdeal"></div>
-                <h4>{all_packages?.packages_price}đ</h4>
+                <h4>{numeral(all_packages?.packages_price).format('0,0')}đ</h4>
                 <div className="mobilechild__content-item-desc-features">
 
                     <p>{all_packages?.detail_treatment}</p>

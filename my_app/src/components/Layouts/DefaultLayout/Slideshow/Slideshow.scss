@@ -1,5 +1,5 @@
 .home-banner-container{
-    margin-right: 15px;
+    // margin-right: 15px;
     margin-left: 15px;
     margin-top: 0;
 
@@ -23,7 +23,7 @@
 
                 .slide{
                         display: inline-block;
-                        max-height: 384px;
+                        max-height: 500px;
                         width: 100%; 
                         height: 100%;
                         object-fit:inherit;
@@ -96,7 +96,22 @@
 }
 
 
+
 /* home-banner-responsive */
+
+@media only screen and (min-width:1536px)
+    {
+        .home-banner-container{
+            margin-right: 15px;
+            // margin-right: 15px;  
+            margin-left: 15px;
+            // max-width: 100%;
+            max-width: 1520px;
+            // margin: auto;
+        }
+    }
+
+
     @media only screen and (max-width:992px)
     {
         .home-banner-container{

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Sims.scss';
+import { NavLink } from 'react-router-dom';
 import iconSite from './images/1677836489077ico_sim.png';
 import iconItems from './images/icon-pack-sim.png';
-import { SimsTransfomIcon } from '~/components/icons';
+import { PhondataIcon, SimsTransfomIcon } from '~/components/icons';
 import Listsim from '~/api/listsim';
 import listmobiledata from '~/api/listmobiledata';
+import numeral from 'numeral';
 const list = [0,3,6]
 function Sims() {
     const [simData, setSimData] = useState([]);
@@ -130,11 +132,14 @@ function Sims() {
                     </div>
                     <hr />
                     <p className="sim-row-desc-p">
-                        {detailData.standard_price}
+                        {numeral(detailData.standard_price).format('0,0')}
                         <sup>đ</sup>
                     </p>
                     <br />
                     <p className="sim-row-desc-m">tháng</p>
+                    <NavLink to={`/di-dong/${detailData.standard_id}/${detailData.standard_name}`}>
+                        <PhondataIcon width="20px" height="20px"/>
+                    </NavLink>
                 </section>
                 <section className="sim-row-phonenumber col-6-sim">
                     <div className="sim-phonenumber-container">
@@ -197,7 +202,7 @@ function Sims() {
                             </div>
                             <hr/>
                             <p className="sim-row-desc-p">
-                                {mobileData[mobileIndex].standard_price}
+                                {numeral(mobileData[mobileIndex].standard_price).format('0,0')}
                                 <sup>đ</sup>
                             </p>
                             <br />

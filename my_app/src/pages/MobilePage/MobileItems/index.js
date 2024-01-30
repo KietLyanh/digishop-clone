@@ -1,6 +1,7 @@
 import React from "react";
 import './MobileItems.scss'
 import '~/components/GlobalStyles/GlobalStyles.scss'
+import numeral from "numeral";
 import {NavLink} from "react-router-dom";
 import {MobilePageTitleIcon} from "~/components/icons";
 import imgAvt from "./../images/1689580046873VD-17.jpg"
@@ -25,7 +26,7 @@ function MobileItems({id,name,price,detail})
                          <h3>{name}</h3>
                     </NavLink>
                     <NavLink to = {`/di-dong/${id}/${name}`}>
-                        <h4>{price}đ</h4>
+                        <h4>{numeral(price).format('0,0')}đ</h4>
                     </NavLink>
                     <NavLink to = {`/di-dong/${id}/${name}`}>
                         <div className="mobileitems-info-p">

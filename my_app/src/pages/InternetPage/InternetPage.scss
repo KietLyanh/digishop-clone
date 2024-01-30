@@ -1,6 +1,7 @@
 .internet__container{
     
-    margin: 15px;
+    // margin: 15px;
+    // padding-left: 15px;
 
     .internet__linkpage{
         display: flex;
@@ -92,3 +93,14 @@
         }
     }
 }
+
+@media only screen and (min-width:1536px)
+    {
+        .internet__container{
+            margin-left: 15px;
+            margin-right: 15px;
+            // max-width: 100%;
+            max-width: 1520px;
+            // margin: auto;
+        }
+    }

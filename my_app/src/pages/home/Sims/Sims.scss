@@ -1,6 +1,6 @@
 .sim-container{
-    margin-right: 15px;
-    margin-left: 15px;
+    // margin-right: 15px;
+    // margin-left: 15px;
 
     h3{
         text-transform: uppercase;
@@ -163,6 +163,7 @@
         }
 
         .sim-row-desc{
+            position: relative;
             color: #fff;
             text-align: center;
             box-shadow: 0px 4px 30px rgba(149, 149, 149, 0.5);
@@ -172,7 +173,7 @@
            
 
             .sim-row-desc-container{
-                position: relative;
+                // position: relative;
                 margin-bottom: 1rem;
 
                 h3{
@@ -208,6 +209,14 @@
             
             .sim-row-desc-m{
                 font-size: 2rem;
+            }
+
+            svg{
+                position: absolute;
+                bottom: 20px;
+                right: 30px;
+                color: #fff;
+                cursor: pointer;
             }
            
         }

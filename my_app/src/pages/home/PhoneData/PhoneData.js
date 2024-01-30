@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import numeral from 'numeral';
 import './PhoneData.scss';
 import iconTitle from './images/1677836500566ico_didong.png';
 import { PhondataIcon } from '~/components/icons';
@@ -58,13 +59,15 @@ function PhoneData() {
                                         </p>
                                     </div>
                                     <div className="phonedata-row-box-price">
-                                        <h4>{info.standard_price}</h4>
+                                        <h4>{numeral(info.standard_price).format('0,0')}</h4>
                                         <p>đ/lượt</p>
                                     </div>
+                                    <NavLink to={`/di-dong/${info.standard_id}/${info.standard_name}`}>
                                     <div className="phonedata-row-box-btn">
-                                        <span>Đăng ký</span>
-                                        <PhondataIcon />
+                                            <span>Xem thêm</span>
+                                            <PhondataIcon />
                                     </div>
+                                    </NavLink>
                                 </div>
                             </div>
                         </div>
