@@ -27,7 +27,7 @@ function Internettv() {
 
       // In ra console để kiểm tra
       if (windowWidth <= 768) {
-        console.log(windowWidth);
+        // console.log(windowWidth);
         setCurrentItem(2);
       }
       if (windowWidth <= 600) {

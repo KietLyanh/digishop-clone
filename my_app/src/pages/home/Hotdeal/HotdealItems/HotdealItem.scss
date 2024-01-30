@@ -11,7 +11,7 @@
     position: relative;
     /* border: solid red 1px; */
     height: 100%;
-
+    
     box-shadow: 0px 0px 10px rgba(146, 146, 146, 0.25);
 
     .hotdeal-row-box-content {
@@ -233,12 +233,7 @@
             }
         }
 
-
-
-
     }
-
-
 
     .hotdeal-row-box-hot {
         position: absolute;
@@ -297,75 +292,96 @@
 
 @media only screen and (max-width:992px) {
 
-    .hotdeal-row-box:last-child {
-        display: none;
-    }
-
-    .hotdeal-col_6 {
-        flex: 0 0 calc(650px/3);
-        max-width: calc(650px/3);
-    }
-
-    .hotdeal-row-box-content-text {
-        height: 130px;
-        font-size: 1.5rem;
-        line-height: 25px;
-    }
-
-    .hotdeal-row-box-content {
-        height: 70%;
-    }
-
-    .hotdeal-row-box-sold-btn button:nth-child(1),
-    .hotdeal-row-box-sold-btn button:nth-child(2) {
-        width: 60%;
-        font-size: 1.3rem;
-        padding: 4px 0;
-    }
-
-    .hotdeal-row-box-sold-btn button:nth-child(2) {
-        transform: translateX(-40px);
-    }
-
-    .hotdeal-row-box-sold {
-        margin-top: 30px;
-    }
-
-    .hotdeal-row-box-soldout {
-        margin: auto;
-        margin-left: 15px;
-        margin-top: 20px;
-    }
-
-    .hotdeal-row-box-sell {
-        width: 60%;
-    }
-
-    .hotdeal-row-box-countdown {
-        gap: 2px;
-    }
-
-    .hotdeal-row-box-countdown span {
-        font-size: 1.3rem;
-    }
-}
-
-@media only screen and (max-width:768px) {
+    
     .hotdeal-col_6 {
         flex: 0 0 calc(100%/3);
         max-width: calc(100%/3);
+    }
+
+
+
+    .hotdeal-row-box {
+        .hotdeal-row-box-content {
+            height: 70%;
+
+            .hotdeal-row-box-content-text {
+                height: 130px;
+                font-size: 1.3rem;
+                line-height: 25px;
+            }
+        }
+
+
+
+        .hotdeal-row-box-sold-btn button:nth-child(2) {
+            transform: translateX(-40px);
+        }
+
+        .hotdeal-row-box-sold {
+            margin-top: 30px;
+
+            .hotdeal-row-box-sold-btn {
+
+                button:nth-child(1),
+                button:nth-child(2) {
+                    width: 60%;
+                    font-size: 1.3rem;
+                    padding: 4px 0;
+                }
+
+                button:nth-child(2) {
+                    transform: translateX(-50px);
+                    transition: all 0.5s ease;
+                }
+            }
+
+            .hotdeal-row-box-soldout {
+                margin: auto;
+                margin-left: 15px;
+                margin-top: 20px;
+                margin-bottom: 20px ;
+
+                .hotdeal-row-box-sell {
+                    width: 60%;
+                }
+
+                .hotdeal-row-box-countdown {
+                    gap: 2px;
+
+                    span {
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+    .hotdeal-row-box:hover{
+        .hotdeal-row-box-sold-btn{
+            button:nth-child(2){
+                transform: translateX(0px);
+                transition: all 0.5s ease;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width:768px) {
+    .hotdeal-col_4 {
+        flex: 0 0 calc(50%);
+        max-width: 50%;
     }
 }
 
 @media only screen and (max-width:600px) {
 
-    .hotdeal-title h2 {
-        font-size: 24px;
-    }
-
-    .hotdeal-row-box:last-child {
-        display: none;
-    }
+    
 
     .hotdeal-col_4 {
         flex: 0 0 100%;
@@ -377,48 +393,53 @@
     //     max-width: 200px;
     // }
 
-    .hotdeal-row-box-content-text {
-        height: 110px;
-        font-size: 1.4rem;
-        line-height: 22px;
-    }
+   .hotdeal-row-box{
+    
 
     .hotdeal-row-box-content {
-        height: 65%;
+        height: 60%;
+
+        .hotdeal-row-box-content-text {
+            height: 110px;
+            font-size: 1.4rem;
+            line-height: 22px;
+        }
     }
 
-    .hotdeal-row-box-sold-btn button:nth-child(1),
-    .hotdeal-row-box-sold-btn button:nth-child(2) {
-        width: 65%;
-        font-size: 0.9rem;
-        padding: 4px 0;
+    .hotdeal-row-box-sold-btn {
+        button:nth-child(1), button:nth-child(2) {
+            width: 65%;
+            font-size: 0.9rem;
+            padding: 4px 0;
+        }
+        // button:nth-child(2) {
+        //     transform: translateX(-37px);
+        // }
     }
 
-    .hotdeal-row-box-sold-btn button:nth-child(2) {
-        transform: translateX(-37px);
-    }
 
     .hotdeal-row-box-sold {
         margin-top: 30px;
-    }
+        margin-bottom: 20px;
 
-    .hotdeal-row-box-soldout {
-        margin: auto;
-        margin-left: 15px;
-        margin-top: 20px;
-    }
+        .hotdeal-row-box-soldout {
+            margin: auto;
+            margin-left: 15px;
+            margin-top: 20px;
 
-    .hotdeal-row-box-sell {
-        width: 60%;
-    }
+            .hotdeal-row-box-sell {
+                width: 60%;
+            }
 
-    .hotdeal-row-box-countdown {
-        gap: 2px;
-    }
+            .hotdeal-row-box-countdown {
+                gap: 2px;
+            }
 
-    .hotdeal-row-box-countdown span {
-        font-size: 1rem;
+            span {
+                font-size: 1rem;
+                }
+            }
+        }
     }
 }
 
-/* hotdeal-responsive */

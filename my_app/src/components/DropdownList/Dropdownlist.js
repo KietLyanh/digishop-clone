@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './Dropdownlist.scss';
-import { NavLink } from "react-router-dom";
-import config from "~/config";
+// import { NavLink } from "react-router-dom";
+import { HashLink as NavLink } from "react-router-hash-link";
 function Dropdownlist({list,height,width,fontWeight,flexIndex,fontSize})
 {
     // const data = ["Sim số", "Gói cước di động", "Chuyển mạng giữ số", "Nạp thẻ"];
@@ -21,7 +21,7 @@ function Dropdownlist({list,height,width,fontWeight,flexIndex,fontSize})
                     maxHeight: `${flexIndex}`,
                     fontSize:fontSize
                 }}>
-            <NavLink to={cp.linkpage}><span>{cp.title}</span></NavLink>
+            <NavLink to={cp?.linkpage} smooth><span>{cp?.title}</span></NavLink>
                 </div>
             ))}
             </div>

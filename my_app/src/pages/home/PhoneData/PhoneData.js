@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import './PhoneData.scss';
 import iconTitle from './images/1677836500566ico_didong.png';
 import { PhondataIcon } from '~/components/icons';
@@ -20,9 +21,15 @@ function PhoneData() {
             <div className="phonedata-title">
                 <img src={iconTitle} alt="opps" />
                 <h2>Gói cước di động</h2>
-                <a>Gói DATA</a>
-                <a>Gói trả trước</a>
-                <a>Xem tất cả</a>
+                <NavLink>
+                    <p>Gói DATA</p>
+                </NavLink>
+                <NavLink>
+                    <p>Gói trả trước</p>
+                </NavLink>
+                <NavLink>
+                    <p>Xem tất cả</p>
+                </NavLink>
             </div>
 
             <div className="phonedata-row">

@@ -10,10 +10,11 @@ function Sims() {
     const [simData, setSimData] = useState([]);
     const [mobileData, setMobileData] = useState([]);
     const [detailData, setDetailData] = useState({});
-    const [displaySim, setDisplaySim] = useState('none');
+    const [displaySim, setDisplaySim] = useState(false);
     const [numberTrans,setNumberTrans] = useState(0);
     const [nextDisabled, setNextDisabled] = useState(false);
     const [preDisabled, setPreDisabled] = useState(true);
+    const [mobileIndex,setMobileIndex] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -170,7 +171,8 @@ function Sims() {
                             className="sim-row-item sim-item-1"
                             key={index}
                             onClick={() => {
-                                setDisplaySim('block');
+                                setMobileIndex(index);
+                                setDisplaySim(true);
                             }}
                         >
                             <img src={iconItems} alt="opps" />
@@ -179,32 +181,31 @@ function Sims() {
                                 <p>{info.detail_treatment}</p>
                             </div>
                         </div>
-                        <section
+                       {mobileIndex !== null &&  <section
                             className="sim-row-desc"
                             style={{
-                                display: { displaySim },
+                                display:  displaySim && mobileIndex === index ? "block" : "none" 
                             }}
                         >
                             <div className="sim-row-desc-container">
-                                <h3>{info.standard_name}</h3>
+                                <h3>{mobileData[mobileIndex].standard_name}</h3>
                                 <p>
                                     <strong>1. Ưu đãi gói cước</strong>
-                                    <br />
-                                    {info.detail_treatment}
+                                    <br/>
+                                    {mobileData[mobileIndex].detail_treatment}
                                 </p>
                             </div>
-                            <hr />
+                            <hr/>
                             <p className="sim-row-desc-p">
-                                {info.standard_price}
+                                {mobileData[mobileIndex].standard_price}
                                 <sup>đ</sup>
                             </p>
                             <br />
                             <p className="sim-row-desc-m">tháng</p>
-                        </section>
+                        </section>}
                     </>
                 ))}
             </div>
-
             {/* <!-- Phần dùng để responsive --> */}
         </div>
     );

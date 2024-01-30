@@ -1,30 +1,30 @@
-.internet-container{
+.internet-container {
     margin-right: 15px;
     margin-left: 15px;
     margin-top: 15px;
 
 
-    .internet-title{
+    .internet-title {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
         margin-bottom: 15px;
 
-        p{
+        p {
             margin-left: 20px;
             font-size: 1.6rem;
             cursor: pointer;
             color: #5c5c5c;
         }
 
-        img{
+        img {
             width: 17px;
             height: 17px;
             margin-right: 10px;
         }
 
-        h2{
+        h2 {
             font-size: 32px;
             color: #0095d9;
             font-weight: 600;
@@ -32,29 +32,31 @@
         }
 
         //hover
-        
-        p:hover{
+
+        p:hover {
             color: #3aa4f6;
         }
-        p:last-child:hover{
+
+        p:last-child:hover {
             text-decoration: underline;
         }
     }
 
 }
+
 /* .internet-container h3{
     text-transform: uppercase;
 } */
- 
 
 
-.internet-row{
+
+.internet-row {
     padding-right: 5px;
     padding-left: 5px;
     /* height: 100%; */
     overflow: hidden;
 
-    .internet-row-items{
+    .internet-row-items {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -73,39 +75,38 @@
 
 
 
-   @media only screen and (max-width:768px)
-   {
-        .internet-container{
-            max-width: 650px;
+@media only screen and (max-width:768px) {
+    .internet-container {
+        max-width: 650px;
+    }
+
+}
+
+@media only screen and (max-width:600px) {
+    .internet-container {
+        margin-top: 20px;
+        max-width: 350px;
+        /* overflow-x: scroll; */
+
+        .internet-title {
+            h2 {
+                font-size: 18px;
+                color: #0095d9;
+                font-weight: 600;
+            }
+
+            p {
+                font-size: 1.4rem;
+            }
         }
 
-   }
+        .internet-row {
+            .internet-row-items {
+                max-height: 616px;
+            }
+        }
+    }
 
-   @media only screen and (max-width:600px)
-   {
-       .internet-container{
-           margin-top: 20px;
-           max-width: 350px;
-           /* overflow-x: scroll; */
-       }
-   
-       .internet-title h2{
-           font-size: 24px;
-           color: #0095d9;
-           font-weight: 600;
-       }
-      
-       .internet-title a{
-        font-size: 1.4rem;
-       }
-
-       
-   
-       .internet-row-items{
-           max-height: 616px;
-       }
-   
-       
-   }
+}
 
 /* internet-responsive */

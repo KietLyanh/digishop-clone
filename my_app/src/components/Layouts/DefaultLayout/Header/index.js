@@ -52,11 +52,11 @@ function Header() {
         },
         {
             title:  'Internet, Truyền Hình Và Di Động',
-            linkpage: null
+            linkpage: "#internet-truyenhinh-didong"
         },
         {
             title:  'Truyền hình MyTV',
-            linkpage: null
+            linkpage: "#truyehinh-tv"
         }
     ];
 

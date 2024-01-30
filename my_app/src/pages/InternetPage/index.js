@@ -163,7 +163,7 @@ function InternetPage() {
 
             </section>
 
-            <section className="internet__item">
+            <section className="internet__item" id="internet-truyenhinh-didong">
 
                 <div className='internet__item-title'>
                     <img src={ico_mobile} alt="opps" />
@@ -197,7 +197,7 @@ function InternetPage() {
 
             </section>
 
-            <section className="internet__item">
+            <section className="internet__item" id="truyehinh-tv">
 
                 <div className='internet__item-title'>
                     <img src={ico_internetTV} alt="opps" />

@@ -357,7 +357,6 @@
                 }
         
                 .sim-row-item {
-
                     display: flex;
                     flex-direction: row;
                     justify-content: flex-start;
@@ -483,11 +482,12 @@
     {
         .sim-container{
             max-width: 350px;
+            .sim-title h2{
+                font-size: 18px;
+            }
         }
 
-        .sim-title h2{
-            font-size: 24px;
-        }
+        
 
 
     }
