@@ -1,5 +1,5 @@
 import React from "react";
-import './MobileChildPage.scss';
+import './MobileChildItems.scss';
 
 function MobileChildDetail({allPackages}) {
     const listPackage = [

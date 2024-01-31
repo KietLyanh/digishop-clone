@@ -6,8 +6,12 @@
     .header{
         width: 100%;
         // padding-left: 15px;
+        position: relative;
+        z-index: 999;
     }
     .container{
+        // display: flex;
+        // justify-content: center;
         padding-left: 15px;
         // padding-right: 15px;
         width: 100%;

@@ -19,7 +19,6 @@ function DefaultLayout({children})
                 <HeaderTop/>
                 <Header
                 setOpenOverlay={handleSetOverlay}
-                
                 />
             </div>
             <Slideshow className="slideshow"/>

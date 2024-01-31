@@ -1,6 +1,6 @@
 import React from "react";
 import numeral from "numeral";
-import './MobileChildPage.scss';
+import './MobileChildItems.scss';
 import { PhondataIcon } from "~/components/icons";
 import imgMoney from "~/pages/MobilePage/images/recharge-money.png";
 function MobileChildDeposit() {

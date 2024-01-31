@@ -1,5 +1,5 @@
 import React from "react";
-import './MobileChildPage.scss';
+import './MobileChildItems.scss';
 import imgAvt from "~/pages/MobilePage/images/1689580046873VD-17.jpg";
 import numeral from "numeral";
 

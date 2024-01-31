@@ -3,7 +3,9 @@
     margin-left: 15px;
     margin-right: 15px;
     margin-bottom: 20px;
+    width: 100%;
     box-sizing: border-box;
+    
 
 
     .mobilechild__title{
@@ -34,289 +36,174 @@
     .mobilechild__content{
 
         display: flex;
-        flex-direction: column;
-
-        .co-lg-9{
-            flex: 0 0 75%;
-            max-width: 75%;
-        }
-
-        
+        flex-direction: column; 
 
         .mobilechild__content-items{
             display: flex;
             flex-direction: row;
             gap: 20px;
+        }
+    }
+    .mobilechild__content-res{
+        display: none;
+    }
 
+}
+
+// responsive 
+
+
+@media only screen and (min-width:1536px){
+    .mobilechild__container{
+        width: 100%;
+        max-width: 1520px;
+        margin: auto;
+    }   
+}
+
+
+@media only screen and (max-width:1200px){
+    .mobilechild__container{
+        // margin-right: 20px !important;
+        .mobilechild__content{
+            margin-right: 20px;
+            display: block;
 
             .mobilechild__content-item{
+                padding: 20px 30px;
 
-                display: flex;
-                flex-direction: row;
-                align-items: flex-start;
-                // justify-content: space-between;
-                gap: 40px;
-                width: 68%;
+                img{
+                    width: 150px !important;
+                    height: 150px !important;
+                }
+            }
+
+            .mobilechild__content-deposit{
+                h3{
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+
+                .mobilechild__content-deposit-money{
+                    div{
+                        gap: 10px;
+                        padding-left: 20px;
+                        label{
+                            font-size: 12px;
+                        }
+                    }
+
+                    button{
+                        margin-left: 15px;
+                    }
+                }
+            }
+
+            .mobilechild__content-detail {
                 margin-right: 20px;
-                // margin-left: 20px;
-                padding: 30px 50px;
-                background-color: #fff;
-                border-radius: 10px;
-                box-shadow: 0px 4px 30px rgba(182, 182, 182, 0.2);
+            }
+        }
+        .mobilechild__content-res{
+           display: none;
+        }
+    }
+}
+
+// responsive tablet 
+
+@media only screen and (max-width:992px){
+    .mobilechild__container{
+        margin-right: 20px;
+        .mobilechild__content{
+            display: none;
+        }
+        .mobilechild__content-res{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            
+
+            .co-lg-9{
+                flex: none;
+                max-width: 100%;
+            }
+
+            .mobilechild__content-item {
+                width: 100%;
+                padding-right: 20px;
+                padding-left: 10px;
+            }
+
+            .mobilechild__content-deposit {
+                .mobilechild__content-deposit-money {
+                    margin-left: 150px;
+                }
+            }
+            
+        }
+    }
+}
+
+// responsive mobile
+
+@media only screen and (max-width:600px){
+    .mobilechild__container{
+        // margin-right: 20px !important;
+        .mobilechild__content{
+            display: none;
+        }
+        .mobilechild__content-res{
+            margin-right: 20px;
+            display: block;
+
+            .mobilechild__content-item{
+                padding: 20px 30px;
+
+                img{
+                    display: none;
+                }
 
                 .mobilechild__content-item-desc{
-                    display: flex;
-                    flex-direction: column;
-                    width: 100%;
-
-                    .mobilechild__content-item-desc-name{
-                        
-                        display: flex;
-                        flex-direction: row;
-                        align-items: flex-start;
-                        gap: 30px;
-
-                        h3{
-                            color: #196fb0;
-                            font-size: 2.7rem;
-                            margin-top: 5px;
-                        }
-
-                        span{
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            background-color: #0091FF;
-                            color: #fff;
-                            font-size: 1.5rem;
-                            width: 100px;
-                            height: 25px;
-                            text-align: center;
-                            padding: auto;
-                            border-top-left-radius: 10px;
-                            border-bottom-right-radius: 10px;
-
-                        }
-                    }
-
-                    .mobilechild__content-item-desc-hotdeal{
-                        width: 100%;
-                        height: 40px;
-                        background: linear-gradient(to right,#6C92F4,#1B73E9);
-                    }
-
-                    h4{
-                        font-size: 2.3rem;
-                        font-weight: 300;
-                        color: #e7007f;
-                        margin: 20px 0;
-                    }
-
                     .mobilechild__content-item-desc-features{
-                        display: flex;
-                        flex-direction: column;
-                        border-top: solid 1px #dadada;
-                        padding: 30px 0px;
-
-                        p{
-                            color: #5C5C5C;
-                            font-size: 1.4rem;
-                            line-height: 28px;
-                            -webkit-box-orient: vertical;
-                            -webkit-line-clamp: 3;
-                            overflow: hidden;
-                        }
-
                         .mobilechild__content-item-desc-btn{
-                            display: flex;
-                            flex-direction: row;
-                            margin-top: 30px;
-                            justify-content: flex-start;
-                            gap: 30px;
-
                             button{
-                                width: 100px;
-                                height: 30px;
-                                border-radius: 5px;
-                                border: 1px solid #C4C4C4;
-                                color: #000;
-                                font-size: 1.3rem;
-                                font-weight: 300;
-                                background-color: #fff;
-                                transition: transform ease 0.2s;
-                                cursor: pointer;
+                                font-size: 0.9rem;
+                                width: 120px;
                             }
-
-                            button:hover{
-                                
-                                transform: translateY(-3px);
-                                box-shadow: 0px 4px 8px -4px #40C3FF;
-                            }
-
-                            button.active
-                            {
-                                border: #40C3FF solid 1px;
-                            }
-
-                        }
-
-                        .mobilechild__content-item-desc-sg{
-                            // justify-content: center;
-                            text-align: center;
-                            margin: auto;
-                            margin-top: 40px;
-                            margin-bottom: 0px;
-                            width: 150px;
-                            height: 35px;
-                            font-size: 1.5rem;
-                            color: #fff;
-                            font-weight:normal;
-                            border-radius: 20px;
-                            outline: none;
-                            border: none;
-                            background-color: #3aa4f6;
-                            transition: all 0.3s ease-in-out;
-                            cursor: pointer;
-                        }
-
-                        .mobilechild__content-item-desc-sg:hover{
-                            box-shadow: 0px 5px 10px #3aa4f6;
-                            transform: translateY(-5px);
-                            opacity: 0.7;
                         }
                     }
                 }
             }
 
             .mobilechild__content-deposit{
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-               
-                width: 100%;
-                background-color: #fff;
-                border-radius: 10px;
-                box-shadow: 0px 4px 30px rgba(182, 182, 182, 0.2);
-
                 h3{
-                    margin-top: 30px;
-                    margin-bottom: 30px;
-                    font-size: 1.8rem;
-                    color: #163567;
+                    font-size: 1.5rem;
+                    text-align: center;
                 }
 
-
-                .mobilechild__content-deposit-money {
-                    display: flex;
-                    flex-wrap: wrap;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: flex-start;
-                    // margin: auto;
-                    margin-top: 20px;
-                    cursor: pointer;
-                    gap: 10px;
-
-
-                   div{
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 15px;
-                        flex: 0 0 calc(50% - 10px);
-                        max-width: calc(50% - 10px);
+                .mobilechild__content-deposit-money{
+                    margin-left: 60px;
+                    div{
+                        gap: 10px;
+                        padding-left: 0;
                         
-                        box-sizing: border-box;
-                        padding-left: 30px;
-                        
-                        input{
-                            width: 15px;
-                            height: 15px;
-                            cursor: pointer;
-                        }
-
                         label{
-                            font-size: 15px;
-                            color: #5C5C5C;
-                            cursor: pointer;
+                            font-size: 12px;
                         }
-                   }
-                    
-                  }
-                  
-
-                button{
-                    display: flex;
-                    flex-direction: row;
-                    gap: 5px;
-                    align-items: center;
-                    justify-content: center;
-                    margin-top: 40px;
-                    margin-bottom: 20px;
-                    border: 1px solid #C4C4C4;
-                    outline: none;
-                    width: 130px;
-                    background-color: #fff;
-                    border-radius: 20px;
-                    height: 30px;
-                    padding: 5px 10px;
-                    transition: transform ease-in 0.2s;
-                    cursor: pointer;
-                    
-
-                    span{
-                        font-size: 1.6rem;
-                        color: #5C5C5C;
-                        text-transform: uppercase;
-
                     }
-                    
-                }
-                button:hover{
-                    transform: translateY(-3px);
-                    box-shadow: 0px 4px 8px -4px #40C3FF;
+
+                    button{
+
+                        margin-left: 15px;
+                    }
                 }
             }
 
-            
+            .mobilechild__content-detail {
+                margin-right: 20px;
+            }
         }
-
-        .mobilechild__content-detail{
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            background-color: #fff;
-            margin: 30px 0px;
-            border-radius: 10px;
-            padding: 20px 40px;
-
-
-            h3{
-                font-size: 2.3rem;
-                color: #163567;
-            }
-
-            div{
-                
-                h5{
-                    font-size: 1.4rem;
-                    color: #4d4d4d;
-                    margin-bottom: 10px;
-                }
-
-                p{
-                    font-size: 1.3rem;
-                    color: #5C5C5C;
-                    line-height: 28px;
-                }
-            }
-
-
-        }
-
-
-       
+        
     }
-
 }
+

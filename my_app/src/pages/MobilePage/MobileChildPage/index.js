@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./MobileChildPage.scss"
 import { NavLink } from "react-router-dom";
 import getPackagesByDate from "~/api/listmobilestandard";
 import { useParams } from "react-router-dom";
@@ -11,10 +12,10 @@ import Listmobilestandard from "~/api/listmobilestandard";
 
 function MobileChildPage() {
 
-    const {package_id,package_name} = useParams();
+    const { package_id, package_name } = useParams();
     // console.log(package_id,date);
     const [allPackages, setAllPackage] = useState(null);
-    const [filterChild,setFilterChild] = useState({package_id:package_id,package_name:package_name});
+    const [filterChild, setFilterChild] = useState({ package_id: package_id, package_name: package_name });
     // console.log(filterChild);
     // xu ly du lieu all package
     useEffect(() => {
@@ -34,39 +35,39 @@ function MobileChildPage() {
         fetchdata();
     }, [filterChild])
 
-        // xu ly loc child package
+    // xu ly loc child package
     const setValueOnChange = (number) => {
         let name;
         let n = package_id.length;
-        let word = package_id.replace(package_id.substring(n-2,n),'');  
+        let word = package_id.replace(package_id.substring(n - 2, n), '');
         switch (number) {
             case 30:
                 name = `${word}`;
                 break;
             case 90:
-              name = `3${word}`;
-              break;
+                name = `3${word}`;
+                break;
             case 180:
                 name = `6${word}`;
-              break;
+                break;
 
             case 360:
                 name = `12${word}`;
-            break;
+                break;
 
         }
-           setFilterChild({
+        setFilterChild({
             ...filterChild,
-            package_name:name
-           })
-        }
-        
+            package_name: name
+        })
+    }
+
 
 
     return (
-            <div className="mobilechild__container">
-                
-                <div className="mobilechild__title">
+        <div className="mobilechild__container">
+
+            <div className="mobilechild__title">
                 <NavLink to={config.routes.home} className="mobilechild__title-link">
                     <h4>Trang chủ</h4>
                 </NavLink>
@@ -80,36 +81,50 @@ function MobileChildPage() {
                 </NavLink>
                 <MobilePageTitleIcon height="15px" width="15px" />
                 <h4>Chi tiết gói</h4>
-                </div>
+            </div>
 
-                <div className="mobilechild__content">
+            <div className="mobilechild__content">
 
-                    <div className="mobilechild__content-items">
+                <div className="mobilechild__content-items">
 
-                        {/* MobileChildItems */}
-                        <MobileChildItems
+                    {/* MobileChildItems */}
+                    <MobileChildItems
                         all_packages={allPackages}
                         setValueOnChange={setValueOnChange}
-                        />
-
-                        {/* MobileChildDeposit */}
-                        <MobileChildDeposit/>
-
-                    </div>
-
-
-
-
-                    {/* MobileChildDetail */}
-                    <MobileChildDetail 
-                    allPackages={allPackages}
                     />
 
-                
+                    {/* MobileChildDeposit */}
+                    <MobileChildDeposit />
 
                 </div>
 
+
+
+
+                {/* MobileChildDetail */}
+                <MobileChildDetail
+                    allPackages={allPackages}
+                />
             </div>
+
+            <div className="mobilechild__content-res">
+
+                {/* MobileChildItems */}
+                <MobileChildItems
+                    all_packages={allPackages}
+                    setValueOnChange={setValueOnChange}
+                />
+
+                {/* MobileChildDetail */}
+                <MobileChildDetail
+                    allPackages={allPackages}
+                />
+
+                {/* MobileChildDeposit */}
+                <MobileChildDeposit />
+            </div>
+
+        </div >
     );
 }
 export default MobileChildPage;
