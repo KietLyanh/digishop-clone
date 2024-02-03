@@ -1,3 +1,8 @@
+.card{
+  flex:0 0 calc((100% - 30px)/2);
+  max-width: calc((100% - 30px)/2) ;
+}
+
 .mobileitems-container {
   width: calc(90%/2);
   height: 250px;
@@ -97,4 +102,44 @@
   
     box-shadow: 0 5px 25px 1px #afafaf;
   
+}
+
+@media only screen and (max-width:600px){
+    .card{
+      flex: 0 0 calc(100% - 30px);
+      max-width: calc(100% - 30px);
+    }
+    
+    .mobileitems-container{
+      .mobileitems-img{
+        img{
+          width: 80px  !important;
+          height: 80px  !important;     
+        }
+      }
+
+      .mobileitems-content{
+        h3{
+
+        }
+        h4{
+
+        }
+
+        .mobileitems-info-p{
+
+          p{
+
+          }
+        }
+
+        .mobileitems-info-btn{
+
+        }
+      }
+
+      button{
+
+      }
+    }
 }

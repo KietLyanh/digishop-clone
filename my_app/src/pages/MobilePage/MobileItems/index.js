@@ -1,15 +1,16 @@
 import React from "react";
 import './MobileItems.scss'
-import '~/components/GlobalStyles/GlobalStyles.scss'
+// import '~/components/GlobalStyles/GlobalStyles.scss'
 import numeral from "numeral";
 import {NavLink} from "react-router-dom";
 import {MobilePageTitleIcon} from "~/components/icons";
 import imgAvt from "./../images/1689580046873VD-17.jpg"
 function MobileItems({id,name,price,detail})
 {
+    
     // console.log(id);
     return(
-        <div className='mobileitems-container card-2'>
+        <div className='mobileitems-container card'>
             <div className='mobileitems-img'>
                 <img src={imgAvt}
                 style={
