@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './MobilePage.scss';
 import { NavLink } from 'react-router-dom';
-import { MobilePageTitleIcon } from '~/components/icons';
+import { MobilePageTitleIcon } from '~/components/icons/icons';
 import iconTitle from '~/pages/home/PhoneData/images/1677836500566ico_didong.png'
 import config from '~/config';
 import MobileItems from './MobileItems';

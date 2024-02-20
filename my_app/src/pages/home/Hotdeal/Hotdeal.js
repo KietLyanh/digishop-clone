@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import './Hotdeal.scss';
 import pictureTitle from "./image/set.svg"
 import HotdealItems from "./HotdealItems";
-import { HotdealIcon } from "~/components/icons";
+import { HotdealIcon } from "~/components/icons/icons";
 import listmobiledata from "~/api/listmobiledata";
 import Pagination from "~/components/Pagination/Pagination";
 function Hotdeal() {

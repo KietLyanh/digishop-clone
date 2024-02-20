@@ -4,7 +4,7 @@ import InternetItem from "./InternetItem";
 import { listInternet } from "~/api/listInternetClone";
 import config from "~/config";
 import { NavLink } from "react-router-dom";
-import { MobilePageTitleIcon } from "~/components/icons";
+import { MobilePageTitleIcon } from "~/components/icons/icons";
 import Pagination from "~/components/Pagination/Pagination";
 import ico_capquang from "./images/ico_capquang.png";
 import ico_internetTH from "./images/16ico_internet truyen hinh.png";
@@ -75,6 +75,8 @@ function InternetPage() {
         }
     ]
 
+   
+
     return (
         <div className="internet__container">
 
@@ -94,7 +96,7 @@ function InternetPage() {
                 </div>
             </div>
 
-            <section id="cap-quang" className="internet__item">
+            <section id="cap-quang" className="internet__item" >
 
                 <div className='internet__item-title'>
                     <img src={ico_capquang} alt="opps" />

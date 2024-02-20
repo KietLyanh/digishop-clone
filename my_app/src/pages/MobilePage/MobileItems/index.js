@@ -3,7 +3,7 @@ import './MobileItems.scss'
 // import '~/components/GlobalStyles/GlobalStyles.scss'
 import numeral from "numeral";
 import {NavLink} from "react-router-dom";
-import {MobilePageTitleIcon} from "~/components/icons";
+import {MobilePageTitleIcon} from "~/components/icons/icons";
 import imgAvt from "./../images/1689580046873VD-17.jpg"
 function MobileItems({id,name,price,detail})
 {

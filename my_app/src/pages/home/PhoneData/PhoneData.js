@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import numeral from 'numeral';
 import './PhoneData.scss';
 import iconTitle from './images/1677836500566ico_didong.png';
-import { PhondataIcon } from '~/components/icons';
+import { PhondataIcon } from '~/components/icons/icons';
 import listmobiledata from '~/api/listmobiledata';
 function PhoneData() {
     const [phoneData,setPhoneData] = useState([]);

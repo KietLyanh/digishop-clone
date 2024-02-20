@@ -1,7 +1,7 @@
 import React from "react";
 import numeral from "numeral";
 import './MobileChildItems.scss';
-import { PhondataIcon } from "~/components/icons";
+import { PhondataIcon } from "~/components/icons/icons";
 import imgMoney from "~/pages/MobilePage/images/recharge-money.png";
 function MobileChildDeposit() {
     const listNumber = [50000, 100000, 200000, 300000, 500000];

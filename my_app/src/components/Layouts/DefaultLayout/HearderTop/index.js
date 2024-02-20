@@ -3,7 +3,7 @@ import './HeaderTop.scss';
 import '~/components/GlobalStyles/GlobalStyles.scss';
 import config from '~/config';
 import { NavLink } from 'react-router-dom';
-import { HeaderIcon } from '~/components/icons';
+import { HeaderIcon } from '~/components/icons/icons';
 
 function HeaderTop() {
     const [isHeaderVisible,setIsHeaderVisible] = useState(true);

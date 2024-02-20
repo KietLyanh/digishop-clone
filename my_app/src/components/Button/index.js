@@ -8,7 +8,8 @@ function Button(
         backgroundColor,
         text,
         height: height,
-        fontWeight
+        fontWeight,
+        fontSize
     }
 
 ) {
@@ -19,7 +20,8 @@ function Button(
                 border: border,
                 backgroundColor: backgroundColor,
                 height: height,
-                fontWeight:fontWeight
+                fontWeight:fontWeight,
+                fontSize:fontSize
             }}
         >{text}</button>
     );

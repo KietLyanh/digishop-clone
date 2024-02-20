@@ -3,7 +3,7 @@ import './Sims.scss';
 import { NavLink } from 'react-router-dom';
 import iconSite from './images/1677836489077ico_sim.png';
 import iconItems from './images/icon-pack-sim.png';
-import { PhondataIcon, SimsTransfomIcon } from '~/components/icons';
+import { PhondataIcon, SimsTransfomIcon } from '~/components/icons/icons';
 import Listsim from '~/api/listsim';
 import listmobiledata from '~/api/listmobiledata';
 import numeral from 'numeral';

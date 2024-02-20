@@ -1,7 +1,7 @@
 import React from "react";
 import './InternetItem.scss';
 import numeral from "numeral";
-import { PhondataIcon } from "~/components/icons";
+import { PhondataIcon } from "~/components/icons/icons";
 
 
 

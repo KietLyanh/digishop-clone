@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './Pagination.scss';
-import { PaginationIcon } from "../icons";
+import { PaginationIcon } from "../icons/icons";
 
 
 function Pagination({ start, pagination, setCurrentIndex, isOpen, timeoutRef, onChangeValue,color}) {

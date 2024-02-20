@@ -10,7 +10,7 @@ import Card from "~/pages/Card";
 import MobileChildPage from "~/pages/MobilePage/MobileChildPage";
 
 const publicRoutes = [
-    {path:routesConfig.support, component: SupportPage , layout: null},
+    {path:routesConfig.support, component: SupportPage , layout: "LayoutSecond"},
     {path:routesConfig.home,component:home},
     {path:routesConfig.internetTV,component:InternetPage},
     {path:routesConfig.mobile,component:MobilePage},

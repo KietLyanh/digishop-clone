@@ -7,7 +7,7 @@ import MobileChildItems from "./MobileChildItems";
 import MobileChildDeposit from "./MobileChildDeposit";
 import MobileChildDetail from "./MobileChildDetail";
 import config from "~/config";
-import { MobilePageTitleIcon } from "~/components/icons";
+import { MobilePageTitleIcon } from "~/components/icons/icons";
 import Listmobilestandard from "~/api/listmobilestandard";
 
 function MobileChildPage() {
