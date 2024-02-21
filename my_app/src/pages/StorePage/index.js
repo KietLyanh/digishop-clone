@@ -15,9 +15,9 @@ function StorePage() {
                         <StoreFilterIcon className="store__icon" height="20px" width="20px" />
                     </div>
                     <div className="store__map-search-filter">
-                        <input type='text' placeholder='Tỉnh/Thành Phố*'></input>
-                        <input type='text' placeholder='Quận/Huyện*'></input>
-                        <input type='text' placeholder='Cửa hàng/ Điểm giao dịch'></input>
+                        <input className="store__input" type='text' placeholder='Tỉnh/Thành Phố*'></input>
+                        <input className="store__input" type='text' placeholder='Quận/Huyện*'></input>
+                        <input className="store__input" type='text' placeholder='Cửa hàng/ Điểm giao dịch'></input>
                     </div>
 
                     <div className="store__map-search-btn">

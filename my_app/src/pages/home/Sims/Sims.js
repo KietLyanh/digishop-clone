@@ -7,16 +7,16 @@ import { PhondataIcon, SimsTransfomIcon } from '~/components/icons/icons';
 import Listsim from '~/api/listsim';
 import listmobiledata from '~/api/listmobiledata';
 import numeral from 'numeral';
-const list = [0,3,6]
+const list = [0, 3, 6]
 function Sims() {
     const [simData, setSimData] = useState([]);
     const [mobileData, setMobileData] = useState([]);
     const [detailData, setDetailData] = useState({});
     const [displaySim, setDisplaySim] = useState(false);
-    const [numberTrans,setNumberTrans] = useState(0);
+    const [numberTrans, setNumberTrans] = useState(0);
     const [nextDisabled, setNextDisabled] = useState(false);
     const [preDisabled, setPreDisabled] = useState(true);
-    const [mobileIndex,setMobileIndex] = useState(null);
+    const [mobileIndex, setMobileIndex] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -40,7 +40,7 @@ function Sims() {
                 const jsonString = JSON.stringify(response);
                 const dataArray = JSON.parse(jsonString);
                 setMobileData(dataArray);
-                // console.log(dataArray);
+                console.log(dataArray);
                 setDetailData(dataArray[0]);
             } catch (error) {
                 console.log(error);
@@ -48,32 +48,30 @@ function Sims() {
         };
         fetchData();
     }, []);
-    const dataLenght = Math.floor(mobileData?.length/3);
+    const dataLenght = Math.floor(mobileData?.length / 3);
     // console.log(dataLenght);
 
     const preSimcomponent = () => {
         setNextDisabled(false);
-        setNumberTrans(numberTrans-1)
-        if(numberTrans === 1)
-        {
+        setNumberTrans(numberTrans - 1)
+        if (numberTrans === 1) {
             setPreDisabled(true);
-            
+
         }
-            
-        
-        console.log(numberTrans);
+
+
+        // console.log(numberTrans);
     }
 
     const nextSimcomponent = () => {
         setPreDisabled(false);
-        setNumberTrans(numberTrans+1)
-        if(numberTrans >= dataLenght-2)
-        {
+        setNumberTrans(numberTrans + 1)
+        if (numberTrans >= dataLenght - 2) {
             setNextDisabled(true);
         }
         // console.log(numberTrans+1);
     }
- 
+
 
     return (
         <div className="sim-container">
@@ -84,7 +82,7 @@ function Sims() {
             <div className="sim-row-noresponsive">
                 <section className="sim-row-items col-3-sim">
                     <div className='sim-row-items-icon'>
-                        <button className={`sim-row-items-transfomicon ${nextDisabled ? "" : "active"}`} onClick={nextSimcomponent}  disabled={nextDisabled} >
+                        <button className={`sim-row-items-transfomicon ${nextDisabled ? "" : "active"}`} onClick={nextSimcomponent} disabled={nextDisabled} >
                             <SimsTransfomIcon height="15px" width="15px" />
                         </button>
                         <button className={`sim-row-items-transfomicon2 ${preDisabled ? "" : "active"}`} onClick={preSimcomponent} disabled={preDisabled}>
@@ -94,11 +92,11 @@ function Sims() {
                     <div className="sim-row-items-tranform"
                     >
                         {
-                            Array.from({length:dataLenght},(_,index) => mobileData.slice(index*dataLenght,index*dataLenght+dataLenght)
-                            ).map((arr,index) => (
+                            Array.from({ length: dataLenght }, (_, index) => mobileData.slice(index * 3, index * 3 + 3)
+                            ).map((arr, index) => (
                                 <div className="sim-row-items-tranform-item"
-                                key={index}
-                                style={{transform: `translate3d(0, ${-numberTrans*100}%, 0)`}}
+                                    key={index}
+                                    style={{ transform: `translate3d(0, ${-numberTrans * 100}%, 0)` }}
                                 >
                                     {arr.map((info, index) => (
                                         <div
@@ -107,16 +105,16 @@ function Sims() {
                                             onClick={() => {
                                                 setDetailData(info);
                                             }}
-                                    >
-                                        <img src={iconItems} alt="opps" />
-                                        <div className="sim-row-item-desc">
-                                            <h3>{info.standard_name}</h3>
-                                            <p>{info.detail_treatment}</p>
+                                        >
+                                            <img src={iconItems} alt="opps" />
+                                            <div className="sim-row-item-desc">
+                                                <h3>{info.standard_name}</h3>
+                                                <p>{info.detail_treatment}</p>
+                                            </div>
                                         </div>
-                            </div>
-                        ))}
+                                    ))}
 
-                        </div>
+                                </div>
                             ))
                         }
                     </div>
@@ -138,7 +136,7 @@ function Sims() {
                     <br />
                     <p className="sim-row-desc-m">tháng</p>
                     <NavLink to={`/di-dong/${detailData.standard_id}/${detailData.standard_name}`}>
-                        <PhondataIcon width="20px" height="20px"/>
+                        <PhondataIcon width="20px" height="20px" />
                     </NavLink>
                 </section>
                 <section className="sim-row-phonenumber col-6-sim">
@@ -186,21 +184,21 @@ function Sims() {
                                 <p>{info.detail_treatment}</p>
                             </div>
                         </div>
-                       {mobileIndex !== null &&  <section
+                        {mobileIndex !== null && <section
                             className="sim-row-desc"
                             style={{
-                                display:  displaySim && mobileIndex === index ? "block" : "none" 
+                                display: displaySim && mobileIndex === index ? "block" : "none"
                             }}
                         >
                             <div className="sim-row-desc-container">
                                 <h3>{mobileData[mobileIndex].standard_name}</h3>
                                 <p>
                                     <strong>1. Ưu đãi gói cước</strong>
-                                    <br/>
+                                    <br />
                                     {mobileData[mobileIndex].detail_treatment}
                                 </p>
                             </div>
-                            <hr/>
+                            <hr />
                             <p className="sim-row-desc-p">
                                 {numeral(mobileData[mobileIndex].standard_price).format('0,0')}
                                 <sup>đ</sup>

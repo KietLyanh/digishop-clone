@@ -1,0 +1,65 @@
+.mbsim__container{
+    margin: auto;
+    .mbsim__linkpage{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 30px;
+        .mbsim__linkpage-ftitle h4{
+            color: #4d4d4d !important;
+        }
+        h4{
+            font-size: 1.4rem;
+            color: #40C3FF;
+        }
+
+        // hover and responsive
+
+        h4:hover{
+            text-decoration-line: underline;
+        }
+    }
+
+    .mbsim__title{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: 1px solid #dadada;
+        margin-bottom: 30px;
+        padding-bottom: 0;
+        width: 100%;
+
+        h2{
+            display: inline-block;
+            font-size: 3.2rem;
+            color: #0095d9;
+            padding: 10px 5% 20px 0;
+            border-bottom:3px solid #40c3ff ;
+            margin-bottom: 0;
+        }
+
+        h5{
+            font-size: 1.7rem;
+            color: #196fb0;
+            margin-bottom: 10px;
+            margin-right: 20px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        h5:last-child
+        {
+            color: #4d4d4d ;
+        }
+        h5:last-child:hover {
+            color: #196fb0;
+        }
+    }
+
+    .mbsim__main{
+        display: flex;
+        flex-direction: row;
+    }
+}

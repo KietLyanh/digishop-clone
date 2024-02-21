@@ -6,9 +6,10 @@ import banner3 from "./image/anh2.jpg"
 import banner4 from "./image/1695260799069985x374 D159V-compressed.jpg"
 import banner5 from "./image/1695260820827985x374 VD120-compressed.jpg"
 import banner6 from "./image/1700446463191speedtest 3_975x347.jpg"
+import banner7 from "./image/1708478413804985x374 (7).jpg"
 import prevImg from "./image/prev-icon.png";
 import Pagination from "~/components/Pagination/Pagination";
-const list = [banner1, banner2, banner3, banner4, banner5, banner6]
+const list = [banner7,banner1, banner2, banner3, banner4, banner5, banner6]
 const delay = 3000;
 function Slideshow() {
 
