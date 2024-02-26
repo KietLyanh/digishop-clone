@@ -5,6 +5,7 @@
     border-radius: 10px;
     margin-right: 20px;
     margin-bottom: 30px;
+    max-height: 700px;
 
     .mbsim__tab-sub{
         display: flex;
@@ -124,4 +125,11 @@
     }
 
 
+}
+
+@media only screen and (max-width:992px){
+    .col-md-3{
+        flex: 0 0 100%  !important;
+        max-width: 100% !important;
+    }
 }

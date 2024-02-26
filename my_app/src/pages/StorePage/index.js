@@ -7,7 +7,7 @@ function StorePage() {
 
             <div className="store__map grid__full-width">
                 <div className="store__map-search col-md-4">
-                    <input className="store__map-search-name" type='text' placeholder='Tên cửa hàng và địa điểm...'>
+                    <input className="store__map-search-name store__input" type='text' placeholder='Tên cửa hàng và địa điểm...'>
                     </input>
 
                     <div className="store__map-search-title">

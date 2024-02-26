@@ -58,7 +58,7 @@ function MobilePage() {
             try {
                 const response = await Listmobilestandard.getByparam(filters);
                 const { data, pagination } = response;
-                // console.log(pagination);
+                console.log(pagination);
                 const jsonString = JSON.stringify(data);// thanh chuoi
                 const dataArray = JSON.parse(jsonString);// thanh mang
                 setMobileData(dataArray);
@@ -86,7 +86,7 @@ function MobilePage() {
     const handleChangeValueSort = (value) => {
         setSelectedValue(value)
         const list_child = list.find(items => items.title === value) // tìm items có title giống với value trong select
-        console.log(list_child.sql);
+        // console.log(list_child.sql);
         setFilters({
             ...filters,
             orderby: list_child.sql

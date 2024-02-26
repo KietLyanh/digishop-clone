@@ -21,8 +21,9 @@ function Sims() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await Listsim.getAll();
-                const jsonString = JSON.stringify(response);
+                const response = await Listsim.getByParams({});
+                const data = response.data;
+                const jsonString = JSON.stringify(data);
                 const dataArray = JSON.parse(jsonString);
                 setSimData(dataArray);
 

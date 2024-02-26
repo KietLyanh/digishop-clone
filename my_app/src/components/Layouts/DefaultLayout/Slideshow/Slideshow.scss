@@ -148,6 +148,19 @@
 {
     .home-banner-container{
         max-width: 350px;
+        .home-banner-container-row{
+            .home-banner-slideshow{
+                .prevIcon{
+                    width: 30px;
+                    height: 30px;
+                }
+
+                .nextIcon{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
     }
 }
 

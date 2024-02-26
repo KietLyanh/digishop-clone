@@ -71,3 +71,18 @@ p{
     flex: 0 0 75%;
     max-width: 75%;
 }
+
+@media only screen and (max-width:992px){
+    .d-lg-table-cell {
+        display: table-cell !important;
+    }
+    
+    .d-none {
+        display: none !important;
+    }
+}
+
+.blue-bold{
+    font-weight: bold;
+    color: #0095D9;
+}

@@ -4,26 +4,10 @@ import { MobilePageTitleIcon } from '~/components/icons/icons';
 import config from '~/config';
 import MobileSimTab from './MobileSimTab';
 import MobileSimList from './MobileSimList';
-import { useEffect, useState } from 'react';
-import Listsim from '~/api/listsim';
+
 function MobileSim()
 {
-    const [simData,setSimData] = useState([]);
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await Listsim.getAll();
-                const jsonString = JSON.stringify(response);
-                const dataArray = JSON.parse(jsonString);
-                setSimData(dataArray);
-
-                console.log(dataArray);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        fetchData()
-    },[])
+    
     return(
         <div className="mbsim__container">
              <div className='mbsim__linkpage'>
@@ -42,7 +26,7 @@ function MobileSim()
 
             <div className="mbsim__main">
                 <MobileSimTab/>
-                <MobileSimList listmobilesim={simData}/>
+                <MobileSimList />
             </div>
         </div>
     );
