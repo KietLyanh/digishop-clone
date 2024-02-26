@@ -9,83 +9,140 @@ import { StoreIcon, UserIcon, SearchIcon } from '~/components/icons/icons';
 import Dropdownlist from '~/components/DropdownList/Dropdownlist';
 import Search from '~/components/Search';
 import Popup from '~/components/PopupDialog/popup';
-function Header() {
+function Header({setOpenOverlay}) {
 
-    const [isHeaderVisible,setIsHeaderVisible] = useState(true);
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
     const handlesScroll = () => {
         setIsHeaderVisible(window.scrollY <= 0);
     }
 
     useEffect(() => {
-        window.addEventListener('scroll',handlesScroll);
+        window.addEventListener('scroll', handlesScroll);
 
         return () => {
-            window.removeEventListener('scroll',handlesScroll);
+            window.removeEventListener('scroll', handlesScroll);
         }
-    },[])
+    }, [])
 
-    const Datamobile = ['Sim số', 'Gói cước di động', 'Chuyển mạng giữ số', 'Nạp thẻ'];
+    const Datamobile = [{
+        title: 'Sim số',
+        linkpage: config.routes.mobileSim
+    },
+    {
+        title: 'Gói cước di động',
+        linkpage: config.routes.mobile
+    },
+    {
+        title: 'Chuyển mạng giữ số',
+        linkpage: ''
+    },
+
+    {
+        title: 'Nạp thẻ',
+        linkpage: ''
+    }];
     const Datainternet = [
-        'Internet cáp quang',
-        'Internet và Truyền hình',
-        'Internet, Truyền Hình Và Di Động',
-        'Truyền hình MyTV',
+        {
+            title: 'Internet cáp quang',
+            linkpage: "/internet-tv#cap-quang"
+        },
+        {
+            title: 'Internet và Truyền hình',
+            linkpage: "/internet-tv#internet-truyenhinh"
+        },
+        {
+            title:  'Internet, Truyền Hình Và Di Động',
+            linkpage: "/internet-tv#internet-truyenhinh-didong"
+        },
+        {
+            title:  'Truyền hình MyTV',
+            linkpage: "/internet-tv#truyehinh-tv"
+        }
     ];
 
     return (
-        <div className={`grid__full-width ${isHeaderVisible ? 'header-extinct' : 'header-fixed'}`} style={{ backgroundColor: '#fff' }}>
-            <aside className="header-wrapper">
-                <Menu>
-                    <div className="header-content">
-                        <MenuItems
-                            to={config.routes.home}
-                            title="home"
-                            displayIcon="none"
-                            displayImg="block"
-                            displayTitle="none"
-                            image={homeLogo}
-                        />
-                        <MenuItems
-                            to={config.routes.mobile}
-                            image={mobileLogo}
-                            title="DI ĐỘNG"
-                            displayIcon="none"
-                            className="header-wrapper-nav-item-phone"
-                            classNameImg="header-wrapper-nav-item-phone-img"
-                            dropdown={<Dropdownlist list={Datamobile} height="170px" width="170px" flexIndex='25%' fontWeight='600' fontSize='1.4rem' />}
-                        />
-                        <MenuItems
-                            to={config.routes.internetTV}
-                            title="INTERNET - TRUYỀN HÌNH"
-                            image={internetLogo}
-                            displayIcon="none"
-                            className="header-wrapper-nav-item-internet"
-                            classNameImg="header-wrapper-nav-item-internet-img"
-                            dropdown={<Dropdownlist list={Datainternet} height="170px" width="250px" flexIndex='25%' fontWeight='600' fontSize='1.4rem' />}
-                            marginLeftDropdown="-22px"
-                        />
-                        <MenuItems
-                            to={config.routes.store}
-                            icon={<StoreIcon className="fa-w-20" width="20px" height="20px" />}
-                            displayImg="none"
-                            displayTitle="none"
-                        />
-                        <MenuItems
-                            icon={<SearchIcon className="fa-w-16" width="20px" height="20px" />}
-                            displayImg="none"
-                            displayTitle="none"
-                            search={<Search width="350px" />}
-                        />
-                        <MenuItems
-                            icon={<UserIcon className="fa-w-14" width="20px" height="20px" />}
-                            displayImg="none"
-                            displayTitle="none"
-                            popup={<Popup />}
-                        />
+        <>
+            <div className={`grid__full-width ${isHeaderVisible ? 'header-extinct' : 'header-fixed'}`} style={{ backgroundColor: '#fff' }}>
+                <aside className="header-wrapper">
+                    <Menu>
+                        <div className="header-content">
+                            <MenuItems
+                                to={config.routes.home}
+                                title="home"
+                                displayIcon="none"
+                                displayImg="block"
+                                displayTitle="none"
+                                image={homeLogo}
+                                popupOpen={null}
+                            />
+                            <MenuItems
+                                to={config.routes.mobile}
+                                image={mobileLogo}
+                                title="DI ĐỘNG"
+                                displayIcon="none"
+                                className="header-wrapper-nav-item-phone"
+                                classNameImg="header-wrapper-nav-item-phone-img"
+                                dropdown={<Dropdownlist list={Datamobile} height="170px" width="170px" flexIndex='25%' fontWeight='600' fontSize='1.4rem' />}
+                                popupOpen={null}
+                            />
+                            <MenuItems
+                                to={config.routes.internetTV}
+                                title="INTERNET - TRUYỀN HÌNH"
+                                image={internetLogo}
+                                displayIcon="none"
+                                className="header-wrapper-nav-item-internet"
+                                classNameImg="header-wrapper-nav-item-internet-img"
+                                dropdown={<Dropdownlist list={Datainternet} height="170px" width="250px" flexIndex='25%' fontWeight='600' fontSize='1.4rem' />}
+                                marginLeftDropdown="-22px"
+                                popupOpen={null}
+                            />
+                            <MenuItems
+                                to={config.routes.store}
+                                icon={<StoreIcon className="fa-w-20" width="20px" height="20px" />}
+                                displayImg="none"
+                                displayTitle="none"
+                                popupOpen={null}
+                            />
+                            <MenuItems
+                                icon={<SearchIcon className="fa-w-16" width="20px" height="20px" />}
+                                displayImg="none"
+                                displayTitle="none"
+                                search={<Search width="350px" />}
+                                popupOpen={null}
+                            />
+                            <MenuItems
+                                icon={<UserIcon className="fa-w-14" width="20px" height="20px" />}
+                                displayImg="none"
+                                displayTitle="none"
+                                popupOpen={setOpenOverlay}
+                           
+                            />
+                        </div>
+                    </Menu>
+                </aside>
+            </div>
+
+            <div class="header-wrapper-fix" style={{display:"none"}}>
+                <div class="container-header">
+                    <div class="header-content">
+                        <div class="header-content-closebtn">
+                            <div class="header-content-Mainbtn"></div>
+                        </div>
+                        <a class="header-wrapper-nav-item-logo" href="/">
+                            <img src={homeLogo} alt="oops" />
+                        </a>
+                     
+                         <MenuItems
+                             icon={<UserIcon className="fa-w-14" width="20px" height="20px" />}
+                             displayImg="none"
+                             displayTitle="none"
+                             popupOpen={setOpenOverlay}
+                             
+                         />
                     </div>
-                </Menu>
-            </aside>
-        </div>
+                </div>
+            </div>
+        </>
     );
 }
 export default Header;

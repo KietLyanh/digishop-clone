@@ -1,0 +1,209 @@
+.mobilechild__container{
+    display: block;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    
+
+
+    .mobilechild__title{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 30px;
+        .mobilechild__title-link h4{
+            color: #4d4d4d !important;
+        }
+        .mobilechild__title-link h4:nth-child(2),.mobilechild__title-link h4:nth-child(3)
+        {
+            font-weight: 300 !important;
+        }
+        h4{
+            font-size: 1.4rem;
+            color: #40C3FF;
+        }
+
+        // hover and responsive
+
+        h4:hover{
+            text-decoration-line: underline;
+        }
+    }
+
+    .mobilechild__content{
+
+        display: flex;
+        flex-direction: column; 
+
+        .mobilechild__content-items{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+    .mobilechild__content-res{
+        display: none;
+    }
+
+}
+
+// responsive 
+
+
+@media only screen and (min-width:1536px){
+    .mobilechild__container{
+        width: 100%;
+        max-width: 1520px;
+        margin: auto;
+    }   
+}
+
+
+@media only screen and (max-width:1200px){
+    .mobilechild__container{
+        // margin-right: 20px !important;
+        .mobilechild__content{
+            margin-right: 20px;
+            display: block;
+
+            .mobilechild__content-item{
+                padding: 20px 30px;
+
+                img{
+                    width: 150px !important;
+                    height: 150px !important;
+                }
+            }
+
+            .mobilechild__content-deposit{
+                h3{
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+
+                .mobilechild__content-deposit-money{
+                    div{
+                        gap: 10px;
+                        padding-left: 20px;
+                        label{
+                            font-size: 12px;
+                        }
+                    }
+
+                    button{
+                        margin-left: 15px;
+                    }
+                }
+            }
+
+            .mobilechild__content-detail {
+                margin-right: 20px;
+            }
+        }
+        .mobilechild__content-res{
+           display: none;
+        }
+    }
+}
+
+// responsive tablet 
+
+@media only screen and (max-width:992px){
+    .mobilechild__container{
+        margin-right: 20px;
+        .mobilechild__content{
+            display: none;
+        }
+        .mobilechild__content-res{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            
+
+            .co-lg-9{
+                flex: none;
+                max-width: 100%;
+            }
+
+            .mobilechild__content-item {
+                width: 100%;
+                padding-right: 20px;
+                padding-left: 10px;
+            }
+
+            .mobilechild__content-deposit {
+                .mobilechild__content-deposit-money {
+                    margin-left: 150px;
+                }
+            }
+            
+        }
+    }
+}
+
+// responsive mobile
+
+@media only screen and (max-width:600px){
+    .mobilechild__container{
+        // margin-right: 20px !important;
+        .mobilechild__content{
+            display: none;
+        }
+        .mobilechild__content-res{
+            margin-right: 20px;
+            display: block;
+
+            .mobilechild__content-item{
+                padding: 20px 30px;
+
+                img{
+                    display: none;
+                }
+
+                .mobilechild__content-item-desc{
+                    .mobilechild__content-item-desc-features{
+                        .mobilechild__content-item-desc-btn{
+                            button{
+                                font-size: 0.9rem;
+                                width: 120px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .mobilechild__content-deposit{
+                h3{
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+
+                .mobilechild__content-deposit-money{
+                    margin-left: 60px;
+                    div{
+                        gap: 10px;
+                        padding-left: 0;
+                        
+                        label{
+                            font-size: 12px;
+                        }
+                    }
+
+                    button{
+
+                        margin-left: 15px;
+                    }
+                }
+            }
+
+            .mobilechild__content-detail {
+                margin-right: 20px;
+            }
+        }
+        
+    }
+}
+

@@ -1,0 +1,445 @@
+.hotdeal-col_4 {
+    flex: 0 0 calc(95%/4);
+    max-width: calc(95%/4);
+}
+
+.hotdeal-row-box {
+    /* padding: 0 8px 0; */
+    border-radius: 8px;
+    cursor: pointer;
+    /* padding: 0 10px; */
+    position: relative;
+    /* border: solid red 1px; */
+    height: 100%;
+    
+    box-shadow: 0px 0px 10px rgba(146, 146, 146, 0.25);
+
+    .hotdeal-row-box-content {
+        height: 75%;
+
+        h3 {
+            position: relative;
+            font-size: 30px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: rgb(25, 111, 176);
+            text-align: center;
+            text-wrap: nowrap;
+            line-height: 56px;
+            overflow: hidden;
+            margin: 0;
+            margin-top: 15px;
+        }
+
+        h3::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 75%;
+            background-color: #d0dddd;
+            margin: auto;
+        }
+
+        .hotdeal-row-box-content-img {
+            padding: 10px 17% 0;
+
+            img {
+                width: 100%;
+                /* height: 100%; */
+                margin-bottom: 15px;
+            }
+        }
+
+        .hotdeal-row-box-content-text {
+            position: relative;
+            text-align: center;
+            height: 160px;
+            padding: 0 15% 0;
+            font-size: 1.6rem;
+            line-height: 32px;
+            margin-top: 10px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 5;
+            color: #5c5c5c;
+            /* white-space: nowrap; */
+
+        }
+
+        .hotdeal-row-box-content-text::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            width: 75%;
+            background-color: #d0dddd;
+            margin: auto;
+        }
+
+        .hotdeal-row-box-content-text-price {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 0px 10px 10%;
+            gap: 5px;
+            margin-bottom: 40px;
+
+            h4 {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 1.4rem;
+                font-weight: bold;
+            }
+        }
+
+    }
+
+    .hotdeal-row-box-sold {
+
+        margin-top: 8px;
+        overflow-x: hidden;
+
+
+        .hotdeal-row-box-sold-btn {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            margin-right: 15%;
+            margin-left: 15%;
+
+            button:nth-child(1) {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                /* gap: 3px; */
+
+                text-transform: uppercase;
+                background-color: #fff;
+                border: solid 1px #c4c4c4;
+                border-radius: 100px;
+                font-size: 1.4rem;
+                width: 50%;
+                padding: 8px 0;
+                cursor: pointer;
+                line-height: 18px;
+                text-align: center;
+                transition: all 0.5s ease;
+                transform: translateX(-200px);
+
+                span {
+                    color: #3AA4F6;
+                }
+
+                /* margin-right: calc(64%/2);
+                margin-left: calc(64%/2); */
+
+
+            }
+
+            button:nth-child(1) svg {
+                width: 15px;
+                height: 15px;
+            }
+
+            button:nth-child(2) {
+                color: #fff;
+                text-transform: uppercase;
+                background-color: #3AA4F6;
+                border-style: none;
+                border-radius: 100px;
+                font-size: 1.4rem;
+                width: 50%;
+                padding: 8px 0;
+                cursor: pointer;
+                line-height: 18px;
+                text-align: center;
+                /* margin-left: 53%; */
+                transform: translateX(-58px);
+                transition: all 0.5s ease;
+            }
+
+
+        }
+
+        .hotdeal-row-box-soldout {
+            display: flex;
+            flex-direction: row;
+            /* justify-content: space-between; */
+            align-items: center;
+            /* margin-left: 30px;
+            margin-right: 10px; */
+
+            margin: auto;
+            margin-left: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            /* width: 70%; */
+
+            .hotdeal-row-box-sell {
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+
+                span {
+                    color: #E7007F;
+                    margin-bottom: 2px;
+                }
+
+                .hotdeal-row-box-sell-progress {
+                    height: 5px;
+                    border: none;
+                    width: 88%;
+                    border-radius: 100px;
+                    background-color: #DCDCDC;
+
+                    .value {
+                        height: 100%;
+                        width: 55%;
+                        background-color: #E7007F;
+                        border-radius: 100px;
+                    }
+
+                }
+            }
+
+            .hotdeal-row-box-countdown {
+                display: flex;
+                width: 20%;
+                gap: 5px;
+                flex-wrap: nowrap;
+                /* align-items: center; */
+
+                span {
+                    background: #6b828c;
+                    border-radius: 4px;
+                    color: #fff;
+                    padding: 2px 3px;
+                    font-size: 1.5rem;
+                    height: fit-content;
+                    /* margin-right: 20px; */
+                }
+            }
+        }
+
+    }
+
+    .hotdeal-row-box-hot {
+        position: absolute;
+        top: 0;
+        right: -25px;
+        padding: 5px 10px 12px 17px;
+        min-width: 58px;
+        color: var(--white-color);
+        background: url("./../image/icon-km-2.svg") no-repeat center center;
+        background-size: 100% 100%;
+        font-weight: 700;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+}
+
+
+/*Phần hiệu ứng hover và animtion*/
+
+.hotdeal-row-box:hover {
+    box-shadow: 0 5px 25px 1px #afafaf;
+}
+
+.hotdeal-row-box:hover .hotdeal-row-box-sold-btn button:nth-child(2) {
+    transform: translateX(0px);
+    transition: all 0.5s ease;
+}
+
+
+.hotdeal-row-box-sold-btn button:nth-child(2):hover {
+    opacity: 0.8;
+}
+
+
+.hotdeal-row-box:hover .hotdeal-row-box-sold-btn button:nth-child(1) {
+    transition: all 0.5s ease;
+    transform: translateX(0);
+}
+
+
+.hotdeal-row-box-sold-btn button:nth-child(1):hover {
+    border-color: #3AA4F6;
+}
+
+
+.hotdeal-row-box-sold-btn button:nth-child(1):hover svg {
+    color: #3AA4F6;
+}
+
+.hotdeal-row-box-sold-btn button:nth-child(1):hover span {
+    color: #196fb0;
+}
+
+// responsive
+
+@media only screen and (max-width:992px) {
+
+    
+    .hotdeal-col_6 {
+        flex: 0 0 calc(100%/3);
+        max-width: calc(100%/3);
+    }
+
+
+
+    .hotdeal-row-box {
+        .hotdeal-row-box-content {
+            height: 70%;
+
+            .hotdeal-row-box-content-text {
+                height: 130px;
+                font-size: 1.3rem;
+                line-height: 25px;
+            }
+        }
+
+
+
+        .hotdeal-row-box-sold-btn button:nth-child(2) {
+            transform: translateX(-40px);
+        }
+
+        .hotdeal-row-box-sold {
+            margin-top: 30px;
+
+            .hotdeal-row-box-sold-btn {
+
+                button:nth-child(1),
+                button:nth-child(2) {
+                    width: 60%;
+                    font-size: 1.3rem;
+                    padding: 4px 0;
+                }
+
+                button:nth-child(2) {
+                    transform: translateX(-50px);
+                    transition: all 0.5s ease;
+                }
+            }
+
+            .hotdeal-row-box-soldout {
+                margin: auto;
+                margin-left: 15px;
+                margin-top: 20px;
+                margin-bottom: 20px ;
+
+                .hotdeal-row-box-sell {
+                    width: 60%;
+                }
+
+                .hotdeal-row-box-countdown {
+                    gap: 2px;
+
+                    span {
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+        }
+    }
+    .hotdeal-row-box:hover{
+        .hotdeal-row-box-sold-btn{
+            button:nth-child(2){
+                transform: translateX(0px);
+                transition: all 0.5s ease;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width:768px) {
+    .hotdeal-col_4 {
+        flex: 0 0 calc(50%);
+        max-width: 50%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+
+    
+
+    .hotdeal-col_4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    // .hotdeal-col_6 {
+    //     flex: none;
+    //     max-width: 200px;
+    // }
+
+   .hotdeal-row-box{
+    
+
+    .hotdeal-row-box-content {
+        height: 60%;
+
+        .hotdeal-row-box-content-text {
+            height: 110px;
+            font-size: 1.4rem;
+            line-height: 22px;
+        }
+    }
+
+    .hotdeal-row-box-sold-btn {
+        button:nth-child(1), button:nth-child(2) {
+            width: 65%;
+            font-size: 0.9rem;
+            padding: 4px 0;
+        }
+        // button:nth-child(2) {
+        //     transform: translateX(-37px);
+        // }
+    }
+
+
+    .hotdeal-row-box-sold {
+        margin-top: 30px;
+        margin-bottom: 20px;
+
+        .hotdeal-row-box-soldout {
+            margin: auto;
+            margin-left: 15px;
+            margin-top: 20px;
+
+            .hotdeal-row-box-sell {
+                width: 60%;
+            }
+
+            .hotdeal-row-box-countdown {
+                gap: 2px;
+            }
+
+            span {
+                font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+

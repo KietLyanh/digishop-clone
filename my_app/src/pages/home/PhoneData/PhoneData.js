@@ -1,31 +1,36 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import numeral from 'numeral';
 import './PhoneData.scss';
 import iconTitle from './images/1677836500566ico_didong.png';
-import { PhondataIcon } from '~/components/icons';
+import { PhondataIcon } from '~/components/icons/icons';
+import listmobiledata from '~/api/listmobiledata';
 function PhoneData() {
     const [phoneData,setPhoneData] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch("http://localhost:9999/backend-forReact/listmobiledata");
-            if(!response.ok)
-            {
-                throw new Error("network response was not ok");
-            }
-            const result = await response.json();
-            const jsonString = JSON.stringify(result);
+            const response = await listmobiledata.getAll();
+            const jsonString = JSON.stringify(response);
             const dataArray = JSON.parse(jsonString);
             setPhoneData(dataArray);
         }
         fetchData();
+        // console.log(phoneData[0].detail_treatment);
     },[])
     return (
         <div className="phonedata-container">
             <div className="phonedata-title">
                 <img src={iconTitle} alt="opps" />
                 <h2>Gói cước di động</h2>
-                <a>Gói DATA</a>
-                <a>Gói trả trước</a>
-                <a>Xem tất cả</a>
+                <NavLink>
+                    <p>Gói DATA</p>
+                </NavLink>
+                <NavLink>
+                    <p>Gói trả trước</p>
+                </NavLink>
+                <NavLink>
+                    <p>Xem tất cả</p>
+                </NavLink>
             </div>
 
             <div className="phonedata-row">
@@ -54,13 +59,15 @@ function PhoneData() {
                                         </p>
                                     </div>
                                     <div className="phonedata-row-box-price">
-                                        <h4>{info.standard_price}</h4>
+                                        <h4>{numeral(info.standard_price).format('0,0')}</h4>
                                         <p>đ/lượt</p>
                                     </div>
+                                    <NavLink to={`/di-dong/${info.standard_id}/${info.standard_name}`}>
                                     <div className="phonedata-row-box-btn">
-                                        <span>Đăng ký</span>
-                                        <PhondataIcon />
+                                            <span>Xem thêm</span>
+                                            <PhondataIcon />
                                     </div>
+                                    </NavLink>
                                 </div>
                             </div>
                         </div>
