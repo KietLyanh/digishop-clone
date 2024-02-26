@@ -1,0 +1,73 @@
+@import 'normalize.css';
+
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+}
+
+*{
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto',sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color:  #f4f7fb;
+}
+
+/* .grid{
+    width: 1520px;
+    
+    margin: 0 auto; /*để căn giữa bố cục
+    
+} */
+body{
+    margin: 0;
+}
+
+.grid__full-width{
+    width: 100% !important;
+}
+
+
+a{
+    text-decoration: none   ;
+}
+
+p{
+    margin: 0 0;
+}
+
+.card-2{
+    flex:0 0 calc((100% - 30px)/2);
+    max-width: calc((100% - 30px)/2) ;
+}
+
+.card-1{
+    flex: 0 0 calc(100% - 30px);
+    max-width: calc(100% - 30px);
+}
+
+.col-md-4{
+    flex: 0 0 calc(100%/3);
+    max-width: calc(100%/3);
+}
+
+.col-md-8{
+    flex: 0 0 calc(100%*2/3);
+    max-width: calc(100%*2/3);
+}
+
+.col-md-3{
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-md-9{
+    flex: 0 0 75%;
+    max-width: 75%;
+}

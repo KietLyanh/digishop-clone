@@ -1,0 +1,109 @@
+.hotdeal-container {
+    // margin-left: 15px;
+    // margin-right: 15px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    // height: 100%;
+
+    /* hotdeal-title */
+    .hotdeal-title {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            font-size: 32px;
+            color: #0095d9;
+            font-weight: 600;
+        }
+
+        img {
+            margin-right: 10px;
+        }
+    }
+
+
+    .hotdeal-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 20px;
+        box-sizing: content-box;
+        /* max-width: calc(100%-30px); */
+        height: 78%;
+        max-height: 700px;
+        z-index: 1;
+        gap: 20px;
+        // margin-left: 15px;
+        margin-right: 15px;
+        // overflow: hidden;
+        padding: 15px;
+        transition: ease 0.3s;
+    }
+
+
+    /* hotdeal-title */
+}
+
+
+
+
+
+/* hotdeal-responsive */
+
+@media only screen and (max-width:992px) {
+    .hotdeal-container {
+
+        max-width: 750px;
+        margin: auto;
+
+        .hotdeal-row {
+            height: 70%;
+            max-height: 600px;
+        }
+    }
+
+
+
+
+}
+
+@media only screen and (max-width:768px) {
+    .hotdeal-container {
+        max-width: 650px;
+        margin: auto;
+
+        .hotdeal-row{
+            height: 100%;
+            justify-content: flex-start;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width:600px) {
+    .hotdeal-container {
+        max-width: 350px;
+        margin: auto;
+
+        .hotdeal-title h2 {
+            font-size: 18px;
+        }
+
+
+        .hotdeal-row {
+            height: 65%;
+            max-height: 600px;
+            justify-content: flex-start;
+            padding-left: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+
+
+
+}
+

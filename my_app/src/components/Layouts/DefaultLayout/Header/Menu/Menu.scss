@@ -1,0 +1,128 @@
+.container-header {
+    margin-right: 9.6px;
+    margin-left: 9.6px;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 100%;
+    // position: relative;
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* gap: ; */
+        height: 100%;
+        
+
+      
+        .header-wrapper-nav-item-phone,
+        .header-wrapper-nav-item-internet {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 1.4rem;
+            font-weight: 500;
+            gap: 8px;
+            cursor: pointer;
+            color: #000;
+            z-index: 1000;
+        
+        }
+        .dropdownList {
+            
+            position: absolute;
+            // top: 0;
+            // left: 0;
+            // left: 0;
+            // bottom: -50px;
+            margin-left: -35px;
+            padding-top: 24px;
+            -webkit-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+            z-index: 1000;
+        }
+
+
+        .search{
+            position: absolute;
+            right: 0;
+            margin-right: 15px;
+            padding-top: 20px;
+            -webkit-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+            z-index: 1000;
+        }
+
+        .popup{
+           
+        }
+
+        .header-wrapper-nav-item-phone-img,
+        .header-wrapper-nav-item-internet-img {
+            max-width: 20px;
+            max-height: 20px;
+        }
+
+        .fa-w-20,
+        .fa-w-16,
+        .fa-w-14 {
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        // xu ly hover
+        .header-wrapper-nav-item-phone::after,
+        .header-wrapper-nav-item-internet::after {
+            content: '';
+            width: 0%;
+            left: 3px;
+            bottom: -15px;
+            height: 1.5px;
+            position: absolute;
+            -webkit-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+        }
+
+      
+
+        .header-wrapper-nav-item-phone:hover,
+        .header-wrapper-nav-item-internet:hover {
+            color: #0095d9;
+        }
+   
+
+        .header-wrapper-nav-item-phone:hover .header-wrapper-nav-item-phone-img {
+            color: #0095d9;
+        }
+
+        .header-wrapper-nav-item-phone:hover::after {
+            width: 72%;
+            background-color: #0095d9;
+        }
+
+        .header-wrapper-nav-item-internet:hover::after {
+            width: 80%;
+            background-color: #0095d9;
+        }
+
+        .header-wrapper-top-a:hover .header-wrapper-top-icon svg #headset-mic-path {
+            fill: #0095d9;
+            /* Màu của biểu tượng khi hover */
+        }
+
+        .fa-w-20:hover,
+        .fa-w-16:hover,
+        .fa-w-14:hover {
+            color: #0095d9;
+        }
+
+        .header-wrapper-nav-item-internet:hover img,
+        .header-wrapper-nav-item-phone:hover img {
+            filter: invert(60%) sepia(100%) saturate(85) hue-rotate(205deg);
+        }
+    }
+}

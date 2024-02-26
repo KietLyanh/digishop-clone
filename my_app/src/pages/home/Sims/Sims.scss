@@ -1,0 +1,505 @@
+.sim-container{
+    // margin-right: 15px;
+    // margin-left: 15px;
+
+    h3{
+        text-transform: uppercase;
+    }
+    /* sim title */
+
+    .sim-title{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 10px;
+
+        img{
+            width: 17px;
+            height: 17px;
+        }
+
+        h2{
+            font-size: 32px;
+            color: #0095d9;
+            font-weight: 600;
+            font-style: normal;
+        }
+    }
+
+    /* sim title */
+
+    .sim-row-noresponsive{
+        background: #ffffff;
+        box-shadow: 0px 4px 30px rgba(149, 149, 149, 0.25);
+        border-radius: 8px;
+        display: flex;
+        margin-top: 20px;
+        height: 594px;
+
+
+        .sim-row-items{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow-y: hidden;
+            z-index: 1;
+        
+        
+            .sim-row-items-icon{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    z-index: 999;
+                    bottom: 15px;
+                    right: 15px;
+                    gap: 10px;
+                .sim-row-items-transfomicon{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color:#c4c4c4;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    border: none;
+                    cursor: pointer;
+                    outline: none;
+                }
+                .sim-row-items-transfomicon2{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color:#c4c4c4;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    transform: rotate(180deg);
+                    cursor: pointer;
+                    border: none;
+                    outline: none;
+                }
+
+                .active {
+                    background-color: #0095d9;
+                }
+            }
+
+            .sim-row-items-tranform{
+                height: 100%;
+                // overflow: scroll;
+                overflow-y: hidden;
+                
+
+                .sim-row-items-tranform-item{
+                    height: 100%;
+                    display: block;
+                    transition: 0.5s linear;
+                    .sim-row-item{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        width: 100%;
+                        min-height: calc(100%/3);
+                        padding-bottom: 10px;
+                        padding-right: 10px;
+                        padding-left: 10px;
+                        padding-top: 5px;
+                        border-bottom: solid 1px #eaeff7;
+                        overflow: hidden;
+                        cursor: pointer;
+                        /* border: solid red 1px; */
+    
+                        h3{
+                            color: #40c3ff;
+                            /* width: 250px; */
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            font-size: 2.8rem;
+                        }
+    
+                        img{
+                            height: 80px;
+                            width: 80px;
+                            margin-right: 15px;
+                            background-color: rgba(228, 246, 255, 0.9);
+                            border-radius: 50%;
+                        }
+    
+                        .sim-row-item-desc{
+                            width: 59%;
+                            font-size: 1.5rem;
+                            line-height: 20px;
+                            padding-bottom: 20px;
+    
+                            p{
+                                overflow: hidden;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 4;
+                                color: #5c5c5c;
+                            }
+                        }
+                    }
+    
+                    .sim-row-item:hover h3{
+                        color: #196fb0;
+                    }
+    
+                    .sim-row-item:hover{
+                        background-color: rgba(64, 192, 255, 0.3);
+                    }
+                }
+            }
+            
+            
+        }
+
+        .sim-row-desc{
+            position: relative;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0px 4px 30px rgba(149, 149, 149, 0.5);
+            background-color: #3aa4f6;
+            padding: 3%;
+
+           
+
+            .sim-row-desc-container{
+                // position: relative;
+                margin-bottom: 1rem;
+
+                h3{
+                    width: 100%;
+                    font-size: 2.8rem;
+                }
+
+                p{
+                    font-size: 1.6rem;
+                    line-height: 26px;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 8;
+                }
+            }
+
+            hr{
+                border: none;
+                width: 40%;
+                height: 1px;
+                background: #fff;
+                border-radius: 5px;
+                margin: 15% auto 0;
+            }
+
+            .sim-row-desc-p{
+                margin-top: 15px;
+                font-size: 2.8rem;
+                font-weight: bold;
+            }
+            
+            
+            .sim-row-desc-m{
+                font-size: 2rem;
+            }
+
+            svg{
+                position: absolute;
+                bottom: 20px;
+                right: 30px;
+                color: #fff;
+                cursor: pointer;
+            }
+           
+        }
+
+
+        .sim-phonenumber-container{
+            padding: 3% 0;
+            background-color: #fff;
+            height: 100%;
+            border-radius: 0px 8px 8px 0px;
+            
+
+            .sim-phonenumber-table{
+                height: 80%;
+                padding: 0px 5%;
+                overflow: hidden;
+                margin-bottom: 50px;
+
+                table{
+                    font-size: 15px;
+                    width: 100%;
+                    border-radius: 5px;
+                    border-spacing: none;
+                    border-collapse: collapse !important;
+                    background-color: #fff;
+                    color: #5c5c5c;
+    
+                    tr{
+                        border-bottom: 1px solid rgba(208, 220, 221, 0.6);
+    
+                        td{
+                            padding: 13.5px;
+                            text-align: center;
+                            font-weight: bold;
+            
+                            .sim-phonenumber-td{
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                align-items: center;
+                                gap: 10px;
+    
+                                input
+                                {
+                                    width: 16px;
+                                    height: 16px;
+                                    border: solid 1px #c4c4c4;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+            
+                        td:nth-child(2)
+                        {
+                            /* margin: 0; */
+                            color: #8b8b8b;
+                        }
+                    }
+                }
+            }
+
+            .sim-phonenumber-btn {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+                margin-bottom: 15px;
+
+                button{
+                    border-radius: 100px;
+                    border: solid 1px #c4c4c4;
+                    background-color: transparent;
+                    padding: 8px 15px;
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    color: #5c5c5c;
+                    cursor: pointer;
+                 }
+
+                 button:nth-child(2){
+                    background-color: #3aa4f6;
+                    border: none;
+                    color: #fff;
+                }
+
+                button:nth-child(2):hover{
+                    opacity: 0.8;
+                }
+                
+                button:nth-child(1):hover{
+                    background-color: #eaeaea;
+                }
+            }
+
+        }
+
+    }
+}
+
+
+.sim-row-responsive{
+    display: none;
+}
+
+.col-3-sim{
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+
+.col-6-sim{
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-3-simMobile{
+    flex: 0 0 calc(100%/3);
+    max-height: calc(100%/3);
+}
+
+
+/*Phần hiệu ứng hover và animation*/
+
+
+/* sim-responsive */
+
+    @media only screen and (max-width:992px)
+    {
+        .sim-container{
+            max-width: 720px;
+            margin: auto;
+
+            .sim-row-noresponsive{
+                display: none;
+            }
+
+            .sim-row-responsive{
+                display: block;
+                overflow-y: scroll;
+                height: 594px;
+                border-radius: 8px;
+
+                .sim-item-1{
+                    background-color: rgba(64, 192, 255, 0.3);
+                }
+        
+                .sim-row-item {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+                    padding-bottom: 10px;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    padding-top: 5px;
+                    border-bottom: solid 1px #eaeff7;
+                    overflow: hidden;
+                    cursor: pointer;
+
+                    h3{
+                        color: #40c3ff;
+                        /* width: 250px; */
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        font-size: 2.8rem;
+                    }
+
+                    img{
+                        height: 50px;
+                        width: 50px;
+                        margin-right: 15px;
+                        background-color: rgba(228, 246, 255, 0.9);
+                        border-radius: 50%;
+                    }
+
+                    .sim-row-item-desc{
+                        width: 59%;
+                        font-size: 1.5rem;
+                        line-height: 20px;
+                        padding-bottom: 20px;
+
+                        p{
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 4;
+                            color: #5c5c5c;
+                        }
+                    }
+                }
+
+                .sim-row-desc{
+                    color: #fff;
+                    text-align: center;
+                    box-shadow: 0px 4px 30px rgba(149, 149, 149, 0.5);
+                    background-color: #3aa4f6;
+                    padding: 3%;
+        
+                   
+        
+                    .sim-row-desc-container{
+                        position: relative;
+                        margin-bottom: 1rem;
+        
+                        h3{
+                            width: 100%;
+                            font-size: 2.8rem;
+                        }
+        
+                        p{
+                            font-size: 1.6rem;
+                            line-height: 26px;
+                            overflow: hidden;
+                            display: -webkit-box;
+                            -webkit-box-orient: vertical;
+                            -webkit-line-clamp: 8;
+                        }
+                    }
+        
+                    hr{
+                        border: none;
+                        width: 40%;
+                        height: 1px;
+                        background: #fff;
+                        border-radius: 5px;
+                        margin: 15% auto 0;
+                    }
+        
+                    .sim-row-desc-p{
+                        margin-top: 15px;
+                        font-size: 2.8rem;
+                        font-weight: bold;
+                    }
+                    
+                    
+                    .sim-row-desc-m{
+                        font-size: 2rem;
+                    }
+                   
+                }
+        
+                
+                ::-webkit-scrollbar-track {
+                    box-shadow: inset 0 0 5px grey; 
+                    border-radius: 10px;
+                }
+            }
+    
+            
+        }
+
+        .col-3-sim{
+            flex: none;
+            max-width: 100%;
+        }
+
+       
+    }
+
+    @media only screen and (max-width:768px)
+    {
+        .sim-container{
+            max-width: 650px;
+        }
+    }
+
+    @media only screen and (max-width:600px)
+    {
+        .sim-container{
+            max-width: 350px;
+            .sim-title h2{
+                font-size: 18px;
+            }
+        }
+
+        
+
+
+    }
+
+/* sim-responsive */
