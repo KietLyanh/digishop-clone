@@ -6,6 +6,7 @@
 package controller;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import dal.AllDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,6 +15,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 import model.Sim;
 
@@ -65,10 +67,46 @@ public class ListSimName extends HttpServlet {
         try{
             AllDAOImpl s = new AllDAOImpl();
             List<Sim> list = s.getSimNames();
-            Gson gson = new Gson();
-            String json = gson.toJson(list);
-            out.write(json);
-            
+            List<Sim> listByKeword = new ArrayList<>();
+            String page = request.getParameter("page");
+            String limit = request.getParameter("limit");
+            String keyword = request.getParameter("keyword");
+            if(keyword == null)
+            {
+                listByKeword.addAll(list);
+            }
+            else {
+                for(Sim x : list)
+                {
+                    if(x.getSim_number_name().contains(keyword)){
+                        listByKeword.add(x);
+                    }
+                }
+            }
+            int pageNumber = (page == null) ? 1 : Integer.parseInt(page);
+            int limitQuantity = (limit == null) ? listByKeword.size() : Integer.parseInt(limit);
+            int start,end;
+            start = (pageNumber-1)*limitQuantity;
+            end = Math.min(pageNumber*limitQuantity, listByKeword.size());
+            int totalPage;
+            if(listByKeword.size() % limitQuantity == 0)
+            {
+                totalPage = (int) listByKeword.size()/limitQuantity;
+            }
+            else {
+                totalPage = (int) (Math.ceil(listByKeword.size()/limitQuantity) + 1);
+            }
+            List<Sim> listPag = s.getListSimData(listByKeword, start, end);
+            JsonObject responseJson = new JsonObject();
+            responseJson.add("data", new Gson().toJsonTree(listPag));
+            JsonObject paginationJson = new JsonObject();
+            paginationJson.addProperty("page", pageNumber);
+            paginationJson.addProperty("totalPages", totalPage);
+            paginationJson.addProperty("limit", limitQuantity);
+//            paginationJson.addProperty("start", start+1);
+//            paginationJson.addProperty("end", end);
+            responseJson.add("pagination", paginationJson);
+            out.write(responseJson.toString());
         }
         catch(Exception e)
         {

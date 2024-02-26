@@ -26,5 +26,6 @@ public interface AllDAO {
     List<Standard_packages> getMobileStandard(List<Standard_packages> list,int start,int end);
     List<Standard_packages> getAllMobileStandards(String orderby);
     Standard_packages getMobileStandardByName(String name);
+    List<Sim> getListSimData(List<Sim> list,int start,int end);
     
 }

@@ -76,12 +76,12 @@ public class AllDAOImpl implements AllDAO {
     public List<Sim> getSimNames() {
      List<Sim> list = new ArrayList<>();
      try( Connection cnt = DBcontextSims.getConnection(); 
-             PreparedStatement st = cnt.prepareStatement("select sim_number_name from sim_numbers");  
+             PreparedStatement st = cnt.prepareStatement("select * from sim_numbers");  
              ResultSet rs = st.executeQuery()
              ){
          while(rs.next())
          {
-             Sim s = new Sim(rs.getString("sim_number_name"));
+             Sim s = new Sim(rs.getString("sim_number_name"),rs.getString("sim_number_type"),rs.getInt("sim_number_id"),rs.getInt("sim_number_fee"),rs.getInt("sim_number_time"));
              list.add(s);
          }
      }
@@ -97,7 +97,7 @@ public class AllDAOImpl implements AllDAO {
       List<MobileData> list = new ArrayList<>();
       try(
               Connection cnt = DBcontextPrepair_Package.getConnection();
-              PreparedStatement st = cnt.prepareStatement("SELECT standard_name,standard_price,detail_treatment FROM \n" +
+              PreparedStatement st = cnt.prepareStatement("SELECT standard_name,standard_price,detail_treatment,standard_id FROM \n" +
                 "standard_package INNER JOIN details WHERE standard_package.detail_id = details.detail_id");
               ResultSet rs = st.executeQuery()
           ){
@@ -106,7 +106,8 @@ public class AllDAOImpl implements AllDAO {
               MobileData mb = new MobileData(
                       rs.getString("standard_name"), 
                       rs.getString("detail_treatment"),
-                      rs.getInt("standard_price"));
+                      rs.getInt("standard_price"),
+                      rs.getString("standard_id"));
               list.add(mb);
           }
       }
@@ -126,6 +127,8 @@ public class AllDAOImpl implements AllDAO {
         }
         return arr;
     }
+    
+    
 
     @Override
     public List<Standard_packages> getAllMobileStandards(String orderby) {
@@ -191,6 +194,16 @@ public class AllDAOImpl implements AllDAO {
         return null;
     }
     
+    @Override
+    public List<Sim> getListSimData(List<Sim> list, int start, int end) {
+        List<Sim> arr = new ArrayList<>();
+        for(int i = start; i < end; i++)
+        {
+            arr.add(list.get(i));
+        }
+        return arr;
+    }
+    
 //       public static void main(String[] args) {
 //        AllDAOImpl c = new AllDAOImpl();
 //        Standard_packages list = c.getMobileStandardByName("VD120N");
@@ -203,6 +216,8 @@ public class AllDAOImpl implements AllDAO {
 //        AllDAOImpl c = new AllDAOImpl();
 //        List<MobileStandard> list = c.get
 //    }
+
+    
 
     
 
