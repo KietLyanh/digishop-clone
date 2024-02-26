@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * @author Admin
  */
 public class DBcontextSims {
-           public static Connection getConnection() {
+       public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String jdbcUrl = "jdbc:mysql://localhost:3306/Sims";

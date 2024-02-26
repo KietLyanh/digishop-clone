@@ -83,7 +83,6 @@ public class GetAllPackages extends HttpServlet {
             }
             Gson gson = new Gson();
             if (keyword == null) {
-                
                 String json = gson.toJson(list);
                 out.write(json);
             } else {
