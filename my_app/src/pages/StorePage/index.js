@@ -6,7 +6,7 @@ function StorePage() {
         <div className="store__container grid__full-width">
 
             <div className="store__map grid__full-width">
-                <div className="store__map-search col-md-4">
+                <div className="store__map-search col-md-4 col-12">
                     <input className="store__map-search-name store__input" type='text' placeholder='Tên cửa hàng và địa điểm...'>
                     </input>
 
@@ -33,7 +33,7 @@ function StorePage() {
                     </div>
                 </div>
 
-                <div className="store__map-place col-md-8">
+                <div className="store__map-place col-md-8 col-12">
                     <h1>GOOGLE MAP</h1>
                 </div>
             </div>
@@ -44,7 +44,7 @@ function StorePage() {
 
                 <div className="store__sp-contact">
 
-                    <div className='store__sp-contact-phone col-md-4'>
+                    <div className='store__sp-contact-phone col-12 col-md-6 col-xl-4'>
                         <h4>Tổng đài</h4>
                         <div>
                             <h4>Internet/Truyền hình MyTV</h4>
@@ -61,7 +61,7 @@ function StorePage() {
                         </div>
 
                     </div>
-                    <div className='store__sp-contact-sms col-md-4'>
+                    <div className='store__sp-contact-sms col-12 col-md-6 col-xl-4'>
                         <div>
                             <h4>Email:</h4>
                             <Button lv="lv2" color="#fff" border="none" backgroundColor="#3aa4f6" text="cskh@vnpt.vn" height="35px" fontWeight="300" fontSize="1.5rem" />
@@ -90,7 +90,7 @@ function StorePage() {
                         </div>
 
                     </div>
-                    <div className='store__sp-contact-internet col-md-4'>
+                    <div className='store__sp-contact-internet col-12 col-md-6 col-xl-4'>
                         <h4>Cộng đồng</h4>
                         <div>
                             <h4>Fanpage:</h4>
@@ -105,20 +105,20 @@ function StorePage() {
                 </div>
 
                 <div className="store__sp-site" >
-                    <div className="store__sp-site-item col-md-3">
+                    <div className="store__sp-site-item col-md-3 col-md-6 col-12">
                         <StoreIconComputer height="130px" width="130px" />
                         <h4>Ưu đãi - Khuyến mãi</h4>
                     </div>
-                    <div className="store__sp-site-item col-md-3">
+                    <div className="store__sp-site-item col-md-3 col-md-6 col-12">
                         <StoreIconSearch height="130px" width="130px" />
                         <h4>Câu hỏi thường gặp</h4>
                     </div>
-                    <div className="store__sp-site-item col-md-3">
+                    <div className="store__sp-site-item col-md-3 col-md-6 col-12">
 
                         <StoreIconWoman height="130px" width="130px" />
                         <h4>Live chat online</h4>
                     </div>
-                    <div className="store__sp-site-item col-md-3">
+                    <div className="store__sp-site-item col-md-3 col-md-6 col-12">
 
                         <StoreIconMobile height="130px" width="130px" />
                         <h4>Chuyển mạng giữ số</h4>

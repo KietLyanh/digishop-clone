@@ -5,9 +5,9 @@
 
     .support__img img{
         max-width: 100%;
-    height: auto;
-    width: 100%;
-    min-height: 110px;
+        height: auto;
+        width: 100%;
+        min-height: 110px;
     }
   
     .support__sp {
@@ -27,16 +27,17 @@
             display: flex;
             // flex-wrap: wrap;
             flex-direction: row;
-            justify-content: center;
             align-items: center;
+            justify-content: flex-start;
             margin-left: 50px;
             // padding-right: 80px;
             width: 100%;
-            height: 350px;
+            // height: 350px;
             // min-width: 450px;
             margin-bottom: 30px;
             margin-top: 40px;
             flex-wrap: wrap;
+            gap: 30px;
             // box-sizing: border-box;
 
             h4 {
@@ -50,10 +51,10 @@
                 // height: 50px;
                 background-color: #fff;
                 border-radius: 10px;
-                margin-right: 20px;
+                // margin-right: 20px;
                 padding-top: 30px;
                 padding-left: 20px;
-                
+                max-width: 450px;
                 height: 100%;
                 min-height: 300px;
                 position: relative;
@@ -219,10 +220,7 @@
 }
 
 @media only screen and (max-width:1200px){
-    .col-md-4{
-        flex: 0 0 calc(50% - 50px) !important;
-        max-width: calc(50% - 50px) !important;
-    }
+    
 
     .support__container{
         .support__sp{
@@ -234,5 +232,55 @@
         }
     }
     
+}
+
+@media only screen and (max-width:992px){
+    .support__container{
+        .support__sp{
+            .support__sp-contact{
+                
+                .support__sp-contact-phone,
+                .support__sp-contact-sms,
+                .support__sp-contact-internet {
+                    max-width: 350px;
+                }
+            }
+
+        }
+    }
+    
+}
+
+@media only screen and (max-width:600px){
+    .support__container{
+        .support__sp{
+            h1{
+                font-size: 2.2rem;
+            }
+            .support__sp-contact{
+                
+                .support__sp-contact-phone,
+                .support__sp-contact-sms,
+                .support__sp-contact-internet {
+                    max-width: 300px;
+                }
+
+                .support__sp-contact-sms{
+                    .support__sp-contact-sms-cnt{
+                        flex-wrap: wrap;
+                        gap: 20px;
+                        
+                    }
+                }
+
+                .support__sp-contact-internet{
+                    .lv3{
+                        width: 250px !important;
+                    }
+                }
+            }
+
+        }
+    }
 }
 

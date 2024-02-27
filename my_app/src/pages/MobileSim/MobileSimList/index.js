@@ -96,7 +96,7 @@ function MobileSimList() {
                         {
                             simData?.map((item,index) => (
                                 <tr key={index}>
-                                    <td>{index+1}</td>
+                                    <td>{item.sim_number_id}</td>
                                     <td className="blue-bold">{item.sim_number_name}</td>
                                     <td className='d-lg-table-cell d-none'>{item.sim_number_type}</td>
                                     <td className='d-lg-table-cell d-none'>{item.sim_number_fee} đ/tháng</td>

@@ -3,8 +3,8 @@ import './MobileChildItems.scss';
 import imgAvt from "~/pages/MobilePage/images/1689580046873VD-17.jpg";
 import numeral from "numeral";
 
-function MobileChildItems({ all_packages, setValueOnChange }) {
-    const list = [30,90, 180, 360];
+function MobileChildItems({ all_packages, setValueOnChange, time_limits }) {
+    
     return (
         <div className="mobilechild__content-item co-lg-9">
 
@@ -29,7 +29,7 @@ function MobileChildItems({ all_packages, setValueOnChange }) {
 
                     <div className="mobilechild__content-item-desc-btn">
                     
-                      {list.map((number,index) => (
+                      {time_limits.map((number,index) => (
                           <button 
                           key={index}
                           onClick={() => setValueOnChange(number)}

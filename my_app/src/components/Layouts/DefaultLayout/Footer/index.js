@@ -9,6 +9,7 @@ import tiktok from "./images/tiktok-ic.png"
 import zalo from "./images/zalo.png"
 import logo from "./images/logo.png"
 import notice from "./images/dathongbao_bct.png"
+import config from "~/config";
 function Footer() {
 
   const menu = ["Giới thiệu", "Tin tức - khuyến mại", "Câu hỏi thường gặp", "Điều khoản"];
@@ -54,31 +55,31 @@ function Footer() {
               <h6>Menu</h6>
               <ul>
                 <li>
-                  <a>Trang chủ</a>
+                  <NavLink to={config.routes.home} ><p>Trang chủ</p></NavLink>
                 </li>
                 <li>
-                  <a>Di động</a>
+                  <NavLink to={config.routes.mobile}><p>Di động</p></NavLink>
                 </li>
                 <li>
-                  <a>Internet - Truyền hình</a>
+                  <NavLink to={config.routes.internetTV}><p>Internet - Truyền hình</p></NavLink>
                 </li>
                 <li>
-                  <a>Chuyển mạng giữ số</a>
+                  <p>Chuyển mạng giữ số</p>
                 </li>
                 <li>
-                  <a>Tin tức</a>
+                  <p>Tin tức</p>
                 </li>
               </ul>
               <h6>Mạng xã hội</h6>
               <div className="col-3-img-social">
-                <a>
+                <p>
                   <img src={fb} alt="opps" />
-                </a>
-                <a>
+                </p>
+                <p>
                   <img src={youtube} alt="opps" />
-                </a>
-                <a> <img src={zalo} alt="opps" /></a>
-                <a>
+                </p>
+                <p> <img src={zalo} alt="opps" /></p>
+                <p>
                   <img
                     src={tiktok}
                     alt="opps"
@@ -86,8 +87,8 @@ function Footer() {
                       width: "20px",
                       height: "20px"
                     }}
-                  /></a>
-                <a>
+                  /></p>
+                <p>
                   <img
                     src={insta}
                     alt="opps"
@@ -95,38 +96,38 @@ function Footer() {
                       width: "20px",
                       height: "20px"
                     }}
-                  /></a>
+                  /></p>
               </div>
             </div>
             <div className="col-3">
               <h6>Chính sách và điều khoản</h6>
               <ul>
                 <li>
-                  <a>Tiêu chuẩn chất lượng sản phẩm/ dịch vụ</a>
+                  <p>Tiêu chuẩn chất lượng sản phẩm/ dịch vụ</p>
                 </li>
                 <li>
-                  <a>Điều khoản chung</a>
+                  <p>Điều khoản chung</p>
                 </li>
                 <li>
-                  <a>Chính sách giao hàng</a>
+                  <p>Chính sách giao hàng</p>
                 </li>
                 <li>
-                  <a>Chính sách thanh toán</a>
+                  <p>Chính sách thanh toán</p>
                 </li>
                 <li>
-                  <a>Chính sách bảo mật thanh toán</a>
+                  <p>Chính sách bảo mật thanh toán</p>
                 </li>
                 <li>
-                  <a>Chính sách đổi trả sản phẩm/dịch vụ</a>
+                  <p>Chính sách đổi trả sản phẩm/dịch vụ</p>
                 </li>
                 <li>
-                  <a>Chính sách bảo mật thông tin cá nhân</a>
+                  <p>Chính sách bảo mật thông tin cá nhân</p>
                 </li>
                 <li>
-                  <a>Quy trình giải quyết khiếu nại</a>
+                  <p>Quy trình giải quyết khiếu nại</p>
                 </li>
                 <li>
-                  <a>Quy trình mua bán</a>
+                  <p>Quy trình mua bán</p>
                 </li>
               </ul>
             </div>
