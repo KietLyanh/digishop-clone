@@ -17,7 +17,7 @@ function SupportPage()
 
                 <div className="support__sp-contact">
 
-                    <div className='support__sp-contact-phone col-md-4'>
+                    <div className='support__sp-contact-phone col-12 col-md-6 col-xl-4'>
                         <h4>Tổng đài</h4>
                         <div>
                             <h4>Internet/Truyền hình MyTV</h4>
@@ -34,7 +34,7 @@ function SupportPage()
                         </div>
 
                     </div>
-                    <div className='support__sp-contact-sms col-md-4'>
+                    <div className='support__sp-contact-sms col-12 col-md-6 col-xl-4'>
                         <div>
                             <h4>Email:</h4>
                             <Button lv="lv2" color="#fff" border="none" backgroundColor="#3aa4f6" text="cskh@vnpt.vn" height="35px" fontWeight="300" fontSize="1.5rem" />
@@ -44,13 +44,13 @@ function SupportPage()
                             <div  className="support__sp-contact-sms-cnt">
                                 <div className="support__sp-contact-sms-cnt-ico">
                                     <div className="icon">
-                                        <StoreIconLiveChat height="30px" width="30px"/>
+                                        <StoreIconLiveChat height="30px" width="30px" className="icon-live"/>
                                     </div>
                                     <h5>Livechat</h5>
                                 </div>
                                 <div className="support__sp-contact-sms-cnt-ico">
                                     <div className="icon">
-                                        <StoreIconTele height="30px" width="30px"/>
+                                        <StoreIconTele height="30px" width="30px" className="icon-tele"/>
                                     </div>
                                     <h5>Livechat</h5>
                                 </div>
@@ -63,7 +63,7 @@ function SupportPage()
                         </div>
 
                     </div>
-                    <div className='support__sp-contact-internet col-md-4'>
+                    <div className='support__sp-contact-internet col-12 col-md-6 col-xl-4'>
                         <h4>Cộng đồng</h4>
                         <div>
                             <h4>Fanpage:</h4>

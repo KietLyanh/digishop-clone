@@ -122,13 +122,13 @@ function Header({setOpenOverlay}) {
                 </aside>
             </div>
 
-            <div class="header-wrapper-fix" style={{display:"none"}}>
-                <div class="container-header">
-                    <div class="header-content">
-                        <div class="header-content-closebtn">
-                            <div class="header-content-Mainbtn"></div>
+            <div className={`${isHeaderVisible ? 'header-wrapper-extinct' : 'header-wrapper-fix'}`} style={{display:"none"}}>
+                <div className="container-header">
+                    <div className="header-content">
+                        <div className="header-content-closebtn">
+                            <div className="header-content-Mainbtn"></div>
                         </div>
-                        <a class="header-wrapper-nav-item-logo" href="/">
+                        <a className="header-wrapper-nav-item-logo" href="/">
                             <img src={homeLogo} alt="oops" />
                         </a>
                      

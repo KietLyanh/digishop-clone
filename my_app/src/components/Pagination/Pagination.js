@@ -11,6 +11,7 @@ function Pagination({ start, pagination, setCurrentIndex, isOpen, timeoutRef, on
     }
     const handleOnChangeValue = (newpage) => {
           onChangeValue(newpage)
+          
     }
      color = color === "white" ? "#fff" : "#007aff";
     // const isOpen = false

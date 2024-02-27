@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./MobileChildPage.scss"
 import { NavLink } from "react-router-dom";
-import getPackagesByDate from "~/api/listmobilestandard";
 import { useParams } from "react-router-dom";
 import MobileChildItems from "./MobileChildItems";
 import MobileChildDeposit from "./MobileChildDeposit";
@@ -15,6 +14,7 @@ function MobileChildPage() {
     const { package_id, package_name } = useParams();
     // console.log(package_id,date);
     const [allPackages, setAllPackage] = useState(null);
+    const [timeLimit,setTimeLimit] = useState([]);
     const [filterChild, setFilterChild] = useState({ package_id: package_id, package_name: package_name });
     // console.log(filterChild);
     // xu ly du lieu all package
@@ -24,7 +24,9 @@ function MobileChildPage() {
                 const response = await Listmobilestandard.getPackagesByDate(filterChild);
                 if (response) {
                     // console.log(response);
-                    setAllPackage(response);
+                    const {package_data, time_limit} = response;
+                    setAllPackage(package_data);
+                    setTimeLimit(time_limit);
                 } else {
                     console.error("Invalid response:", response);
                 }
@@ -91,15 +93,13 @@ function MobileChildPage() {
                     <MobileChildItems
                         all_packages={allPackages}
                         setValueOnChange={setValueOnChange}
+                        time_limits={timeLimit}
                     />
 
                     {/* MobileChildDeposit */}
                     <MobileChildDeposit />
 
                 </div>
-
-
-
 
                 {/* MobileChildDetail */}
                 <MobileChildDetail
@@ -113,6 +113,7 @@ function MobileChildPage() {
                 <MobileChildItems
                     all_packages={allPackages}
                     setValueOnChange={setValueOnChange}
+                    time_limits={timeLimit}
                 />
 
                 {/* MobileChildDetail */}

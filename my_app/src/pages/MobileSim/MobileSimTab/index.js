@@ -24,7 +24,7 @@ const listcharge = [
 ]
 function MobileSimTab() {
     return (
-        <div className="mbsim__tab col-md-3">
+        <div className="mbsim__tab col-md-3 col-12">
             <div className="mbsim__tab-sub">
                 <h3>Loại thuê bao</h3>
                 <div className="mbsim__tab-sub-items">

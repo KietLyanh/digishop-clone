@@ -81,15 +81,17 @@
 
         li{
             margin-bottom: 1.2rem;
-            
+            p{
+                color: #5c5c5c;
+            }
         }
     }
 
-    a{
+    p{
         font-size: 1.5rem;
         cursor: pointer;
     }
-    a:hover{
+    p:hover{
         text-decoration: underline;
         color: #3AA4F6;
         background-color: transparent;

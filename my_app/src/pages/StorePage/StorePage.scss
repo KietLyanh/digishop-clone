@@ -8,7 +8,7 @@
         justify-content: center;
         background-color: #fff;
         padding-top: 20px;
-        height: 450px;
+        min-height: 450px;
         margin-bottom: 20px;
         margin-top: 5px;
         border-radius: 10px;
@@ -90,15 +90,17 @@
         .store__sp-contact {
             display: flex;
             flex-direction: row;
+            align-items: center;
             justify-content: flex-start;
-            align-items: flex-start;
             margin-left: 50px;
-            padding-right: 80px;
+            // padding-right: 80px;
             width: 100%;
-            height: 350px;
+            // height: 350px;
+            // min-width: 450px;
             margin-bottom: 30px;
-            margin-top: 20px;
-            // flex-wrap: wrap;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 30px;
             // box-sizing: border-box;
 
             h4 {
@@ -112,12 +114,14 @@
                 // height: 50px;
                 background-color: #fff;
                 border-radius: 10px;
-                margin-right: 20px;
+                // margin-right: 20px;
                 padding-top: 30px;
                 padding-left: 20px;
+                max-width: 450px;
                 height: 100%;
                 min-height: 300px;
                 position: relative;
+                flex: 1 1 300px;
 
                 .store__sp-contact-phone-icon,
                 .store__sp-contact-sms-icon,
@@ -334,5 +338,125 @@
     .store__container {
         max-width: 1520px;
         margin: auto;
+    }
+}
+
+@media only screen and (max-width:1200px){
+    
+
+    .store__container{
+        .store__sp{
+            .store__sp-contact{
+                display: flex;
+                flex-direction: row;
+            }
+
+            .store__sp-site{
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+               
+            }
+
+        }
+    }
+    
+}
+
+@media only screen and (max-width:992px){
+
+    .store__input{
+        width: 270px;
+    }
+    .store__container{
+
+        .store__map{
+            flex-direction: row;
+            align-items: center;
+
+            .store__map-search{
+                .store__map-search-btn{
+                    .lv4{
+                        width: 270px;
+                    }
+                }
+            }
+            
+        }
+        
+        .store__sp{
+            .store__sp-contact{
+                
+                margin-left: 0;
+                
+                .store__sp-contact-phone,
+                .store__sp-contact-sms,
+                .store__sp-contact-internet {
+                    max-width: 340px;
+                }
+            }
+
+            .store__sp-site{
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 20px;
+
+                .store__sp-site-item{
+                    max-width: 300px;
+                    margin-right: 0;
+                }
+            }
+
+        }
+    }
+    
+}
+
+@media only screen and (max-width:600px){
+    .store__container{
+
+        .store__map{
+            flex-direction: column;
+        }
+        .store__sp{
+            h1{
+                font-size: 2.2rem;
+            }
+            .store__sp-contact{
+                justify-content: center;
+                
+                .store__sp-contact-phone,
+                .store__sp-contact-sms,
+                .store__sp-contact-internet {
+                    max-width: 300px;
+                }
+
+                .store__sp-contact-sms{
+                    .store__sp-contact-sms-cnt{
+                        flex-wrap: wrap;
+                        gap: 20px;
+                        
+                    }
+                }
+
+                .store__sp-contact-internet{
+                    .lv3{
+                        width: 250px !important;
+                    }
+                }
+            }
+
+            .store__sp-site{
+                flex-wrap: wrap;
+
+                .store__sp-site-item{
+                    justify-content: center;
+                    // max-width: 340px;
+                }
+            }
+
+        }
+
+        
     }
 }
