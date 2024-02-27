@@ -5,6 +5,7 @@
 package controller;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import dal.AllDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -66,6 +67,9 @@ public class GetPackagesByDate extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
+        response.addHeader("Access-Control-Allow-Origin", "*"); // hoặc bạn có thể chỉ định origin cụ thể
+        response.addHeader("Access-Control-Allow-Methods", "GET, OPTIONS, HEAD");
+        response.addHeader("Access-Control-Allow-Headers", "Content-Type");
         
         PrintWriter out = response.getWriter();
         try{
@@ -73,6 +77,7 @@ public class GetPackagesByDate extends HttpServlet {
             String id = request.getParameter("package_id");
             AllDAOImpl c = new AllDAOImpl();
             List<All_Packages> list = new ArrayList<>();
+            List<Integer> time_limit = new ArrayList<>();
             List<Standard_packages> listStandard = c.getAllMobileStandards("");
             List<Child_packages> listChild = c.getAllChild();
             for (Standard_packages x : listStandard) {
@@ -83,16 +88,25 @@ public class GetPackagesByDate extends HttpServlet {
                 All_Packages p = new All_Packages(x.getStandard_id(), x.getChild_name(), x.getChild_price(), x.getChild_timeLimit(), x.getDetail_id(), x.getDetail_treatment(), x.getDetail_cancel(), x.getDetail_check(), x.getDetail_legacy(), x.getDetail_extension(), x.getDetail_hotline(), x.getDetail_enrollment());
                 list.add(p);
             }
-            Gson gson = new Gson();
+            JsonObject jsonObject = new JsonObject();
             for(All_Packages x : list)
             {
                 if(x.getPackages_name().equals(name) && x.getPackages_id().equals(id))
                 {
-                    String json = gson.toJson(x);
-                    out.write(json);
+                    jsonObject.add("package_data", new Gson().toJsonTree(x));
                     break;
                 }  
             }
+            
+            for(All_Packages x : list)
+            {
+                if(x.getPackages_id().equals(id))
+                {
+                    time_limit.add(x.getPackages_timelimit());
+                }
+            }
+            jsonObject.add("time_limit", new Gson().toJsonTree(time_limit));
+            out.write(jsonObject.toString());
         }
         catch(Exception e)
         {

@@ -61,8 +61,11 @@ public class ListSimName extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-         response.setContentType("application/json");
+        response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
+        response.addHeader("Access-Control-Allow-Origin", "*"); // hoặc bạn có thể chỉ định origin cụ thể
+        response.addHeader("Access-Control-Allow-Methods", "GET, OPTIONS, HEAD");
+        response.addHeader("Access-Control-Allow-Headers", "Content-Type");
         PrintWriter out = response.getWriter();
         try{
             AllDAOImpl s = new AllDAOImpl();
