@@ -4,9 +4,17 @@
         <servlet-name>CorsFilter</servlet-name>
         <servlet-class>controller.CorsFilter</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginUsers</servlet-name>
+        <servlet-class>controller.LoginUsers</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CorsFilter</servlet-name>
         <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginUsers</servlet-name>
+        <url-pattern>/loginusers</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
