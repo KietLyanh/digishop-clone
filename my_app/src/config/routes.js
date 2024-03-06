@@ -7,6 +7,8 @@ const routes = {
     news:"/tin-tuc",
     mobileSim: "/sim-so",
     cardReaload: "./nap-the",
-    mobileStandardPackage: "/di-dong/:package_id/:package_name"
+    mobileStandardPackage: "/di-dong/:package_id/:package_name",
+    login:"/dang-nhap",
+    register:"/dang-ky"
 }
 export default routes;
