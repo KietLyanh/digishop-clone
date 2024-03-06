@@ -12,8 +12,8 @@ import java.util.Set;
  */
 public class Users {
     private int userid,roleid;
-    private String username,password,email,firstname,lastname,dateofbirth,address;
-    private Set<String> rolename;
+    private String username,password,email,firstname,lastname,address;
+    private String rolename;
 
     public int getUserid() {
         return userid;
@@ -71,13 +71,6 @@ public class Users {
         this.lastname = lastname;
     }
 
-    public String getDateofbirth() {
-        return dateofbirth;
-    }
-
-    public void setDateofbirth(String dateofbirth) {
-        this.dateofbirth = dateofbirth;
-    }
 
     public String getAddress() {
         return address;
@@ -87,11 +80,11 @@ public class Users {
         this.address = address;
     }
 
-    public Set<String> getRolename() {
+    public String getRolename() {
         return rolename;
     }
 
-    public void setRolename(Set<String> rolename) {
+    public void setRolename(String rolename) {
         this.rolename = rolename;
     }
     

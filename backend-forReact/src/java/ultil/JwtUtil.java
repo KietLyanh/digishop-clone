@@ -7,6 +7,7 @@ package ultil;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import java.util.Date;
 
 
 
@@ -15,11 +16,18 @@ import io.jsonwebtoken.SignatureAlgorithm;
  * @author ngotr
  */
 public class JwtUtil {
-     private static final String SECRET_KEY = "Dodaihoc2003*";
-
-    public static String generateToken(String subject) {
+     private static final String SECRET_KEY = "123456789080703xhkfdjfir"; 
+     public static String generateToken(String username,String email,String firstname,String lastname,String address,String rolename) {
         return Jwts.builder()
-                .setSubject(subject)
+                .setSubject(username)
+                .claim("username", username)
+                .claim("email", email)
+                .claim("firstname", firstname)
+                .claim("lastname", lastname)
+                .claim("address", address)
+                .claim("rolename", rolename)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis()+15))
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                 .compact();
     }

@@ -8,7 +8,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Set;
 import model.Users;
 
 /**
@@ -18,13 +17,49 @@ import model.Users;
 public class UsersDAOImpl implements UsersDAO{
 
     @Override
-    public Users registerUsers(String username, String password, Set<String> rolename) {
-        return null;
+    public void registerUsers(String username, String password, String email, String rolename) {
+    try (Connection cnt = DBcontextUsers.getConnection()) {
+        cnt.setAutoCommit(false);
+
+        // Thực hiện câu lệnh INSERT INTO users
+        String sqlInsertUsers = "INSERT INTO users (username, password, email) VALUES (?,?,?);";
+        try (PreparedStatement stInsertUsers = cnt.prepareStatement(sqlInsertUsers)) {
+            stInsertUsers.setString(1, username);
+            stInsertUsers.setString(2, password);
+            stInsertUsers.setString(3, email);
+            stInsertUsers.executeUpdate();
+        }
+
+        // Lấy giá trị LAST_INSERT_ID()
+        String sqlLastUserId = "SET @last_userid = LAST_INSERT_ID();";
+        try (PreparedStatement stLastUserId = cnt.prepareStatement(sqlLastUserId)) {
+            stLastUserId.executeUpdate();
+        }
+
+        // Thiết lập giá trị cho @roleid
+        String sqlSetRoleId = "SET @roleid = ?;";
+        try (PreparedStatement stSetRoleId = cnt.prepareStatement(sqlSetRoleId)) {
+            int roleId = (rolename.equals("ADMIN")) ? 1 : 2;
+            stSetRoleId.setInt(1, roleId);
+            stSetRoleId.executeUpdate();
+        }
+
+        // Thực hiện câu lệnh INSERT INTO userrole
+        String sqlInsertUserRole = "INSERT INTO userrole (userid, roleid) VALUES (@last_userid, @roleid);";
+        try (PreparedStatement stInsertUserRole = cnt.prepareStatement(sqlInsertUserRole)) {
+            stInsertUserRole.executeUpdate();
+        }
+        cnt.commit();
+    } catch (SQLException e) {
+        e.printStackTrace();
+        
     }
+}
+
 
     @Override
     public Users loginUsers(String username, String password) {
-            String query = "SELECT username,password FROM usertable WHERE username = ? AND password = ?";
+            String query = "SELECT username,email,firstname,lastname,address,rolename FROM users,role,userrole WHERE username= ? AND password= ? AND users.userid = userrole.userid AND role.roleid = userrole.roleid";
             try  {
                 Connection cnt = DBcontextUsers.getConnection();
                 PreparedStatement st = cnt.prepareStatement(query);
@@ -34,7 +69,11 @@ public class UsersDAOImpl implements UsersDAO{
                 if (rs.next()) {
                     Users user = new Users();
                     user.setUsername(rs.getString("username"));
-                    user.setPassword(rs.getString("password"));
+                    user.setAddress(rs.getString("address"));
+                    user.setEmail(rs.getString("email"));
+                    user.setFirstname(rs.getString("firstname"));
+                    user.setLastname(rs.getString("lastname"));
+                    user.setRolename(rs.getString("rolename"));
                     return user;
                 }
             
@@ -45,8 +84,10 @@ public class UsersDAOImpl implements UsersDAO{
     }
 
     @Override
-    public Users profileUsers(String username, String email, String firstname, String lastname, String dateofbirth, String address, Set<String> rolename) {
-        return null;
+    public Users profileUsers(String username, String email, String firstname, String lastname, String address, String rolename) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+   
     
 }

@@ -4,8 +4,6 @@
  */
 package controller;
 
-import com.google.gson.Gson;
-import dal.UsersDAO;
 import dal.UsersDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,14 +11,12 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.Users;
-import ultil.JwtUtil;
 
 /**
  *
  * @author ngotr
  */
-public class LoginUsers extends HttpServlet {
+public class RegisterUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,7 +30,18 @@ public class LoginUsers extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
+        try ( PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet RegisterUser</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet RegisterUser at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -46,33 +53,7 @@ public class LoginUsers extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-         response.setContentType("application/json");
-         response.setCharacterEncoding("UTF-8");
-         response.addHeader("Access-Control-Allow-Origin", "*"); // hoặc bạn có thể chỉ định origin cụ thể
-         response.addHeader("Access-Control-Allow-Methods", "GET, OPTIONS, HEAD");
-         response.addHeader("Access-Control-Allow-Headers", "Content-Type");
-         String username = request.getParameter("username");
-         String password = request.getParameter("password");
-
-//         Authenticate user
-        Users authenticatedUser = new UsersDAOImpl().loginUsers(username, password);
-//        response.getWriter().write(new Gson().toJson(authenticatedUser.toString()));
-        if (authenticatedUser != null) {
-            // Authentication successful, you may generate a JWT token here if needed
-             String jwtToken;
-             jwtToken = JwtUtil.generateToken(username,authenticatedUser.getEmail(),authenticatedUser.getFirstname(),authenticatedUser.getLastname(),authenticatedUser.getAddress(),authenticatedUser.getRolename());
-//            response.getWriter().write(jwtToken);
-            response.getWriter().write(jwtToken );
-        } else {
-            // Authentication failed
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("{\"error\": \"Login failed\"}");
-        }
-        response.getWriter().write("hello");
-    }
+   
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -85,7 +66,17 @@ public class LoginUsers extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+         response.setContentType("application/json");
+         response.setCharacterEncoding("UTF-8");
+         response.addHeader("Access-Control-Allow-Origin", "*"); // hoặc bạn có thể chỉ định origin cụ thể
+         response.addHeader("Access-Control-Allow-Methods", "POST, OPTIONS, HEAD");
+         response.addHeader("Access-Control-Allow-Headers", "Content-Type");
+         String username = request.getParameter("username");
+         String password = request.getParameter("password");
+         String email = request.getParameter("email");
+         String rolename = request.getParameter("rolename");
+         UsersDAOImpl user = new UsersDAOImpl();
+         user.registerUsers(username, password, email, rolename);
     }
 
     /**
