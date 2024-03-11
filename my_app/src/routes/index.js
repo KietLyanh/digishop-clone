@@ -10,6 +10,9 @@ import Card from "~/pages/Card";
 import MobileChildPage from "~/pages/MobilePage/MobileChildPage";
 import LoginPage from "~/pages/LoginPage/LoginPage";
 import RegisterPage from "~/pages/RegisterPage/RegisterPage";
+import Personal from "~/pages/Users/User/Personal/Personal";
+import Category from "~/pages/Users/User/Category/Category";
+
 
 const publicRoutes = [
     {path:routesConfig.support, component: SupportPage , layout: "LayoutSecond"},
@@ -25,7 +28,8 @@ const publicRoutes = [
 
 
 ]
-const privateRoutes = {
-
-}
+const privateRoutes = [
+    {path:routesConfig.personal, component: Personal , layout: "LayoutSecond"},
+    {path:routesConfig.category,component: Category, layout:"LayoutSecond"}
+]
 export {publicRoutes,privateRoutes}

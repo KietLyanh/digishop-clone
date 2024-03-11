@@ -2,9 +2,9 @@
 import axiosClient from "./axiosClient";
 
 const register = {
-    postRegister: (params) => {
+    postRegister: (userRegister) => {
         const url = '/registeruser';
-        return axiosClient.post(url,{params});
+        return axiosClient.post(url,userRegister);
     }
 }
 export default register;    

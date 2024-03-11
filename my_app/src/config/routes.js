@@ -9,6 +9,8 @@ const routes = {
     cardReaload: "./nap-the",
     mobileStandardPackage: "/di-dong/:package_id/:package_name",
     login:"/dang-nhap",
-    register:"/dang-ky"
+    register:"/dang-ky",
+    personal:"/ca-nhan",
+    category:"/quan-ly-gian-hang-cua-toi",
 }
 export default routes;

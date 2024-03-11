@@ -1,9 +1,9 @@
 import axiosClient from "./axiosClient";
 
 const login = {
-    getLogin: (params) => {
+    postLogin: (userLogin) => {
         const url = '/loginusers';
-        return axiosClient.get(url,{params});
+        return axiosClient.post(url,userLogin);
     }
 }
 export default login;
