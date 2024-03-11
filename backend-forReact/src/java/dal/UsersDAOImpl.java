@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.Users;
+import ultil.PasswordUtil;
 
 /**
  *
@@ -59,21 +60,24 @@ public class UsersDAOImpl implements UsersDAO{
 
     @Override
     public Users loginUsers(String username, String password) {
-            String query = "SELECT username,email,firstname,lastname,address,rolename FROM users,role,userrole WHERE username= ? AND password= ? AND users.userid = userrole.userid AND role.roleid = userrole.roleid";
+            String query = "SELECT username,password,email,firstname,lastname,address,rolename FROM users,role,userrole WHERE username= ? AND users.userid = userrole.userid AND role.roleid = userrole.roleid";
             try  {
                 Connection cnt = DBcontextUsers.getConnection();
                 PreparedStatement st = cnt.prepareStatement(query);
-                st.setString(1, username);
-                st.setString(2, password); 
+                st.setString(1, username);  
                 ResultSet rs = st.executeQuery();
+                Users user = new Users();
                 if (rs.next()) {
-                    Users user = new Users();
                     user.setUsername(rs.getString("username"));
                     user.setAddress(rs.getString("address"));
                     user.setEmail(rs.getString("email"));
                     user.setFirstname(rs.getString("firstname"));
                     user.setLastname(rs.getString("lastname"));
                     user.setRolename(rs.getString("rolename"));
+                    user.setPassword(rs.getString("password"));
+                }
+                if(PasswordUtil.checkPassword(password, user.getPassword()))
+                {
                     return user;
                 }
             

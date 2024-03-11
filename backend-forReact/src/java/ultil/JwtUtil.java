@@ -27,7 +27,7 @@ public class JwtUtil {
                 .claim("address", address)
                 .claim("rolename", rolename)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis()+15))
+                .setExpiration(new Date(System.currentTimeMillis()+3600000))
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                 .compact();
     }
