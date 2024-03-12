@@ -9,6 +9,7 @@ import { StoreIcon, UserIcon, SearchIcon } from '~/components/icons/icons';
 import Dropdownlist from '~/components/DropdownList/Dropdownlist';
 import Search from '~/components/Search';
 import Popup from '~/components/PopupDialog/popup';
+import routes from '~/config/routes';
 function Header({setOpenOverlay}) {
 
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);
@@ -59,6 +60,17 @@ function Header({setOpenOverlay}) {
             linkpage: "/internet-tv#truyehinh-tv"
         }
     ];
+
+    const Datapersonal = [
+        {
+            title: 'Cá Nhân',
+            linkpage: config.routes.personal
+        },
+        {
+            title: 'Gian Hàng Của Tôi',
+            linkpage: config.routes.category
+        },  
+    ]
 
     return (
         <>
@@ -115,7 +127,8 @@ function Header({setOpenOverlay}) {
                                 displayImg="none"
                                 displayTitle="none"
                                 popupOpen={setOpenOverlay}
-                           
+                                dropdown={<Dropdownlist list={Datapersonal} height="100px" width="100px" flexIndex='50%' fontWeight='600' fontSize='1.4rem' />}
+
                             />
                         </div>
                     </Menu>
@@ -137,7 +150,7 @@ function Header({setOpenOverlay}) {
                              displayImg="none"
                              displayTitle="none"
                              popupOpen={setOpenOverlay}
-                             
+                             dropdown={<Dropdownlist list={Datapersonal} height="100px" width="100px" flexIndex='50%' fontWeight='600' fontSize='1.4rem' />}
                          />
                     </div>
                 </div>

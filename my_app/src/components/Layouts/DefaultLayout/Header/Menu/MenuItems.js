@@ -9,9 +9,9 @@ function MenuItems({
 {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isOpen,setIsOpen] = useState(false);
-    
+    const storeToken = localStorage.getItem('accessToken');
     const handleOnclick = () => {
-        if(popupOpen !== null)
+        if(popupOpen !== null && storeToken === null)
         {
             popupOpen(true)
         }

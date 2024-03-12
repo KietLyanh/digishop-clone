@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {jwtDecode}  from "jwt-decode";
 import { Fragment } from 'react';
 import { publicRoutes,privateRoutes } from './routes';
@@ -10,6 +10,8 @@ function App() {
     const storeToken = localStorage.getItem('accessToken');
     if(storeToken)
     {
+        
+        // setIsAuthenticated(true);
         const decodedToken = jwtDecode(storeToken);
         const expirationTime = decodedToken.exp;
         console.log(expirationTime);
@@ -23,6 +25,7 @@ function App() {
           console.log('Token còn hạn.');
         } else {
           // Token đã hết hạn
+        //   setIsAuthenticated(false);
           localStorage.removeItem('accessToken');
           console.log('Token đã hết hạn.');
         }
@@ -32,7 +35,7 @@ function App() {
         <Router>
             <div className='app'>
                 <Routes>
-                    { publicRoutes.map((route,index)=> {
+                    { (storeToken ? allRoutes : publicRoutes).map((route,index)=> {
                         const Layout = route.layout === null ? Fragment : (route.layout==="LayoutSecond" ? LayoutSecond : DefaultLayout);
                         // lưu ý là fragement là thẻ chứa, nên tạo một thẻ chứa để bao toàn bộ
                         // nội dung của 1 layout mới hoàn toàn, layout này sẽ ko chứa defautlayout

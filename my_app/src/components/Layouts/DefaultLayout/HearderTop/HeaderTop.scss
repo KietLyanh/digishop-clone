@@ -10,9 +10,25 @@
         color: #5c5c5c;
         height: 35px;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         align-items: center;
-    
+        
+        
+        .header-top-title{
+            display: flex;
+            flex-direction: row;
+            margin-left: 15px;
+            gap: 10px;
+            align-items: center;
+            h1{
+                margin: 0;
+                font-size: 1.8rem;
+            }
+            .header-top-logoutico{
+                cursor: pointer;
+            }
+        }
+
        .header-top-wrapper-link{
             position: relative;
             display: flex;

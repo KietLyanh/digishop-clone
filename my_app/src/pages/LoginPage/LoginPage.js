@@ -6,12 +6,10 @@ import login from "~/api/login";
 import logo from './imgs/logo_cas.png';
 import { NavLink, useNavigate } from "react-router-dom";
 import config from "~/config";
+import { jwtDecode } from "jwt-decode";
 function LoginPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
-  const [loggedInUser, setLoggedInUser] = useState(null);
-  const [error, setError] = useState(null);
-
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
@@ -20,25 +18,15 @@ function LoginPage() {
     event.preventDefault();
 
     try {
-      // Mã hóa mật khẩu trước khi gửi đến API
       const password = event.target.elements.password.value; // Lấy mật khẩu từ form
-      // const hashedPassword = await bcrypt.hash(password, 10);
-      // console.log(username,hashedPassword);
-      // Gửi yêu cầu API đăng nhập với mật khẩu đã được mã hóa
       const response = await login.postLogin({
         username: username,
         password: password
       });
       if (response && response.token) {
+
         localStorage.setItem('accessToken', response.token);
-        toast.success('Đăng nhập thành công!', {
-          position: 'top-right',
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-        });
+        localStorage.setItem('username',jwtDecode(response.token).username)
         navigate('/');
       }
       else {
@@ -64,7 +52,6 @@ function LoginPage() {
         pauseOnHover: true,
         draggable: true,
       });
-      setError(error.response ? error.response.data.message : error.message);
     }
   };
   return (
