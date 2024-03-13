@@ -27,6 +27,7 @@ function LoginPage() {
 
         localStorage.setItem('accessToken', response.token);
         localStorage.setItem('username',jwtDecode(response.token).username)
+        localStorage.setItem('role',jwtDecode(response.token).rolename)
         navigate('/');
       }
       else {

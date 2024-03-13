@@ -25,7 +25,15 @@ function HeaderTop() {
     },[])
     return (
         <div className={`grid__full-width  ${isHeaderVisible ? 'headerTop-extinct' : 'headerTop-fixed'}`} style={{backgroundColor:'#f2f2f2'}}>
-            <section className="header-top-wrapper" >
+            <section className="header-top-wrapper" 
+                style={localStorage.getItem('accessToken') ? {
+                    justifyContent:"space-between",
+                    alignItems:"center"
+                } : {
+                    justifyContent:"flex-end",
+                    alignItems:"center"
+                }}
+            >
                 {localStorage.getItem('accessToken') ? <div className="header-top-title" >
                     <h1>Chào Mừng {localStorage.getItem('username')}</h1>
                     <div onClick={handleLogout}>

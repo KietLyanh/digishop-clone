@@ -10,6 +10,7 @@ import Dropdownlist from '~/components/DropdownList/Dropdownlist';
 import Search from '~/components/Search';
 import Popup from '~/components/PopupDialog/popup';
 import routes from '~/config/routes';
+// const flexIndex = 100/3;
 function Header({setOpenOverlay}) {
 
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);
@@ -70,6 +71,10 @@ function Header({setOpenOverlay}) {
             title: 'Gian Hàng Của Tôi',
             linkpage: config.routes.category
         },  
+        {
+            title:'Quản Lý Khách Hàng',
+            linkpage:config.routes.userinfo
+        }
     ]
 
     return (
@@ -94,8 +99,10 @@ function Header({setOpenOverlay}) {
                                 displayIcon="none"
                                 className="header-wrapper-nav-item-phone"
                                 classNameImg="header-wrapper-nav-item-phone-img"
-                                dropdown={<Dropdownlist list={Datamobile} height="170px" width="170px" flexIndex='25%' fontWeight='600' fontSize='1.4rem' />}
+                                dropdown={<Dropdownlist list={Datamobile} height="170px" width="170px" flexIndex='25%' fontWeight='600' fontSize='1.4rem'  />}
+                                marginLeftDropdown="-22px"
                                 popupOpen={null}
+                                authOpen={true}
                             />
                             <MenuItems
                                 to={config.routes.internetTV}
@@ -104,9 +111,10 @@ function Header({setOpenOverlay}) {
                                 displayIcon="none"
                                 className="header-wrapper-nav-item-internet"
                                 classNameImg="header-wrapper-nav-item-internet-img"
-                                dropdown={<Dropdownlist list={Datainternet} height="170px" width="250px" flexIndex='25%' fontWeight='600' fontSize='1.4rem' />}
+                                dropdown={<Dropdownlist list={Datainternet} height="170px" width="250px" flexIndex='25%' fontWeight='600' fontSize='1.4rem'  />}
                                 marginLeftDropdown="-22px"
                                 popupOpen={null}
+                                authOpen={true}
                             />
                             <MenuItems
                                 to={config.routes.store}
@@ -127,8 +135,9 @@ function Header({setOpenOverlay}) {
                                 displayImg="none"
                                 displayTitle="none"
                                 popupOpen={setOpenOverlay}
-                                dropdown={<Dropdownlist list={Datapersonal} height="100px" width="100px" flexIndex='50%' fontWeight='600' fontSize='1.4rem' />}
-
+                                dropdown={<Dropdownlist list={Datapersonal} height="130px" width="150px" flexIndex={`${100/3}%`} fontWeight='600' fontSize='1.4rem' />}
+                                marginLeftDropdown="-120px"
+                                authOpen={localStorage.getItem('accessToken') ? true : false}
                             />
                         </div>
                     </Menu>

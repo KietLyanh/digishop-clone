@@ -12,24 +12,26 @@ import LoginPage from "~/pages/LoginPage/LoginPage";
 import RegisterPage from "~/pages/RegisterPage/RegisterPage";
 import Personal from "~/pages/Users/User/Personal/Personal";
 import Category from "~/pages/Users/User/Category/Category";
+import UserInfo from "~/pages/Users/Admin/UserInfo/UserInfo";
 
 
 const publicRoutes = [
-    {path:routesConfig.support, component: SupportPage , layout: "LayoutSecond"},
-    {path:routesConfig.home,component:home},
-    {path:routesConfig.internetTV,component:InternetPage},
-    {path:routesConfig.mobile,component:MobilePage},
-    {path:routesConfig.store,component:StorePage,layout: "LayoutSecond" },
-    {path:routesConfig.mobileSim,component:MobileSim},
-    {path:routesConfig.cardReaload,component:Card},
-    {path:routesConfig.mobileStandardPackage,component:MobileChildPage},
-    {path:routesConfig.login,component:LoginPage,layout:null},
-    {path:routesConfig.register,component:RegisterPage,layout:null}
+    {path:routesConfig.support, component: SupportPage , layout: "LayoutSecond",requireAdmin:false},
+    {path:routesConfig.home,component:home,requireAdmin:false},
+    {path:routesConfig.internetTV,component:InternetPage,requireAdmin:false},
+    {path:routesConfig.mobile,component:MobilePage,requireAdmin:false},
+    {path:routesConfig.store,component:StorePage,layout: "LayoutSecond" ,requireAdmin:false},
+    {path:routesConfig.mobileSim,component:MobileSim,requireAdmin:false},
+    {path:routesConfig.cardReaload,component:Card,requireAdmin:false},
+    {path:routesConfig.mobileStandardPackage,component:MobileChildPage,requireAdmin:false},
+    {path:routesConfig.login,component:LoginPage,layout:null,requireAdmin:false},
+    {path:routesConfig.register,component:RegisterPage,layout:null,requireAdmin:false},
 
 
 ]
 const privateRoutes = [
-    {path:routesConfig.personal, component: Personal , layout: "LayoutSecond"},
-    {path:routesConfig.category,component: Category, layout:"LayoutSecond"}
+    {path:routesConfig.personal, component: Personal , layout: "LayoutSecond",requireAdmin:false},
+    {path:routesConfig.category,component: Category, layout:"LayoutSecond",requireAdmin:false},
+    {path:routesConfig.userinfo,component:UserInfo,layout:"LayoutSecond" , requireAdmin:true}
 ]
 export {publicRoutes,privateRoutes}

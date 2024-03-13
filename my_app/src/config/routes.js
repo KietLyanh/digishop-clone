@@ -12,5 +12,6 @@ const routes = {
     register:"/dang-ky",
     personal:"/ca-nhan",
     category:"/quan-ly-gian-hang-cua-toi",
+    userinfo: "/quan-ly-khach-hang",
 }
 export default routes;
