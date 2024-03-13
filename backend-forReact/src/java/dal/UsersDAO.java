@@ -14,5 +14,5 @@ import model.Users;
 public interface UsersDAO {
      public void registerUsers(String username,String password,String email ,String rolename);
      public Users loginUsers(String username,String password);
-     public Users profileUsers(String username,String email,String firstname,String lastname,String address,String rolename);
+     public void profileUsers(String username,String firstname,String lastname,String address,String birthday);
 }

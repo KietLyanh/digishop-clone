@@ -8,6 +8,10 @@
         <servlet-name>RegisterUser</servlet-name>
         <servlet-class>controller.RegisterUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProfileUpdate</servlet-name>
+        <servlet-class>controller.ProfileUpdate</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginUsers</servlet-name>
         <url-pattern>/loginusers</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>RegisterUser</servlet-name>
         <url-pattern>/registeruser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfileUpdate</servlet-name>
+        <url-pattern>/profileupdate</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

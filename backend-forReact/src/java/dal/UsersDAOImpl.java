@@ -53,7 +53,6 @@ public class UsersDAOImpl implements UsersDAO{
         cnt.commit();
     } catch (SQLException e) {
         e.printStackTrace();
-        
     }
 }
 
@@ -88,9 +87,26 @@ public class UsersDAOImpl implements UsersDAO{
     }
 
     @Override
-    public Users profileUsers(String username, String email, String firstname, String lastname, String address, String rolename) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void profileUsers( String username, String firstname, String lastname, String address,String birthday) {
+       try (Connection cnt = DBcontextUsers.getConnection()) {
+        cnt.setAutoCommit(false);
+
+        // Thực hiện câu lệnh INSERT INTO users
+        String sqlInsertUsers = "INSERT INTO users (fistname, lastname, address, birthday) VALUES (?,?,?,?) WHERE username= ?;";
+        try (PreparedStatement stInsertUsers = cnt.prepareStatement(sqlInsertUsers)) {
+            stInsertUsers.setString(1, firstname);
+            stInsertUsers.setString(2, lastname);
+            stInsertUsers.setString(3, address);
+            stInsertUsers.setString(4, birthday);
+            stInsertUsers.setString(5, username);
+            stInsertUsers.executeUpdate();
+        }
+        cnt.commit();
+    } catch (SQLException e) {
+        e.printStackTrace();
     }
+
+   }
 
    
     

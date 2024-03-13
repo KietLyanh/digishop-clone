@@ -12,11 +12,19 @@ import java.util.Set;
  */
 public class Users {
     private int userid,roleid;
-    private String username,password,email,firstname,lastname,address;
+    private String username,password,email,firstname,lastname,address,birthday;
     private String rolename;
 
     public int getUserid() {
         return userid;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getBirthday() {
+        return birthday;
     }
 
     public void setUserid(int userid) {

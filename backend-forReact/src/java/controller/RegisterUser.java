@@ -5,6 +5,7 @@
 package controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import dal.UsersDAOImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -48,6 +49,7 @@ public class RegisterUser extends HttpServlet {
         Users userRegister = objectMapper.readValue(requestData, Users.class);
         UsersDAOImpl user = new UsersDAOImpl();
         user.registerUsers(userRegister.getUsername(), userRegister.getPassword(), userRegister.getEmail(),"USER");
+//        response.getWriter().write(new Gson().toJson(userRegister));
     }
 
     /**
